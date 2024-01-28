@@ -307,11 +307,11 @@ setInterval(()=>{
               
                         const hour = ("0" + now.getHours()).slice(-2);
                         const minute = ("0" + now.getMinutes()).slice(-2);
-                        
+                        const targetHr = (process.env.restartHour)-1;
                        
                         serverStatus(function(response){
                             if((`${response}`).includes("Online")){
-                                if(`${hour}:${minute}` === `${(process.env.restartHour)}:45` && activeRestart === false){
+                                if(`${hour}:${minute}` === `${targetHr}:45` && activeRestart === false){
                                     console.log(`Executing Daily Restart Warnings`);
                                     gameWarning("DAILY RESTART",function(){});
                                     activeRestart = true;
