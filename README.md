@@ -88,6 +88,7 @@ Change Notes:
 	
 	01/27/2024 Complete rework/overhaul built in monitoring and rcon ability.
    
+	01/28/2024 Fixed daily restart being off by 1 hour
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation
