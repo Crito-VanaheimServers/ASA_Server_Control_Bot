@@ -2,7 +2,7 @@
 VGS ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v1.6 01/27/2023
+v1.7 01/31/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -89,6 +89,8 @@ Change Notes:
 	01/27/2024 Complete rework/overhaul built in monitoring and rcon ability.
    
 	01/28/2024 Fixed daily restart being off by 1 hour
+
+	01/31/2024 Fixed daily restart broken from last update
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation

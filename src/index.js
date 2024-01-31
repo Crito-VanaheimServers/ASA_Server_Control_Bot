@@ -307,8 +307,15 @@ setInterval(()=>{
               
                         const hour = ("0" + now.getHours()).slice(-2);
                         const minute = ("0" + now.getMinutes()).slice(-2);
-                        const targetHr = (process.env.restartHour)-1;
-                       
+                        var targetHr = (process.env.restartHour);
+                        
+                        if(targetHr === "00"){
+                            targetHr = "24";
+                        };
+
+                        targetHr = targetHr-"01";
+                        targetHr = ("0" + targetHr).slice(-2);
+                                               
                         serverStatus(function(response){
                             if((`${response}`).includes("Online")){
                                 if(`${hour}:${minute}` === `${targetHr}:45` && activeRestart === false){
