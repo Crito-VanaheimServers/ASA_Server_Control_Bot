@@ -1,0 +1,59 @@
+{
+  "env": {
+    "test": {
+      "presets": ["airbnb"],
+      "plugins": [
+        ["inline-react-svg", {
+          "svgo": false
+        }],
+        ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
+        "./scripts/pure-component-fallback.js",
+        "istanbul",
+      ]
+    },
+
+    "development": {
+      "presets": ["airbnb"],
+      "plugins": [
+        ["inline-react-svg", {
+          "svgo": false
+        }],
+        ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
+        "./scripts/pure-component-fallback.js",
+      ],
+    },
+
+    "production": {
+      "presets": [["airbnb", { removePropTypes: true }]],
+      "plugins": [
+        ["inline-react-svg", {
+          "svgo": false
+        }],
+        ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
+        "./scripts/pure-component-fallback.js",
+      ],
+    },
+
+    "cjs": {
+      "presets": [["airbnb", { removePropTypes: true }]],
+      "plugins": [
+        ["inline-react-svg", {
+          "svgo": false
+        }],
+        ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
+        "./scripts/pure-component-fallback.js",
+      ],
+    },
+
+    "esm": {
+      "presets": [["airbnb", { modules: false, removePropTypes: true }]],
+      "plugins": [
+        ["inline-react-svg", {
+          "svgo": false
+        }],
+        ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
+        "./scripts/pure-component-fallback.js",
+      ],
+    },
+  },
+}

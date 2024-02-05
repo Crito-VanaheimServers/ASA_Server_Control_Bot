@@ -1,0 +1,22 @@
+.loadOverlay {
+  background: gray;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s;
+
+  &.spin {
+    visibility: visible;
+    opacity: 0.6;
+  }
+
+  .loadContainer {
+    margin-top: 33vh;
+    text-align: center;
+  }
+}

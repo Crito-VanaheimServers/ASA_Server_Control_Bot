@@ -2,7 +2,7 @@
 VGS ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v1.7 01/31/2024
+v1.8 02/05/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -27,37 +27,40 @@ https://nodejs.org/en
 Discord developer site
 https://discord.com/developers/applications
 
-DOES NOT WORK WITH SERVERS RUN FROM NITRADO
+Bot controls Ark Survival Ascended Server. Designate a specific channel for admin use only so users with
+permissions to that channel can the buttons to start, Stop, Restart your server from discord
+if needed keeping your server files safe. The bot has other functionality built into it read below.
+
+Server control does not work with Nitrado servers but can be dissabled in setup
+Nitrado servers can take advantage of game chat to discord and from discord, mod updates to discord,
+player count status on bot, and rcon commands sent from discord
+
 If you run multiple servers you can install one of these for each server.
 will be working in code to have it control multiple servers not needing multiple bots in future.
 
-Bot controls Ark Survival Ascended Server. Designate a specific channel for admin use only so users with
-permissions to that channel can usE slash commands to start, Stop, Restart your server from discord
-if needed keeping your server files safe.
-
 This works with Server API if you use it. In ASA_The_Island_Start.bat is provided line for specifying the exe to use.
 
-COMMANDS
-    Start command: Starts server if it is not running
+BUTTONS
+    Start button: Starts server if it is not running
                
-    Stop command: will safely save the world and shut down server then shut down the server monitor.
+    Stop button: will safely save the world and shut down server then shut down the server monitor.
 
-    Restart command: will first check if the server is running or not and if it is running than it will safely 
+    Restart button: will first check if the server is running or not and if it is running than it will safely 
                      save the world and shut down the server, Then check for any
                      game updates and apply them if needed. Finally the server will start.
 
-    Restart with warning command: Does what the restart command does but gives in game warnings starting at 15 minutes before
+    Restart with warning button: Does what the restart command does but gives in game warnings starting at 15 minutes before
                                   the restart takes place to give players time to prepare for restart.
 
-    Shutdown with warning command: Does what the Stop command does but gives in game warnings starting at 15 minutes before
+    Shutdown with warning button: Does what the Stop command does but gives in game warnings starting at 15 minutes before
                                    the shutdown takes place to give players time to prepare for shutdown.
 
-    Cancel warning command: can be used to stop the restart with warning command or the shutdown with warning command so server will
+    Cancel warning button: can be used to stop the restart with warning command or the shutdown with warning command so server will
                             not perform those actions.
 
-    Wild dino wipe command: Use to destroy all wild dions on the map so new/fresh dinos can start spawning in.
+    Destroy wild Dinos button: Use to destroy all wild dions on the map so new/fresh dinos can start spawning in.
 	
-	RCON Commad: Allows RCON commands to be ran from discord and get response if one is given from the server.
+	Button channel chat: Allows RCON commands to be ran from discord and get response if one is given from the server.
 
 BOT MONITORS
 	
@@ -66,11 +69,13 @@ BOT MONITORS
 
     TIME: Checks system time and when it reaches 15 minutes prior to your desired restart time it will start sending
     in game warnings to players chat and broadcast at top of screen, so they have time to log off before world save and server restart.
+	
+	MOD UPDATES: If you use the mod update function than the bot will detect when mod update is available and post information about the MOD
+	to your desired discord channel.
 
-
-    If you accidently close your monitor than just run the ASA_The_Island_Start.bat again, If server is running this will not
+	If you accidently close your monitor than just run the ASA_The_Island_Start.bat again, If server is running this will not
     do anything to server it will just restart the discord bot.
-
+	
 EXTRA FEATURES
     Bot status displays how many players are connected to server vs max player slots available.
 
@@ -91,6 +96,10 @@ Change Notes:
 	01/28/2024 Fixed daily restart being off by 1 hour
 
 	01/31/2024 Fixed daily restart broken from last update
+	
+	02/05/2024 Major update requires all files to be replaced and new settings to be set.
+			   No more slash commands to control server it is all done by buttons (suggest setting up specific admin channel desiganted for this).
+			   Auto detect mod updates, post info about them to discord, and trigger restart to update mod.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation

@@ -1,0 +1,21 @@
+.requiredLabel {
+  display: flex;
+  font-weight: bold;
+  .required {
+    padding-left: 5px;
+    color: #d9534f;
+  }
+}
+
+.textInput {
+  border-radius: 0;
+  min-height: 40px;
+  &:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+  }
+}
+
+.disabled {
+  cursor: no-drop;
+}

@@ -1,0 +1,31 @@
+const CurseForgeGamesIDs = {
+    Demeo: 78135,
+    WildStar: 454,
+    ChroniclesOfArcadia: 70667,
+    FinalFantasyIII: 5026,
+    RunesOfMagic: 335,
+    SidMeiersCivilizationVI: 727,
+    TheElderScrollsOnline: 455,
+    FinalFantasyV: 5021,
+    TheSims4: 78062,
+    TheSecretWorld: 64,
+    AmongUs: 69761,
+    Minecraft: 432,
+    FinalFantasyVI: 4773,
+    FinalFantasyI: 5230,
+    WorldOfTanks: 423,
+    DarkestDungeon: 608,
+    KerbalSpaceProgram: 4401,
+    Terraria: 431,
+    SecretWorldLegends: 4455,
+    StardewValley: 669,
+    FinalFantasyIV: 4741,
+    WorldOfWarcraft: 1,
+    MinecraftDungeons: 69271,
+    StarCraftII: 65,
+    SurvivingMars: 61489,
+    FinalFantasyII: 5001,
+    Rift: 424
+}
+
+module.exports = CurseForgeGamesIDs

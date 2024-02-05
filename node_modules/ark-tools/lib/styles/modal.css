@@ -1,0 +1,23 @@
+.appear {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.15s linear; }
+
+.modalOverlay {
+  background: gray;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transition: opacity 0.8s;
+  visibility: visible;
+  opacity: 0.6; }
+
+.modal-body {
+  max-height: calc(100vh - 200px);
+  min-height: 40px;
+  overflow-y: auto; }
+
+.filter {
+  border-radius: 0; }
