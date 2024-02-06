@@ -14,7 +14,7 @@ module.exports = (gameWarning);
 function gameWarning([client,warning]) {
     try {
         (async function () {
-            var warnMinutes = [60000, 60000];//[300000, 300000, 60000, 60000, 60000, 60000, 60000];
+            var warnMinutes = [300000, 300000, 60000, 60000, 60000, 60000, 60000];
             var totalMin = 0;
             for (let i = 0; i < warnMinutes.length; i++) {
                 totalMin = warnMinutes[i] + totalMin;
