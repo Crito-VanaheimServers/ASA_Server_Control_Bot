@@ -69,21 +69,9 @@ function gameWarning([client,warning]) {
             rconCall(`"DoExit"`, function (data) {
                 (async function () {
                     await sleep(30000);
-                    /*if (warning === "ADMIN FORCED RESTART") {
-                        updateServer(`${warning}`, function (response) {
-                            if ((`${response}`).includes("server is up to date")) {
-                                startServer(`${warning}`, function (response) {
-                                    if ((`${response}`).includes("server was started")) {
-                                        const rconRestartWarn = new EmbedBuilder()
-                                            .setTitle(process.env.Message_Tittle)
-                                            .addFields({ name: `${warning}`, value: (`${process.env.Message_Tittle} server is now up to date\n${response}\nFinal bootup may take a few minutes before showing online`) })
-                                            .setColor(0x00e8ff)
-                                        client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [rconRestartWarn] });
-                                    }
-                                });
-                            }
-                        });
-                    } else {*/
+                    if (warning === "ADMIN FORCED RESTART") {
+                        restartState.setRestartState(false);
+                    } else {
                         if (warning === "ADMIN FORCED SHUTDOWN") {
                             var responseTrim = (`${data}`).trim();
                             const rconShutdownWarn = new EmbedBuilder()
@@ -92,24 +80,12 @@ function gameWarning([client,warning]) {
                                 .setColor(0x00e8ff)
                             client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [rconShutdownWarn] });
                             console.log(`${responseTrim}\n${process.env.Message_Tittle} shutdown successfully`);
-                        } /*else {
+                        } else {
                             if ((warning === "DAILY RESTART") || (warning === "MOD UPDATE RESTART")) {
-                                updateServer(`${warning}`, function (response) {
-                                    if ((`${response}`).includes("server is up to date")) {
-                                        startServer(`${warning}`, function (response) {
-                                            if ((`${response}`).includes("server was started")) {
-                                                const rconDailyWarn = new EmbedBuilder()
-                                                    .setTitle(process.env.Message_Tittle)
-                                                    .addFields({ name: `${warning}`, value: (`${process.env.Message_Tittle} server is now up to date\n${response}\nFinal bootup may take a few minutes before showing online`) })
-                                                    .setColor(0x00e8ff)
-                                                client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [rconDailyWarn] });
-                                            }
-                                        });
-                                    }
-                                });
+                                restartState.setRestartState(false);
                             }
                         }
-                    }*/
+                    }
                 })();
             });
         })();
