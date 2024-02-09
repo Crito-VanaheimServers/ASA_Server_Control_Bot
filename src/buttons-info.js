@@ -29,7 +29,7 @@ function buttonsInfo(client) {
                 {
                     id: 'restartwarn',
                     lable: 'WARNING & RESTART',
-                    style: ButtonStyle.Success,
+                    style: ButtonStyle.Primary,
                     emoji: '⚠️'
                 },
                 {

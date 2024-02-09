@@ -12,10 +12,8 @@ function discordChat(chatMessage) {
         if (chatMessage.author.bot) {
             return
         } else {
-            rconCall(`ServerChat ${messageToSend}`, function (error) {
-                if (error) {
-                    console.error('Error sending Discord message to server:', error);
-                } else {
+            rconCall(`ServerChat ${messageToSend}`, function (response) {
+                if(response){
                     console.log(`${messageToSend}`);
                 }
             });
