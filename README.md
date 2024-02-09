@@ -2,7 +2,7 @@
 VGS ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v1.8 02/05/2024
+v1.9 02/08/05/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -100,6 +100,8 @@ Change Notes:
 	02/05/2024 Major update requires all files to be replaced and new settings to be set.
 			   No more slash commands to control server it is all done by buttons (suggest setting up specific admin channel desiganted for this).
 			   Auto detect mod updates, post info about them to discord, and trigger restart to update mod.
+	
+	02/08/2024 fixed console log error with chat messages and changed button color of restart with warnings button.	
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation
