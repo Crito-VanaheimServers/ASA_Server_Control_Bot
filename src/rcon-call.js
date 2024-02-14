@@ -1,30 +1,33 @@
-require('dotenv').config();
+const config = require('config');
 const Rcon = require('rcon/node-rcon');
 
-module.exports = (rconCall);
-
-function rconCall(rconCMD, callback) {
+module.exports = async function rconCall([clients, rconCMD]) {
     try {
+        var server = clients[1];
+
         var rconoptions = {
             tcp: true,
             challenge: false
         };
 
-        var conn = new Rcon(process.env.ASA_ServerIP, process.env.ASA_rcon_port, process.env.ASA_password, rconoptions);
+        return new Promise((resolve, reject) => {
+            var conn = new Rcon(config.get(`Servers.${server}.Local_IP`), config.get(`Servers.${server}.Rcon_Port`), config.get(`Servers.${server}.Admin_Password`), rconoptions);
 
-        conn.on('auth', function () {
-            conn.send(rconCMD);
-        }).on('response', function (rconInfo) {
-            conn.emit('end');
-            return callback(rconInfo);
-        }).on('error', function (err) {
-            conn.emit('end');
-        }).on('end', function () {
-            conn.disconnect();
+            conn.on('auth', function () {
+                conn.send(rconCMD);
+            }).on('response', function (rconInfo) {
+                conn.emit('end');
+                resolve(rconInfo);
+            }).on('error', function (err) {
+                conn.emit('end');
+                reject(err);
+            }).on('end', function () {
+                conn.disconnect();
+            });
+
+            conn.connect();
         });
-
-        conn.connect();
     } catch (error) {
-        console.error('Error in rconCall:', error);
+        return
     }
-}
+};

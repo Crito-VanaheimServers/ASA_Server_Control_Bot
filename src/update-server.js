@@ -1,38 +1,44 @@
-require('dotenv').config();
+const config = require('config');
 const { EmbedBuilder } = require('discord.js');
 const startServer = require("./server-start");
 
-module.exports = (updateServer);
+module.exports = async function updateServer([clients, commandSender]) {
+    return new Promise((resolve, reject) => {
+        try {
+            const client = clients[0];
+            const server = clients[1];
 
+            const updateinfo = new EmbedBuilder()
+                .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
+                .addFields({ name: commandSender, value: `${config.get(`Servers.${server}.Game_Server_Name`)} checking for updates please wait....` })
+                .setColor(0x00e8ff);
+            client.channels.cache.get(config.get(`Servers.${server}.Admin_Channel_ID`)).send({ embeds: [updateinfo] });
 
-function updateServer([client, commandSender],callback) {
+            const updateserver = require('child_process').spawn(config.get(`ControlBot.Bot_Folder_Path`) + '/src/UpdateServer.bat', [config.get(`Servers.${server}.Server_Path`), config.get(`Servers.${server}.Game_Server_Name`), config.get(`ControlBot.Steam_Path`)]);
 
-    try {
-        const updateinfo = new EmbedBuilder()
-            .setTitle(process.env.Message_Tittle)
-            .addFields({ name: (`${commandSender}`), value: (`${process.env.Message_Tittle} checking for updates please wait....`) })
-            .setColor(0x00e8ff)
-        client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [updateinfo] });
-
-        var updateserver = require('child_process').spawn((process.env.Bot_Folder_Path) + ('/src/UpdateServer.bat'), [process.env.GameServerPath, process.env.Message_Tittle, process.env.SteamPath]);
-
-        updateserver.stdout.on('data', function (data) {
-            console.log(`${data}`);
-        });
-        updateserver.on('close', (code) => {
-            if (code === 0) {
-                startServer([client, commandSender]);
-                return callback(code);
-            } else {
-                console.log("UPDATE ERROR: Try restarting the bot");
-                const serverupdate = new EmbedBuilder()
-                    .setTitle(process.env.Message_Tittle)
-                    .addFields({ name: `${commandSender}`, value: `UPDATE ERROR: Try restarting the bot` })
-                    .setColor(0x00e8ff)
-                client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [serverupdate] });
-            }
-        });
-    } catch (error) {
-        return
-    }
-};
+            updateserver.stdout.on('data', function (data) {
+                console.log(`${data}`);
+                if (`${data}`.includes("server is up to date")) {
+                    resolve();
+                }
+            });
+            updateserver.on('close', (code) => {
+                if (code === 0) {
+                    startServer([clients, commandSender]);
+                    resolve(code);
+                } else {
+                    console.log("UPDATE ERROR: Try restarting the bot");
+                    const serverupdate = new EmbedBuilder()
+                        .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
+                        .addFields({ name: commandSender, value: "UPDATE ERROR: Try restarting the bot" })
+                        .setColor(0x00e8ff);
+                    client.channels.cache.get(config.get(`Servers.${server}.Game_Server_Name`)).send({ embeds: [serverupdate] });
+                    reject(new Error("UPDATE ERROR"));
+                }
+            });
+        } catch (error) {
+            console.error('Error in updateServer function:', error);
+            reject(error);
+        }
+    });
+}

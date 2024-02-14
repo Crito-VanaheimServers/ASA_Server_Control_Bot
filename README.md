@@ -60,7 +60,7 @@ BUTTONS
 
     Destroy wild Dinos button: Use to destroy all wild dions on the map so new/fresh dinos can start spawning in.
 	
-	Button channel chat: Allows RCON commands to be ran from discord and get response if one is given from the server.
+	Use backslash commands to access RCON commands features for each server to send rcon commands from discord and get response if one is given from the server.
 
 BOT MONITORS
 	
@@ -112,7 +112,7 @@ PART 1:	Nodejs Installation
 	1. 	Download and install nodejs (version recommended for most users) to the machine your ASA Server is running on.
 		nodejs link https://nodejs.org/en
 	
-PART 2: Setup your discord bot
+PART 2: Setup your discord bot (each server you want to control from discord needs its own bot, this installation can handle multiple bots)
 	
 	1. 	Navigate to discord developers site and log in with your discord login credentials
 		discord developers site https://discord.com/developers
@@ -176,11 +176,12 @@ Part 4:	File setup for your bot
 				
 	3. 	Place the VGS_ASA_Server_Control_Bot folder where ever you would like.
 	
-	4.	Go into VGS_ASA_Server_Control_Bot folder and find VGS_ASA_Server_Controller_Start.bat file. Right click on it
-		and find Edit or Edit With to edit the file with a text editor.
+	4.	Go into VGS_ASA_Server_Control_Bot folder and find the config folder and inside the config is the default.json
+		edit this file with a text editor. In the example_config.txt you will find helpful information on how to setup the default.json File
+		the example_config also shows a 2 server setup and if you want more servers just follow the example config adding another server.
 	
-	5.	all lines with :: are instructions read them they will guide your with putting in correct info.
- 		At top of this file we need our bot token. Go back to the bot page I said we would come back to
+	5.	all lines with // in the example_config are instructions read them they will guide your with putting in correct info.
+ 		in the default config file we need bot tokens for each of our bots for each server. Go back to the bot page I said we would come back to
 		on the discord developers portal.
 
   	6. 	On the left side of the page select the Bot tab, on this page you should find you bots icon picture
@@ -199,17 +200,14 @@ Part 4:	File setup for your bot
 	9.	On the left side of User Settings scroll down until you find Advanced and click this, you should now see at the 
 		top Developer Mode. Turn this on.
 		
-	10. 	Go back to your discord server and at the top left is your servers name, Right click on this and you should Now
+	10. Go back to your discord server and at the top left is your servers name, Right click on this and you should Now
 		have Copy Server ID as the last option in the dropdown. If you do not see Copy Server ID than you did not turn on
 		Developer Mode.
 		
-	11. 	Go back to VGS_ASA_Server_Controller_Start.bat file and paste in the ID to correct location. Do this for all the ID's you need.
+	11. Go back to default.json file and paste in the ID to correct location. Do this for all the ID's you need.
 		Find the bot in the player list right click and copy ID, right click on channels and click copy ID.
-		
-	12. 	when you get to the line ::DONT TOUCH ANYTHING BELOW THIS LINE UNLESS
- 		YOU KNOW WHAT YOU ARE DOING OR YOU WILL BREAK THINGS!! Stop and save the file.
-			
-	13. 	If you have made it this far Congratulations you should be ready to start your bot by double clicking on
+				
+	12. If you have made it this far Congratulations you should be ready to start your bot by double clicking on
 		VGS_ASA_Server_Controller_Start.bat found in VGS_ASA_Server_Control_Bot folder. You should than be able to go to your
 		discord and see your bot online now.
 		

@@ -1,10 +1,10 @@
-require('dotenv').config();
+const config = require('config');
 
 module.exports = (restartTimeConv);
 
 function restartTimeConv(callback) {
     try {
-        var targetHr = (process.env.restartHour);
+        var targetHr = config.get(`ControlBot.Restart_Hour`);
 
         if (targetHr === "00") {
             targetHr = "24";

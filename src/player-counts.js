@@ -1,15 +1,18 @@
-require('dotenv').config();
+const config = require('config');
 const { ActivityType } = require('discord.js');
 const Gamedig = require('gamedig');
 
 module.exports = (playerCounts);
 
-function playerCounts(client) {
+function playerCounts(clients) {
     try {
+        var client = clients[0];
+        var server = clients[1];
+
         Gamedig.query({
             type: 'asa',
-            host: (process.env.Global_IP),
-            port: (process.env.Game_Port)
+            host: config.get(`Servers.${server}.Global_IP`),
+            port: config.get(`Servers.${server}.Game_Port`)
         }).then((res) => {
             var plyrCnt = res.raw.totalPlayers;
             var maxSlots = res.maxplayers;
@@ -31,6 +34,7 @@ function playerCounts(client) {
             });
         })
     } catch (error) {
+        console.error('Error in playerCounts:', error);
         return
     }
 }

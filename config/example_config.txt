@@ -1,0 +1,128 @@
+{
+    "ControlBot": {
+        //your discord server ID where your bot will be listening
+        "Discord_ID": "45648948947894654541564987",
+		
+        //full path to the location of this bots files use \\ seperating the folder names
+        "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
+		
+        //Battlemetrics Personal Access Token, this is free to obtain and can get from https://www.battlemetrics.com/developers
+        //Currently not in use
+        "Battle_Metrics_Token": "a5f4d65f456ad4f65asd4f65a4d5f64asd65f45ads64f564sadf564asd56f4asd654f56asd4fg56a4sdf564ads5f64asd65f4asd56f456ads4f56asd4f65as4df654dsa65fg46a5dsfg465asd4fg56asd4fg65a4sd1gf56a1sdfg65a4fg564ag54rdf56afg489afd498",
+        
+		//Curseforge API Token, this is free but requires a google account to login and can be obtained from https://console.curseforge.com/#/login
+        //Bot uses this to keep an eye on mod changes to automatically keep mods up to date on your server
+        //if you do not get a token than you will not be able to use modUpdates and should set modUpdates=false above or bot will likely crash
+        "Curse_Forge_Token": "5da4fd54fad654asdf54asd56f456sdf4g865dfg485a4gd54dgf54a",
+        
+		//Set file path to the folder your steam cmd files are located use \\ seperating the folder names
+        "Steam_Path": "C:\\VGS_Server_Files\\Steam_CMD_Files",
+        
+		//Change this to the hour you want server to restart. military (12=12pm 00=12am) https://www.ontheclock.com/convert-military-24-hour-time.aspx
+        "Restart_Hour": "00",
+        
+		//if you do not use Nitrado and you are running this bot on the same machine as the servers than you can set this to true and control your servers from discord buttons
+        "Server_Control": true,
+        
+		//If you want mods that update to post to discord and send restart warnings to server for mod updates set this to true
+        "Mod_Updates": true,
+        
+		//if you want game chat to post to discord set this to true
+        "Game_Chat": true,
+        
+		//if you want discord members to be able to chat to players in game set this to true
+        "Discord_Chat": true
+    },
+
+    "Servers": {
+	
+		//you can add as many servers as you want but each server needs its own bot to communicate with
+		//make a name for each server no spaces
+        "The_Island_Test": {
+			
+			//Set file path to the folder your server files are located or will be located
+            "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
+			
+			//If your using Server API then set this to AsaApiLoader.exe
+			//If you have no idea or you are NOT using Server API than set to ArkAscendedServer.exe
+			//info about server API found here https://gameservershub.com/forums/resources/categories/asa-official-resources.111/
+			"EXE_Launcher": "ArkAscendedServer.exe",
+            
+			//Battlemetrics server ID, Find your server on battlemetrics and select it then in adress bar copy the ID number.
+			//Example: https://www.battlemetrics.com/servers/arksa/24950685 
+			//BMServerID would be 24950685
+			//Currently not in use
+			"Battle_Metrics_ServerID": "12345678",
+			
+			//your bots token from bot you create at https://discord.com/developers/ each server needs its own bot
+            "Player_Count_Bot_Token": "fd54f56a4fg685a4fg984agf654a6fg465ad4gf65asd4fg654a6df4",
+			
+			//your discord bots ID
+            "Bot_ID": "415646546546548489",
+			
+			//Discord channel ID where your server control buttons will appear.
+			//Make this an admin channel only or everyone will have control of your server.
+			//RCON commands can be sent by using / key in chat and selecting the server rcon you want to send commands to
+			//When sending RCON commands do not use quotes. (Example: ListPlayers) is what your would send in the chat to get a list of players from server using RCON
+			//If serverControl is set to false you can still use this channel to send RCON commands. RCON feature should work for Nitrado servers.
+            "Admin_Channel_ID": "454564865489451451564894",
+			
+			//discord channel ID were in game chat is to be sent to, if discordChat=true from above than it would be a good idea
+			//to have a dedicated channel for game chat only due to any message sent in discord in this channel will go in game
+			//if gameChat=false and discordChat=false from above than just leave random numbers here and all should be good.
+			//if either one is set to true than you need a channel ID here.
+            "Chat_Channel_ID": "546546549849841518954",
+			
+			//set the ID of the channel you want info for mod updates to be posted to.
+			//This tells the players the mod name, date it was updated, and a link to the mod page.
+			//If modUpdates is set to false than leave it alone having random numbers will not hurt anything.
+            "Mod_Channel": "465456448949498489498",
+			
+			//List mods for the bot to look for updates on and trigger a server restart with warnings to update the outdated mod. (seperate each mod id with commas)
+			//Updates to mods are done with -automanagedmods in your commandline
+            "Mod_IDs": "947835, 937546, 961601, 940786, 931119, 946694, 928708, 928501, 930404, 928621, 929420, 930128, 933099, 931877, 929543, 929038, 928818, 929713, 931047, 931874, 955451, 934401, 955932, 943713, 927131, 926956, 916922, 914844, 912902, 900062",
+            
+			//Name of your server that players see when they search for it
+			"Game_Server_Name": "VGS TEST",
+			
+			//set your global ip to your server
+            "Global_IP": "12.34.567.890",
+			
+			//The bot should run on same machine as server for everything to work correctly unless your using it for nitrado server
+			//If using for nitrado server and just want player counts, rcon control, and chat then set this to same ip as your global ip
+			//If running on same machine as the servers than set this to your local ip (default 127.0.0.1)
+            "Local_IP": "127.0.0.1",
+			
+			//set the servers port
+            "Game_Port": "7877",
+			
+			//set your servers rcon port
+            "Rcon_Port": "27120",
+			
+			//set your password you use to log in as admin in game here for rcon to work with the bot
+            "Admin_Password": "yourPassord",
+			
+			//Set the start up command line for your ark server
+            "Command_Line": "TheIsland_WP?listen?Port=7877?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
+        },
+
+        "The_Island": {
+            "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\The_Island",
+            "EXE_Launcher": "AsaApiLoader.exe",
+            "Battle_Metrics_ServerID": "545645645",
+            "Player_Count_Bot_Token": "54daf56f456as4df564asd56f4as56df46a5sdf4g65asd4fg65ads4fg65a",
+            "Bot_ID": "5456465465468468954",
+            "Admin_Channel_ID": "4654564564869478947",
+            "Chat_Channel_ID": "415645645646549849846",
+            "Mod_Channel": "64564654654568498489465",
+            "Mod_IDs": "947835, 937546, 961601, 940786, 931119, 946694, 928708, 928501, 930404, 928621, 929420, 930128, 933099, 931877, 929543, 929038, 928818, 929713, 931047, 931874, 955451, 934401, 955932, 943713, 927131, 926956, 916922, 914844, 912902, 900062",
+            "Game_Server_Name": "VGS ISLAND PVE BOOSTED",
+            "Global_IP": "12.34.567.890",
+            "Local_IP": "127.0.0.1",
+            "Game_Port": "7777",
+            "Rcon_Port": "27020",
+            "Admin_Password": "yourpassword",
+            "Command_Line": "TheIsland_WP?listen?Port=7777?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
+        }
+    }
+}

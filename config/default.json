@@ -1,0 +1,36 @@
+{
+    "ControlBot": {
+        "Discord_ID": "54654156123165415684564153214",
+        "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
+        "Battle_Metrics_Token": "fd5s6g4dsf56g465sdf4gsdf56g4sdf56g4156dsfg4156dsf41g56dsf4gb564dsfg564fsd56g4d6f5sg465fds4g65dfs4g65df4g654fds65g4fd65sg465dsf4g56dsf4g56dfs4g654dfs65g4sdf65g4sdf65g456sdf4g65sdf4g6dfs54g65dsfg564g56sdf4",
+        "Curse_Forge_Token": "$f5adsf456ad4f5asd4f56a41sdfg564ad56fg4asd56fg46ads54fg6",
+        "Steam_Path": "C: \\VGS_Server_Files\\Steam_CMD_Files",
+        "Restart_Hour": "00",
+        "Server_Control": true,
+        "Mod_Updates": true,
+        "Game_Chat": true,
+        "Discord_Chat": true
+    },
+
+    "Servers": {
+
+        "The_Island_Test": {
+            "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
+            "EXE_Launcher": "ArkAscendedServer.exe",
+            "Battle_Metrics_ServerID": "456456452132514564",
+            "Player_Count_Bot_Token": "ad4f56ad4sf564ds56f4165adsfg456asd4gf65ads4fg564asd56fg4das564fg65ads4f65fa41d56f456",
+            "Bot_ID": "54564564564654654",
+            "Admin_Channel_ID": "465465456456456434",
+            "Chat_Channel_ID": "546545645465465846546",
+            "Mod_Channel": "54654654564634556456454",
+            "Mod_IDs": "947835, 937546, 961601, 940786, 931119, 946694, 928708, 928501, 930404, 928621, 929420, 930128, 933099, 931877, 929543, 929038, 928818, 929713, 931047, 931874, 955451, 934401, 955932, 943713, 927131, 926956, 916922, 914844, 912902, 900062",
+            "Game_Server_Name": "VGS TEST",
+            "Global_IP": "12.34.567.890",
+            "Local_IP": "127.0.0.1",
+            "Game_Port": "7877",
+            "Rcon_Port": "27120",
+            "Admin_Password": "yourpassword",
+            "Command_Line": "TheIsland_WP?listen?Port=7877?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
+        }
+    }
+}

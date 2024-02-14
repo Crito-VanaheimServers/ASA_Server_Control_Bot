@@ -1,8 +1,6 @@
-require('dotenv').config();
+const config = require('config');
 const { EmbedBuilder } = require('discord.js');
 const rconCall = require("./rcon-call");
-const cancelState = require("./cancel-state");
-const restartState = require("./restart-state.js");
 const buttonsInfo = require("./buttons-info.js");
 
 function sleep(ms) {
@@ -11,86 +9,74 @@ function sleep(ms) {
 
 module.exports = (gameWarning);
 
-function gameWarning([client,warning]) {
+async function gameWarning([clients, warning]) {
     try {
-        (async function () {
-            var warnMinutes = [300000, 300000, 60000, 60000, 60000, 60000, 60000];
-            var totalMin = 0;
-            for (let i = 0; i < warnMinutes.length; i++) {
-                totalMin = warnMinutes[i] + totalMin;
-            }
+        const client = clients[0];
+        const server = clients[1];
 
-            for (let i = 0; i < warnMinutes.length; i++) {
-                var totalMinConv = totalMin / 60000;
-                var cancelRestart = cancelState.getCancelState();
-                if (cancelRestart === false) {
-                    var warnBroadcast = `Broadcast ****${warning} ${totalMinConv} MINUTES****`;
-                    var warnMessage = `ServerChat ****${warning} ${totalMinConv} MINUTES****`;
-                } else {
-                    var warnBroadcast = `Broadcast ****${warning} CANCELLED****`;
-                    var warnMessage = `ServerChat ****${warning} CANCELLED****`;
-                    const rconCancelWarn = new EmbedBuilder()
-                        .setTitle(process.env.Message_Tittle)
-                        .addFields({ name: `${warning}`, value: (`****${warning} CANCELLED****`) })
-                        .setColor(0x00e8ff)
-                    client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [rconCancelWarn] });
+        const warnMinutes = [300000, 300000, 60000, 60000, 60000, 60000, 60000];
+        let totalMin = warnMinutes.reduce((acc, curr) => acc + curr, 0);
 
-                    rconCall(warnBroadcast, function () {
-                        console.log(`${warnBroadcast}`);
-                    });
+        for (let i = 0; i < warnMinutes.length; i++) {
+            let totalMinConv = totalMin / 60000;
+            let warnBroadcast, warnMessage;
 
-                    await sleep(2000);
+            if (clients[3] === false) {
+                warnBroadcast = `Broadcast ****${warning} ${totalMinConv} MINUTES****`;
+                warnMessage = `ServerChat ****${warning} ${totalMinConv} MINUTES****`;
+            } else {
+                warnBroadcast = `Broadcast ****${warning} CANCELLED****`;
+                warnMessage = `ServerChat ****${warning} CANCELLED****`;
 
-                    rconCall(warnMessage, function () {
-                        console.log(`${warnMessage}`);
-                    });
-                    
-                    cancelState.setCancelState(false);
-                    restartState.setRestartState(false);
-                    buttonsInfo(client);
-                    return
-                }
+                const rconCancelWarn = new EmbedBuilder()
+                    .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
+                    .addFields({ name: `${warning}`, value: (`****${warning} CANCELLED****`) })
+                    .setColor(0x00e8ff);
+                await client.channels.cache.get(config.get(`Servers.${server}.Admin_Channel_ID`)).send({ embeds: [rconCancelWarn] });
 
-                rconCall(warnBroadcast, function () {
-                    console.log(`${warnBroadcast}`);
-                });
+                rconCall([clients, warnBroadcast]);
+                console.log(`${warnBroadcast}`);
 
                 await sleep(2000);
 
-                rconCall(warnMessage, function () {
-                    console.log(`${warnMessage}`);
-                });
+                rconCall([clients, warnMessage]);
+                console.log(`${warnMessage}`);
 
-                await sleep(warnMinutes[i]);
-                totalMin = totalMin - warnMinutes[i];
+                clients[2] = false;
+                clients[3] = false;
+                await buttonsInfo(clients);
+                return;
             }
 
+            rconCall([clients, warnBroadcast]);
+            console.log(`${warnBroadcast}`);
 
-            rconCall(`"DoExit"`, function (data) {
-                (async function () {
-                    await sleep(30000);
-                    if (warning === "ADMIN FORCED RESTART") {
-                        restartState.setRestartState(false);
-                    } else {
-                        if (warning === "ADMIN FORCED SHUTDOWN") {
-                            var responseTrim = (`${data}`).trim();
-                            const rconShutdownWarn = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `${warning}`, value: (`${responseTrim}\n${process.env.Message_Tittle} shutdown successfully`) })
-                                .setColor(0x00e8ff)
-                            client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [rconShutdownWarn] });
-                            console.log(`${responseTrim}\n${process.env.Message_Tittle} shutdown successfully`);
-                        } else {
-                            if ((warning === "DAILY RESTART") || (warning === "MOD UPDATE RESTART")) {
-                                restartState.setRestartState(false);
-                            }
-                        }
-                    }
-                })();
-            });
-        })();
+            await sleep(2000);
+
+            rconCall([clients, warnMessage]);
+            console.log(`${warnMessage}`);
+
+            await sleep(warnMinutes[i]);
+            totalMin -= warnMinutes[i];
+        }
+
+        const response = await rconCall([clients, 'DoExit']);
+        await sleep(30000);
+
+        if (warning === "ADMIN FORCED RESTART") {
+            clients[2] = false;
+        } else if (warning === "ADMIN FORCED SHUTDOWN") {
+            const responseTrim = `${response}`.trim();
+            const rconShutdownWarn = new EmbedBuilder()
+                .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
+                .addFields({ name: `${warning}`, value: (`${responseTrim}\n${config.get(`Servers.${server}.Game_Server_Name`)} shutdown successfully`) })
+                .setColor(0x00e8ff);
+            await client.channels.cache.get(config.get(`Servers.${server}.Admin_Channel_ID`)).send({ embeds: [rconShutdownWarn] });
+            console.log(`${responseTrim}\n${config.get(`Servers.${server}.Game_Server_Name`)} shutdown successfully`);
+        } else if (warning === "DAILY RESTART" || warning === "MOD UPDATE RESTART") {
+            clients[2] = false;
+        }
     } catch (error) {
-        return
+        console.error('Error in gameWarning function:', error);
     }
-};
-
+}

@@ -1,10 +1,10 @@
-require('dotenv').config();
-const { Client, IntentsBitField, EmbedBuilder, ActivityType, ButtonBuilder, ButtonStyle, ComponentType } = require('discord.js');
+const config = require('config');
+const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
+const playerCounts = require("./player-counts.js");
 const serverStatus = require("./server-status.js");
 const buttonsInfo = require("./buttons-info.js");
 const updateServer = require("./update-server.js");
 const modCollect = require("./mod-collect.js");
-const playerCounts = require("./player-counts.js");
 const gameChat = require("./game-chat.js");
 const discordChat = require("./discord-chat.js");
 const timeCheck = require("./time-check.js");
@@ -13,10 +13,8 @@ const gameWarning = require("./server-warnings.js");
 const reBoot = require("./re-boot.js");
 const modCheck = require("./mod-check.js");
 const rconCall = require("./rcon-call.js");
-const cancelState = require("./cancel-state.js");
-const restartState = require("./restart-state.js");
 
-var restartTime = (process.env.restartHour);
+var restartTime = config.get(`ControlBot.Restart_Hour`);
 restartTimeConv(function (response) {
     restartTime = response;
 });
@@ -25,488 +23,475 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-var activeRestart = restartState.getRestartState();
-var cancelRestart = cancelState.getCancelState();
+const clients = [];
 
-var modUpdate = false;
+function afterLogin() {
+    setInterval(() => {
+        for (let i = 0; i < clients.length; i++) {
+            playerCounts(clients[i]);
+        }
 
-const client = new Client({
-    intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent,
-    ],
-});
+        if (config.get(`ControlBot.Game_Chat`)) {
+            for (let i = 0; i < clients.length; i++) {
+                gameChat(clients[i]);
+            }
+        }
 
-if ((process.env.Mod_Updates) === "true") {
-    modCollect();
-}
+        if (config.get(`ControlBot.Server_Control`)) {
+            (async function () {
+                for (let i = 0; i < clients.length; i++) {
+                    try {
+                        const result = await serverStatus(clients[i]);
+                        if (`${result}`.includes("Online")) {
+                            const timeResult = await timeCheck();
+                            if (`${timeResult}` === `${restartTime}`) {
+                                if (clients[i][2] === false) {
+                                    clients[i][2] = true;
+                                    console.log(`Executing Daily Restart Warnings`);
+                                    gameWarning([clients[i], "DAILY RESTART"]);
+                                }
+                            }
+                        } else {
+                            if (clients[i][2] === false) {
+                                clients[i][2] = true;
+                                console.log(`${result}`);
+                                reBoot([clients[i], `${clients[i][0].user.tag}`]);
+                                await updateServer([clients[i], `${clients[i][0].user.tag}`]);
+                                clients[i][2] = false;
+                                clients[i][4] = false;
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                }
+            })();
+        }
 
-client.on('ready', (c) => {
-    console.log(`${c.user.tag} is online.`);
+        if (config.get(`ControlBot.Mod_Updates`)) {
+            (async function () {
+                for (let i = 0; i < clients.length; i++) {
+                    try {
+                        if (clients[i][4]) {
+                            if (clients[i][2] === false) {
+                                const result = await serverStatus(clients[i]);
+                                if (`${result}`.includes("Online")) {
+                                    clients[i][2] = true;
+                                    console.log(`Mod updates ready for server, restarting ${process.env.Message_Tittle} server with warnings please wait...`);
+                                    gameWarning([clients[i], "MOD UPDATE RESTART"]);
+                                }
+                            }
+                        } else {
+                            await modCheck(clients[i]);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                }
+            })();
+        }
+    }, 3000);
 
-    if ((process.env.Server_Control) === "true") {
-        buttonsInfo(client);
-        serverStatus(function (result) {
-            if ((`${result}`).includes("Online")) {
-                console.log(`${result}`);
-            } else {
-                restartState.setRestartState(true);
-                console.log(`${result}`);
-                updateServer([client, `${c.user.tag}`], function (result) {
+    if (config.get(`ControlBot.Mod_Updates`)) {
+        (async function () {
+            try {
+                for (let i = 0; i < clients.length; i++) {
+                    await modCollect(clients[i]);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        })();
+    }
+
+    if (config.get(`ControlBot.Server_Control`)) {
+        (async function () {
+            for (let i = 0; i < clients.length; i++) {
+                try {
+                    await buttonsInfo(clients[i]);
+                    const result = await serverStatus(clients[i]);
+                    if (`${result}`.includes("Online")) {
+                        clients[i][2] = false;
+                        console.log(`${result}`);
+                    } else {
+                        console.log(`${result}`);
+                        await updateServer([clients[i], `${clients[i][0].user.tag}`]);
+                        clients[i][2] = false;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+        })();
+    }
+
+    for (let i = 0; i < clients.length; i++) {
+        clients[i][0].on('messageCreate', (chatMessage) => {
+            if (config.get(`ControlBot.Discord_Chat`)) {
+                if (chatMessage.channelId === config.get(`Servers.${clients[i][1]}.Chat_Channel_ID`)) {
+                    discordChat([clients[i], chatMessage]);
+                }
+            }
+        });
+    }
+
+    for (let i = 0; i < clients.length; i++) {
+        clients[i][0].on('interactionCreate', (interaction) => {
+            var IDName = config.get(`Servers.${clients[i][1]}.Game_Server_Name`).toLowerCase().replace(/\s+/g, '_');
+            if (interaction.isButton()) {
+                if (interaction.customId === `${IDName}_start`) {
                     (async function () {
                         try {
-                            await result;
-                            restartState.setRestartState(false);
-                            activeRestart = restartState.getRestartState();
-                            modUpdate = false;
+                            var commandSender = interaction.user.globalName;
+                            const result = await serverStatus(clients[i]);
+                            if (`${result}`.includes("Online")) {
+                                const sartcommand = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: commandSender, value: (`${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already online`) })
+                                    .setColor(0x00e8ff)
+                                interaction.reply({ embeds: [sartcommand] });
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already online`);
+                                buttonsInfo(clients[i]);
+                            } else {
+                                const sartcommand = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: commandSender, value: (`Starting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server`) })
+                                    .setColor(0x00e8ff)
+                                interaction.reply({ embeds: [sartcommand] });
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Starting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server`);
+                                clients[i][2] = true;
+                                await updateServer([clients[i], `${clients[i][0].user.tag}`]);
+                                clients[i][2] = false;
+                            }
                         } catch (error) {
                             return
                         }
                     })();
-                });
-            }
-        })
-    }
+                }
 
-    setInterval(() => {
-
-        playerCounts(client);
-
-        if ((process.env.Game_Chat) === "true") {
-            gameChat(client);
-        }
-
-        if ((process.env.Server_Control) === "true") {
-            serverStatus(function (response) {
-                if ((`${response}`).includes("Online")) {
-                    timeCheck(function (response) {
-                        if (`${response}` === `${restartTime}`) {
-                            activeRestart = restartState.getRestartState();
-                            if (activeRestart === false) {
-                                restartState.setRestartState(true);
-                                activeRestart = restartState.getRestartState();
-                                console.log(`Executing Daily Restart Warnings`);
-                                gameWarning([client, "DAILY RESTART"]);
+                if (interaction.customId === `${IDName}_stop`) {
+                    (async function () {
+                        try {
+                            var commandSender = interaction.user.globalName;
+                            const result = await serverStatus(clients[i]);
+                            if (`${result}`.includes("Online")) {
+                                if (clients[i][2] === false) {
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Sending shutdown signal to ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server, awaiting response...`);
+                                    const stopcommand = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: commandSender, value: (`Sending shutdown signal to ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server, awaiting response...`) })
+                                        .setColor(0x00e8ff)
+                                    interaction.reply({ embeds: [stopcommand] });
+                                    clients[i][2] = true;
+                                    const response = await rconCall([clients[i], 'DoExit']);
+                                    var responseTrim = (`${response}`).trim();
+                                    const serverstop = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: commandSender, value: (`${responseTrim}\n${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} shutdown successfully`) })
+                                        .setColor(0x00e8ff)
+                                    await clients[i][0].channels.cache.get((config.get(`Servers.${clients[i][1]}.Admin_Channel_ID`))).send({ embeds: [serverstop] });
+                                    console.log(`${responseTrim}\n${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} shutdown successfully`);
+                                    buttonsInfo(clients[i]);
+                                } else {
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
+                                    const serverstop = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
+                                        .setColor(0xff0000)
+                                    interaction.reply({ embeds: [serverstop] });
+                                }
+                            } else {
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline`);
+                                const status = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: `ERROR`, value: (`${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline`) })
+                                    .setColor(0xff0000)
+                                interaction.reply({ embeds: [status] });
                             }
+                        } catch (error) {
+                            return
                         }
-                    });
-                } else {
-                    if ((`${response}`).includes("Offline")) {
-                        activeRestart = restartState.getRestartState();
-                        if (activeRestart === false) {
-                            restartState.setRestartState(true);
-                            activeRestart = restartState.getRestartState();
-                            reBoot([client, `${c.user.tag}`]);
-                            updateServer([client, `${c.user.tag}`], function (result) {
-                                (async function () {
-                                    try {
-                                        await result;
-                                        restartState.setRestartState(false);
-                                        activeRestart = restartState.getRestartState();
-                                        modUpdate = false;
-                                    } catch (error) {
-                                        return
+                    })();
+                }
+
+                if (interaction.customId === `${IDName}_restart`) {
+                    (async function () {
+                        try {
+                            var commandSender = interaction.user.globalName;
+                            const result = await serverStatus(clients[i]);
+                            if (`${result}`.includes("Online")) {
+                                if (clients[i][2] === false) {
+                                    clients[i][2] = true;
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server please wait...`);
+                                    const restartcommand = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: commandSender, value: (`Restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server please wait...`) })
+                                        .setColor(0x00e8ff)
+                                    interaction.reply({ embeds: [restartcommand] });
+                                    await rconCall([clients[i], 'DoExit']);
+                                    await sleep(60000);
+                                    await updateServer([clients[i], `${clients[i][0].user.tag}`]);
+                                    clients[i][2] = false;
+                                    clients[i][4] = false;
+                                } else {
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
+                                    const restartcommand = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
+                                        .setColor(0xff0000)
+                                    interaction.reply({ embeds: [restartcommand] });
+                                }
+                            } else {
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
+                                const status = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: `ERROR`, value: (`${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`) })
+                                    .setColor(0xff0000)
+                                interaction.reply({ embeds: [status] });
+                            }
+                        } catch (error) {
+                            return
+                        }
+                    })();
+                }
+
+                if (interaction.customId === `${IDName}_restartwarn`) {
+                    (async function () {
+                        try {
+                            var commandSender = interaction.user.globalName;
+                            const result = await serverStatus(clients[i]);
+                            if (`${result}`.includes("Online")) {
+                                if (clients[i][2] === false) {
+                                    clients[i][2] = true;
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server with warnings please wait...`);
+                                    const restartwarning = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: commandSender, value: `Restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server with warnings please wait....` })
+                                        .setColor(0x00e8ff)
+                                    interaction.reply({ embeds: [restartwarning] });
+                                    gameWarning([clients[i], "ADMIN FORCED RESTART"]);
+                                } else {
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
+                                    const restartwarning = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
+                                        .setColor(0xff0000)
+                                    interaction.reply({ embeds: [restartwarning] });
+                                }
+                            } else {
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
+                                const status = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: `ERROR`, value: (`${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`) })
+                                    .setColor(0xff0000)
+                                interaction.reply({ embeds: [status] });
+                            }
+                        } catch (error) {
+                            return
+                        }
+                    })();
+                }
+
+                if (interaction.customId === `${IDName}_stopwarn`) {
+                    (async function () {
+                        try {
+                            var commandSender = interaction.user.globalName;
+                            const result = await serverStatus(clients[i]);
+                            if (`${result}`.includes("Online")) {
+                                if (clients[i][2] === false) {
+                                    clients[i][2] = true;
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Shutting down ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server with warnings please wait...`);
+                                    const shutdownwarning = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: commandSender, value: `Shutting down ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server with warnings please wait....` })
+                                        .setColor(0x00e8ff)
+                                    interaction.reply({ embeds: [shutdownwarning] });
+                                    gameWarning([clients[i], "ADMIN FORCED SHUTDOWN"]);
+                                } else {
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
+                                    const shutdownwarning = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
+                                        .setColor(0xff0000)
+                                    interaction.reply({ embeds: [shutdownwarning] });
+                                }
+                            } else {
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
+                                const status = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: `ERROR`, value: (`${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`) })
+                                    .setColor(0xff0000)
+                                interaction.reply({ embeds: [status] });
+                            }
+
+                        } catch (error) {
+                            return
+                        }
+                    })();
+                }
+
+                if (interaction.customId === `${IDName}_cancelwarn`) {
+                    (async function () {
+                        try {
+                            var commandSender = interaction.user.globalName;
+                            if (clients[i][3] === false) {
+                                if (clients[i][4] === false) {
+                                    const cancelwarning = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: commandSender, value: "Cancelling restart please wait..." })
+                                        .setColor(0x00e8ff)
+                                    interaction.reply({ embeds: [cancelwarning] });
+                                    clients[i][3] = true;
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Cancelling restart please wait...`);
+                                } else {
+                                    const cancelwarning = new EmbedBuilder()
+                                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                        .addFields({ name: `ERROR`, value: "Restart for mod updates can't be cancelled" })
+                                        .setColor(0xff0000)
+                                    interaction.reply({ embeds: [cancelwarning] });
+                                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restart for mod updates can't be cancelled`);
+                                }
+                            } else {
+                                const cancelwarning = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: `ERROR`, value: "Active restart cancellation in progress" })
+                                    .setColor(0xff0000)
+                                interaction.reply({ embeds: [cancelwarning] });
+                                console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart cancellation in progress`);
+                            }
+                        } catch (error) {
+                            return
+                        }
+                    })();
+                }
+
+                if (interaction.customId === `${IDName}_dinodestroy`) {
+                    (async function () {
+                        try {
+                            var commandSender = interaction.user.globalName;
+                            const rcondinowipe = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: commandSender, value: 'Destroying all wild dinos' })
+                                .setColor(0x00e8ff)
+                            interaction.reply({ embeds: [rcondinowipe] });
+                            console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.customId}\nRESPONSE: Destroying all wild dinos`);
+                            await rconCall([clients[i], 'DestroyWildDinos']);
+                        } catch (error) {
+                            return
+                        }
+                    })();
+                }
+            }
+
+            if (interaction.commandName === `${IDName}_players`) {
+                (async function () {
+                    try {
+                        var commandSender = interaction.user.globalName;
+                        if (interaction.channelId !== (config.get(`Servers.${clients[i][1]}.Chat_Channel_ID`))) {
+                            const response = await rconCall([clients[i], 'ListPlayers']);
+                            var plyrTrim = response.trim();
+                            var plyrSplit = plyrTrim.split(/[,,\n]/);
+                            var newPlayerList = "";
+
+                            if (plyrSplit[0].trim() === 'No Players Connected') {
+                                const plListEmbed = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: 'ONLINE PLAYERS:', value: ('No Players Connected') })
+                                    .setColor(0xff0000)
+                                interaction.reply({ embeds: [plListEmbed] });
+                                console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: No Players Connected`);
+                            } else {
+                                for (let i = 0; i < plyrSplit.length; i++) {
+                                    if (plyrSplit[i].length < 30) {
+                                        let player = plyrSplit[i];
+                                        newPlayerList = newPlayerList + (`${player}\n`);
                                     }
-                                })();
-                            });
-                        }
-                    }
-                }
-            });
-        }
-
-        if (modUpdate === false) {
-            modCheck(client, function (result) {
-                modUpdate = result;
-            });
-        }
-
-        if ((process.env.Server_Control) === "true") {
-            activeRestart = restartState.getRestartState();
-            if (modUpdate === true && activeRestart === false) {
-                serverStatus(function (response) {
-                    console.log(response);
-                    if ((`${response}`).includes("Online")) {
-                        restartState.setRestartState(true);
-                        activeRestart = restartState.getRestartState();
-                        console.log(`Mod updates ready for server, restarting ${process.env.Message_Tittle} server with warnings please wait...`);
-                        gameWarning([client, "DAILY RESTART"]);
-                    }
-                })
-            }
-        }
-    }, 10000);
-
-
-    client.on('messageCreate', (chatMessage) => {
-        if ((process.env.Discord_Chat) === "true") {
-            if (chatMessage.channelId === (process.env.Chat_Channel_ID)) {
-                discordChat(chatMessage);
-            }
-        }
-
-        if (!chatMessage.author.bot) {
-            if (chatMessage.channelId === (process.env.Admin_Channel_ID)) {
-                try {
-                    var rconSender = chatMessage.author.globalName;
-                    rconCall(`"${chatMessage}"`, function (response) {
-                        const rconEmbed = new EmbedBuilder()
-                            .setTitle(process.env.Message_Tittle)
-                            .addFields({ name: `RCON Command Sender: ${rconSender}`, value: `RCON Command Recived: ${chatMessage}\n${response}` })
-                            .setColor(0x00e8ff)
-                        client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [rconEmbed] });
-                        console.log(`RCON Command Sender: ${rconSender}\nRCON Command Recived: ${chatMessage}\nRCON Results:\n${response}`);
-                        buttonsInfo(client);
-                    });
-                } catch (error) {
-                    return
-                }
-            }
-        }
-    });
-
-});
-
-client.on('interactionCreate', (interaction) => {
-    if (interaction.isButton()) {
-        if (interaction.customId === "start") {
-            try {
-                var commandSender = interaction.user.globalName;
-                serverStatus(function (response) {
-                    if ((`${response}`).includes("Online")) {
-                        const sartcommand = new EmbedBuilder()
-                            .setTitle(process.env.Message_Tittle)
-                            .addFields({ name: commandSender, value: (`${process.env.Message_Tittle} server is already online`) })
-                            .setColor(0x00e8ff)
-                        interaction.reply({ embeds: [sartcommand] });
-                        console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${process.env.Message_Tittle} server is already online`);
-                        buttonsInfo(client);
-                    } else {
-                        if ((`${response}`).includes("Offline")) {
-                            const sartcommand = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: commandSender, value: (`Starting ${process.env.Message_Tittle} server`) })
-                                .setColor(0x00e8ff)
-                            interaction.reply({ embeds: [sartcommand] });
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Starting ${process.env.Message_Tittle} server`);
-                            restartState.setRestartState(true);
-                            activeRestart = restartState.getRestartState();
-                            (async function () {
-                                await sleep(2000);
-                                updateServer([client, `${commandSender}`], function (result) {
-                                    (async function () {
-                                        try {
-                                            await result;
-                                            restartState.setRestartState(false);
-                                            activeRestart = restartState.getRestartState();
-                                            modUpdate = false;
-                                        } catch (error) {
-                                            return
-                                        }
-                                    })();
-                                });
-                            })();
-                        }
-                    }
-                });
-            } catch (error) {
-                return
-            }
-        }
-
-        if (interaction.customId === "stop") {
-            try {
-                var commandSender = interaction.user.globalName;
-                serverStatus(function (response) {
-                    if ((`${response}`).includes("Online")) {
-                        activeRestart = restartState.getRestartState();
-                        if (activeRestart === false) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Sending shutdown signal to ${process.env.Message_Tittle} server, awaiting response...`);
-                            const stopcommand = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: commandSender, value: (`Sending shutdown signal to ${process.env.Message_Tittle} server, awaiting response...`) })
-                                .setColor(0x00e8ff)
-                            interaction.reply({ embeds: [stopcommand] });
-                            restartState.setRestartState(true);
-                            activeRestart = restartState.getRestartState();
-                            rconCall(`"DoExit"`, function (response) {
-                                if ((`${response}`).trim() === 'Server received, But no response!!') {
-                                    return
-                                } else {
-                                    (async function () {
-                                        await sleep(2000);
-                                        var responseTrim = (`${response}`).trim();
-                                        const serverstop = new EmbedBuilder()
-                                            .setTitle(process.env.Message_Tittle)
-                                            .addFields({ name: commandSender, value: (`${responseTrim}\n${process.env.Message_Tittle} shutdown successfully`) })
-                                            .setColor(0x00e8ff)
-                                        client.channels.cache.get((process.env.Admin_Channel_ID)).send({ embeds: [serverstop] });
-                                        console.log(`${responseTrim}\n${process.env.Message_Tittle} shutdown successfully`);
-                                        buttonsInfo(client);
-                                    })();
                                 }
-                            });
-                        } else {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
-                            const serverstop = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [serverstop] });
-                        }
-                    } else {
-                        if ((`${response}`).includes("Offline")) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${process.env.Message_Tittle} server is already offline`);
-                            const status = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: (`${process.env.Message_Tittle} server is already offline`) })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [status] });
-                        }
-                    }
-                });
-            } catch (error) {
-                return
-            }
-        }
 
-        if (interaction.customId === "restart") {
-            try {
-                var commandSender = interaction.user.globalName;
-                serverStatus(function (response) {
-                    if ((`${response}`).includes("Online")) {
-                        activeRestart = restartState.getRestartState();
-                        if (activeRestart === false) {
-                            restartState.setRestartState(true);
-                            activeRestart = restartState.getRestartState();
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restarting ${process.env.Message_Tittle} server please wait...`);
-                            const restartcommand = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: commandSender, value: (`Restarting ${process.env.Message_Tittle} server please wait...`) })
-                                .setColor(0x00e8ff)
-                            interaction.reply({ embeds: [restartcommand] });
-
-                            rconCall(`"DoExit"`, function (response) {
-                                if ((`${response}`).trim() === 'Server received, But no response!!') {
-                                    return
-                                } else {
-                                    (async function () {
-                                        await sleep(2000);
-                                        updateServer([client, `${commandSender}`], function (result) {
-                                            (async function () {
-                                                try {
-                                                    await result;
-                                                    restartState.setRestartState(false);
-                                                    activeRestart = restartState.getRestartState();
-                                                    modUpdate = false;
-                                                } catch (error) {
-                                                    return
-                                                }
-                                            })();
-                                        });
-                                    })();
-                                }
-                            });
-                        } else {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
-                            const restartcommand = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [restartcommand] });
-                        }
-                    } else {
-                        if ((`${response}`).includes("Offline")) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${process.env.Message_Tittle} server is already offline, try starting the server`);
-                            const status = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: (`${process.env.Message_Tittle} server is already offline, try starting the server`) })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [status] });
-                        }
-                    }
-                })
-            } catch (error) {
-                return
-            }
-        }
-
-        if (interaction.customId === "restartwarn") {
-            try {
-                var commandSender = interaction.user.globalName;
-                serverStatus(function (response) {
-                    if ((`${response}`).includes("Online")) {
-                        activeRestart = restartState.getRestartState();
-                        if (activeRestart === false) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restarting ${process.env.Message_Tittle} server with warnings please wait...`);
-                            const restartwarning = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: commandSender, value: `Restarting ${process.env.Message_Tittle} server with warnings please wait....` })
-                                .setColor(0x00e8ff)
-                            interaction.reply({ embeds: [restartwarning] });
-                            restartState.setRestartState(true);
-                            activeRestart = restartState.getRestartState();
-                            gameWarning([client, "ADMIN FORCED RESTART"]);
-                        } else {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
-                            const restartwarning = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [restartwarning] });
-                        }
-                    } else {
-                        if ((`${response}`).includes("Offline")) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${process.env.Message_Tittle} server is already offline, try starting the server`);
-                            const status = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: (`${process.env.Message_Tittle} server is already offline, try starting the server`) })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [status] });
-                        }
-                    }
-                })
-            } catch (error) {
-                return
-            }
-        }
-
-        if (interaction.customId === "stopwarn") {
-            try {
-                var commandSender = interaction.user.globalName;
-                serverStatus(function (response) {
-                    if ((`${response}`).includes("Online")) {
-                        activeRestart = restartState.getRestartState();
-                        if (activeRestart === false) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Shutting down ${process.env.Message_Tittle} server with warnings please wait...`);
-                            const shutdownwarning = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: commandSender, value: `Shutting down ${process.env.Message_Tittle} server with warnings please wait....` })
-                                .setColor(0x00e8ff)
-                            interaction.reply({ embeds: [shutdownwarning] });
-                            restartState.setRestartState(true);
-                            activeRestart = restartState.getRestartState();
-                            gameWarning([client, "ADMIN FORCED SHUTDOWN"]);
-                        } else {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
-                            const shutdownwarning = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [shutdownwarning] });
-                        }
-                    } else {
-                        if ((`${response}`).includes("Offline")) {
-                            console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${process.env.Message_Tittle} server is already offline, try starting the server`);
-                            const status = new EmbedBuilder()
-                                .setTitle(process.env.Message_Tittle)
-                                .addFields({ name: `ERROR`, value: (`${process.env.Message_Tittle} server is already offline, try starting the server`) })
-                                .setColor(0xff0000)
-                            interaction.reply({ embeds: [status] });
-                        }
-                    }
-                })
-            } catch (error) {
-                return
-            }
-        }
-
-        if (interaction.customId === "cancelwarn") {
-            try {
-                var commandSender = interaction.user.globalName;
-                cancelRestart = cancelState.getCancelState();
-                if (cancelRestart === false) {
-                    if (modUpdate === false) {
-                        const cancelwarning = new EmbedBuilder()
-                            .setTitle(process.env.Message_Tittle)
-                            .addFields({ name: commandSender, value: "Cancelling restart please wait..." })
-                            .setColor(0x00e8ff)
-                        interaction.reply({ embeds: [cancelwarning] });
-                        cancelState.setCancelState(true);
-                        console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Cancelling restart please wait...`);
-                    } else {
-                        const cancelwarning = new EmbedBuilder()
-                            .setTitle(process.env.Message_Tittle)
-                            .addFields({ name: `ERROR`, value: "Restart for mod updates can't be cancelled" })
-                            .setColor(0xff0000)
-                        interaction.reply({ embeds: [cancelwarning] });
-                        console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restart for mod updates can't be cancelled`);
-                    }
-                } else {
-                    const cancelwarning = new EmbedBuilder()
-                        .setTitle(process.env.Message_Tittle)
-                        .addFields({ name: `ERROR`, value: "Active restart cancellation in progress" })
-                        .setColor(0xff0000)
-                    interaction.reply({ embeds: [cancelwarning] });
-                    console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart cancellation in progress`);
-                }
-            } catch (error) {
-                return
-            }
-        }
-
-        if (interaction.customId === "dinodestroy") {
-            try {
-                var commandSender = interaction.user.globalName;
-                const rcondinowipe = new EmbedBuilder()
-                    .setTitle(process.env.Message_Tittle)
-                    .addFields({ name: commandSender, value: 'Destroying all wild dinos' })
-                    .setColor(0x00e8ff)
-                interaction.reply({ embeds: [rcondinowipe] });
-                console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.customId}\nRESPONSE: Destroying all wild dinos`);
-                rconCall(`"DestroyWildDinos"`, function () { });
-            } catch (error) {
-                return
-            }
-        }
-    }
-
-    if (interaction.commandName === (process.env.Map_name) + '_players') {
-        try {
-            var commandSender = interaction.user.globalName;
-            if (interaction.channelId !== (process.env.Chat_Channel_ID)) {
-                rconCall(`"ListPlayers"`, function (response) {
-                    var plyrTrim = response.trim();
-                    var plyrSplit = plyrTrim.split(/[,,\n]/);
-                    var newPlayerList = "";
-
-                    if (plyrSplit[0].trim() === 'No Players Connected') {
-                        const plListEmbed = new EmbedBuilder()
-                            .setTitle(process.env.Message_Tittle)
-                            .addFields({ name: 'ONLINE PLAYERS:', value: ('No Players Connected') })
-                            .setColor(0xff0000)
-                        interaction.reply({ embeds: [plListEmbed] });
-                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: No Players Connected`);
-                    } else {
-                        for (let i = 0; i < plyrSplit.length; i++) {
-                            if (plyrSplit[i].length < 30) {
-                                let player = plyrSplit[i];
-                                newPlayerList = newPlayerList + (`${player}\n`);
+                                const plListEmbed = new EmbedBuilder()
+                                    .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                    .addFields({ name: 'ONLINE PLAYERS:', value: newPlayerList })
+                                    .setColor(0x00e8ff)
+                                interaction.reply({ embeds: [plListEmbed] });
+                                console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE:\n${newPlayerList}`);
                             }
+                        } else {
+                            const plListEmbed = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: 'ERROR:', value: 'You cant send player list to in game chat!' })
+                                .setColor(0xff0000)
+                            interaction.reply({ embeds: [plListEmbed] });
+                            console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: You cant send player list to in game chat!`);
                         }
-
-                        const plListEmbed = new EmbedBuilder()
-                            .setTitle(process.env.Message_Tittle)
-                            .addFields({ name: 'ONLINE PLAYERS:', value: newPlayerList })
-                            .setColor(0x00e8ff)
-                        interaction.reply({ embeds: [plListEmbed] });
-                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE:\n${newPlayerList}`);
+                    } catch (error) {
+                        return
                     }
-                });
-
-            } else {
-                const plListEmbed = new EmbedBuilder()
-                    .setTitle(process.env.Message_Tittle)
-                    .addFields({ name: 'ERROR:', value: 'You cant send player list to in game chat!' })
-                    .setColor(0xff0000)
-                interaction.reply({ embeds: [plListEmbed] });
-                console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: You cant send player list to in game chat!`);
+                })();
             }
+
+            if (interaction.commandName === `${IDName}_rcon`) {
+                (async function () {
+                    try {
+                        var rconCommand = interaction.options.get('rcon-command').value;
+                        var rconSender = interaction.user.globalName;
+                        if (interaction.channelId === (config.get(`Servers.${clients[i][1]}.Admin_Channel_ID`))) {
+                            const response = await rconCall([clients[i], `"${rconCommand}"`]);
+                            const rconEmbed = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: `RCON Command Sender: ${rconSender}`, value: `RCON Command Recived: ${rconCommand}\n${response}` })
+                                .setColor(0x00e8ff)
+                            interaction.reply({ embeds: [rconEmbed] });
+                            console.log(`RCON Command Sender: ${rconSender}\nRCON Command Recived: ${rconCommand}\nRCON Results:\n${response}`);
+                        } else {
+                            const rconEmbed = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: 'ERROR:', value: 'You just tried to run an admin command outside of an admin channel!' })
+                                .setColor(0xff0000)
+                            interaction.reply({ embeds: [rconEmbed] });
+                            console.log(`RCON Command Sender: ${rconSender}\nRCON Command Recived: ${rconCommand}\n RCON Results: You just tried to run an admin command outside of an admin channel!`);
+                        }
+                    } catch (error) {
+                        return
+                    }
+                })();
+            }
+        });
+    }
+}
+
+async function createAndLoginClients() {
+    const servers = config.get('Servers');
+
+    for (const serverKey in servers) {
+        const server = servers[serverKey];
+        const client = new Client({
+            intents: [
+                IntentsBitField.Flags.Guilds,
+                IntentsBitField.Flags.GuildMembers,
+                IntentsBitField.Flags.GuildMessages,
+                IntentsBitField.Flags.MessageContent,
+            ],
+        });
+
+        client.on('ready', () => {
+            console.log(`${client.user.tag} is online.`);
+            clients.push([client, serverKey, true, false, false]);
+            if (clients.length === Object.keys(servers).length) {
+                afterLogin();
+            }
+        });
+
+
+        try {
+            await client.login(server.Player_Count_Bot_Token);
         } catch (error) {
-            return
+            console.error(`Error logging in client for server ${serverKey}:`, error);
         }
     }
-});
-client.login(process.env.TOKEN);
+}
+
+createAndLoginClients()
+
+//cancelRestart = clients[i][3];
+//modUpdate = clients[i][4];
+//activeRestart = clients[i][2];
