@@ -6,8 +6,9 @@ module.exports = (buttonsInfo);
 
 async function buttonsInfo(clients) {
     try {
-        var client = clients[0];
-        var server = clients[1];
+        for (let i = 0; i < clients.length; i++) {
+        var server = clients[i][1];
+        var client = clients[i][0];
 
         var IDName = config.get(`Servers.${server}.Game_Server_Name`).toLowerCase().replace(/\s+/g, '_');
 
@@ -77,7 +78,7 @@ async function buttonsInfo(clients) {
         }
 
         const messageObject = {
-            content: `${config.get(`Servers.${server}.Game_Server_Name`)} Controls\nRCON commands: send as a normal message, no quotes`,
+            content: `${config.get(`Servers.${server}.Game_Server_Name`)} Controls\nRCON commands: use / key and select appropriate server to send your rcon command `,
             components: buttonbuild(buttons),
         }
 
@@ -91,8 +92,8 @@ async function buttonsInfo(clients) {
             });
         });
 
-        await channel.send(messageObject)
-        return
+        await channel.send(messageObject);
+    }
     } catch (error) {
         console.error('Error:', error);
         return

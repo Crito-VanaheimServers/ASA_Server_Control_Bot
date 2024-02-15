@@ -9,7 +9,7 @@ function sleep(ms) {
 
 module.exports = (gameWarning);
 
-async function gameWarning([clients, warning]) {
+async function gameWarning([clients, warning, clientsArray]) {
     try {
         const client = clients[0];
         const server = clients[1];
@@ -44,7 +44,7 @@ async function gameWarning([clients, warning]) {
 
                 clients[2] = false;
                 clients[3] = false;
-                await buttonsInfo(clients);
+                await buttonsInfo(clientsArray);
                 return;
             }
 
@@ -73,6 +73,8 @@ async function gameWarning([clients, warning]) {
                 .setColor(0x00e8ff);
             await client.channels.cache.get(config.get(`Servers.${server}.Admin_Channel_ID`)).send({ embeds: [rconShutdownWarn] });
             console.log(`${responseTrim}\n${config.get(`Servers.${server}.Game_Server_Name`)} shutdown successfully`);
+            await sleep(20000);
+            await buttonsInfo(clientsArray);
         } else if (warning === "DAILY RESTART" || warning === "MOD UPDATE RESTART") {
             clients[2] = false;
         }

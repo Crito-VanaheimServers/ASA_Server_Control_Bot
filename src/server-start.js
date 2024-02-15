@@ -1,6 +1,5 @@
 const config = require('config');
 const { EmbedBuilder } = require('discord.js');
-const buttonsInfo = require("./buttons-info");
 
 module.exports = (startServer);
 
@@ -19,7 +18,6 @@ function startServer([clients, commandSender]) {
                 .addFields({ name: (`${commandSender}`), value: (`${message}`) })
                 .setColor(0x00e8ff)
             client.channels.cache.get((config.get(`Servers.${server}.Admin_Channel_ID`))).send({ embeds: [serverstart] });
-            buttonsInfo(clients);
         });
         serverstart.stderr.on('error', function (error) {
             console.log("SERVER START ERROR: Try restarting the bot");
@@ -28,7 +26,6 @@ function startServer([clients, commandSender]) {
                 .addFields({ name: commandSender, value: `SERVER START ERROR: Try restarting the bot` })
                 .setColor(0x00e8ff)
             client.channels.cache.get((config.get(`Servers.${server}.Admin_Channel_ID`))).send({ embeds: [startserver] });
-            buttonsInfo(clients);
         });
     } catch (error) {
         console.error('Error in serverStart:', error);
