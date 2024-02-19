@@ -30,7 +30,10 @@
             "Game_Port": "7877",
             "Rcon_Port": "27120",
             "Admin_Password": "yourpassword",
+			"VIP_Players": "Crito, Bob, Tim",
+            "VIP_Color": "1,0,1,1",
+            "Server_Color": "0,1,0,1",
             "Command_Line": "TheIsland_WP?listen?Port=7877?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
-        }
+		}
     }
 }

@@ -102,6 +102,15 @@
 			//set your password you use to log in as admin in game here for rcon to work with the bot
             "Admin_Password": "yourPassord",
 			
+			//List of vip players discord names that will have names colored in game chat setting them apart from normal players in chat
+			"VIP_Players": "Crito, Bob, Tim",
+			
+			//RGBA color code that will be the color of VIP players names
+            "VIP_Color": "1,0,1,1",
+			
+			//Server color if using cross chat with cluster will be color for server in chat
+            "Server_Color": "0,1,0,1",
+			
 			//Set the start up command line for your ark server
             "Command_Line": "TheIsland_WP?listen?Port=7877?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
         },
@@ -122,6 +131,9 @@
             "Game_Port": "7777",
             "Rcon_Port": "27020",
             "Admin_Password": "yourpassword",
+			"VIP_Players": "Crito, Bob, Tim",
+            "VIP_Color": "1,0,1,1",
+            "Server_Color": "0,1,0,1",
             "Command_Line": "TheIsland_WP?listen?Port=7777?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
         }
     }
