@@ -441,7 +441,7 @@ function afterLogin() {
                         var rconCommand = interaction.options.get('rcon-command').value;
                         var rconSender = interaction.user.globalName;
                         if (interaction.channelId === (config.get(`Servers.${clients[i][1]}.Admin_Channel_ID`))) {
-                            const response = await rconCall([clients[i], `"${rconCommand}"`]);
+                            const response = await rconCall([clients[i], rconCommand]);
                             const rconEmbed = new EmbedBuilder()
                                 .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
                                 .addFields({ name: `RCON Command Sender: ${rconSender}`, value: `RCON Command Recived: ${rconCommand}\n${response}` })

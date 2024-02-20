@@ -14,7 +14,7 @@ module.exports = async function rconCall([clients, rconCMD]) {
             var conn = new Rcon(config.get(`Servers.${server}.Local_IP`), config.get(`Servers.${server}.Rcon_Port`), config.get(`Servers.${server}.Admin_Password`), rconoptions);
 
             conn.on('auth', function () {
-                conn.send(rconCMD);
+                conn.send(`${rconCMD}`);
             }).on('response', function (rconInfo) {
                 conn.emit('end');
                 resolve(rconInfo);
