@@ -35,10 +35,9 @@ Server control does not work with Nitrado servers but can be dissabled in setup
 Nitrado servers can take advantage of game chat to discord and from discord, mod updates to discord,
 player count status on bot, and rcon commands sent from discord
 
-If you run multiple servers you can install one of these for each server.
-will be working in code to have it control multiple servers not needing multiple bots in future.
+f you run multiple servers this bot will handle them all if config is setup for multiple bots.
 
-This works with Server API if you use it. In ASA_The_Island_Start.bat is provided line for specifying the exe to use.
+This works with Server API if you use it details in example config.
 
 BUTTONS
     Start button: Starts server if it is not running
