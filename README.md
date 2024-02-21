@@ -42,7 +42,7 @@ This works with Server API if you use it details in example config.
 BUTTONS
     Start button: Starts server if it is not running
                
-    Stop button: will safely save the world and shut down server then shut down the server monitor.
+    Stop button: will safely save the world and shut down server.
 
     Restart button: will first check if the server is running or not and if it is running than it will safely 
                      save the world and shut down the server, Then check for any
@@ -72,7 +72,7 @@ BOT MONITORS
 	MOD UPDATES: If you use the mod update function than the bot will detect when mod update is available and post information about the MOD
 	to your desired discord channel.
 
-	If you accidently close your monitor than just run the ASA_The_Island_Start.bat again, If server is running this will not
+	If you accidently close your bot monitor than just run the ASA_The_Island_Start.bat again, If server is running this will not
     do anything to server it will just restart the discord bot.
 	
 EXTRA FEATURES
