@@ -82,7 +82,7 @@
 			//Updates to mods are done with -automanagedmods in your commandline
             "Mod_IDs": "947835, 937546, 961601, 940786, 931119, 946694, 928708, 928501, 930404, 928621, 929420, 930128, 933099, 931877, 929543, 929038, 928818, 929713, 931047, 931874, 955451, 934401, 955932, 943713, 927131, 926956, 916922, 914844, 912902, 900062",
             
-			//Name of your server that players see when they search for it
+			//This does not change your server name it is used for the bot titles on discord messages and command names(do not use special characters)
 			"Game_Server_Name": "VGS TEST",
 			
 			//set your global ip to your server
