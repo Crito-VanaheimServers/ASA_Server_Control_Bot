@@ -13,11 +13,15 @@ const gameWarning = require("./server-warnings.js");
 const reBoot = require("./re-boot.js");
 const modCheck = require("./mod-check.js");
 const rconCall = require("./rcon-call.js");
+const modTimeCheck = require("./mod-timecheck.js");
 
 var restartTime = config.get(`ControlBot.Restart_Hour`);
 restartTimeConv(function (response) {
     restartTime = response;
 });
+
+var nextCheck = "";
+(async function () {nextCheck = await modTimeCheck();})();
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -57,8 +61,6 @@ function afterLogin() {
                                 console.log(`${result}`);
                                 reBoot([clients[i], `${clients[i][0].user.tag}`]);
                                 await updateServer([clients[i], `${clients[i][0].user.tag}`]);
-                                clients[i][2] = false;
-                                clients[i][4] = false;
                                 buttonsInfo(clients);
                             }
                         }
@@ -78,13 +80,17 @@ function afterLogin() {
                                 const result = await serverStatus(clients[i]);
                                 if (`${result}`.includes("Online")) {
                                     clients[i][2] = true;
-                                    console.log(`Mod updates ready for server, restarting ${process.env.Message_Tittle} server with warnings please wait...`);
+                                    console.log(`Mod updates ready for server, restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server with warnings please wait...`);
                                     gameWarning([clients[i], "MOD UPDATE RESTART", clients]);
                                 }
                             }
                         } else {
                             if (clients[i][4] === false) {
-                            await modCheck(clients[i]);
+                                curTime = await timeCheck();
+                                if (`${curTime}` === `${nextCheck}`) {
+                                    nextCheck = await modTimeCheck();
+                                    await modCheck(clients[i]);
+                                }
                             }
                         }
                     } catch (error) {
@@ -118,7 +124,6 @@ function afterLogin() {
                         console.log(`${result}`);
                     } else {
                         console.log(`${result}`);
-                        await updateServer([clients[i], `${clients[i][0].user.tag}`]);
                         clients[i][2] = false;
                     }
                 } catch (error) {
@@ -162,10 +167,7 @@ function afterLogin() {
                                     .setColor(0x00e8ff)
                                 interaction.reply({ embeds: [sartcommand] });
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Starting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server`);
-                                clients[i][2] = true;
-                                await updateServer([clients[i], `${clients[i][0].user.tag}`]);
                                 clients[i][2] = false;
-                                buttonsInfo(clients);
                             }
                         } catch (error) {
                             return
@@ -225,7 +227,6 @@ function afterLogin() {
                             const result = await serverStatus(clients[i]);
                             if (`${result}`.includes("Online")) {
                                 if (clients[i][2] === false) {
-                                    clients[i][2] = true;
                                     console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server please wait...`);
                                     const restartcommand = new EmbedBuilder()
                                         .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
@@ -233,11 +234,6 @@ function afterLogin() {
                                         .setColor(0x00e8ff)
                                     interaction.reply({ embeds: [restartcommand] });
                                     await rconCall([clients[i], 'DoExit']);
-                                    await sleep(60000);
-                                    await updateServer([clients[i], `${clients[i][0].user.tag}`]);
-                                    clients[i][2] = false;
-                                    clients[i][4] = false;
-                                    buttonsInfo(clients);
                                 } else {
                                     console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
                                     const restartcommand = new EmbedBuilder()
@@ -245,6 +241,7 @@ function afterLogin() {
                                         .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [restartcommand] });
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
@@ -282,6 +279,7 @@ function afterLogin() {
                                         .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [restartwarning] });
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
@@ -319,6 +317,7 @@ function afterLogin() {
                                         .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [shutdownwarning] });
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
@@ -355,6 +354,7 @@ function afterLogin() {
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [cancelwarning] });
                                     console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restart for mod updates can't be cancelled`);
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 const cancelwarning = new EmbedBuilder()

@@ -109,6 +109,8 @@ Change Notes:
 	02/19/2024 Changed discord chat to game into format easier on eyes this involved adding 2 new config options.
 
 	02/20/2024 Fixed rcon not working for API shop and permissions commands
+	
+	02/24/2024 Rework to mod updates added change notes to the mod update post. Fixed issue where server restarting would loop multiple times.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation
