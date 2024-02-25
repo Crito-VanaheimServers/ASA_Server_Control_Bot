@@ -488,10 +488,10 @@ function afterLogin() {
                     } else {
                         const plListEmbed = new EmbedBuilder()
                             .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
-                            .addFields({ name: 'ERROR:', value: 'You cant send player list to in game chat!' })
+                            .addFields({ name: 'ERROR:', value: 'You cant send server info to in game chat!' })
                             .setColor(0xff0000)
                         interaction.reply({ embeds: [plListEmbed] });
-                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: You cant send player list to in game chat!`);
+                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: You cant send server info to in game chat!`);
                     }
                     } catch (error) {
                         console.error('Error retrieving server information:', error);
