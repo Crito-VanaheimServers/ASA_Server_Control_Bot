@@ -2,7 +2,7 @@
 VGS ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v2.4 02/24/2024
+v2.5 02/25/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -111,6 +111,11 @@ Change Notes:
 	02/20/2024 Fixed rcon not working for API shop and permissions commands
 	
 	02/24/2024 Rework to mod updates added change notes to the mod update post. Fixed issue where server restarting would loop multiple times.
+	
+	2/25/2024 Added new / slash command for server info. This requires config setting change. In config  set "Battle_Metrics_Token": to your battlemetrics token
+			  or set it to "" empty quotes. empty quotes will disable the function. If you want a token you can get a free token from https://www.battlemetrics.com/developers
+			  make sure to set the "Battle_Metrics_ServerID": for your servers in the config as well, if your using this function. see example config for details.
+			  This command can be used by anyone to get server information/status.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation

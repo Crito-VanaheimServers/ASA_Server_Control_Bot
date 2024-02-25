@@ -14,6 +14,7 @@ const reBoot = require("./re-boot.js");
 const modCheck = require("./mod-check.js");
 const rconCall = require("./rcon-call.js");
 const modTimeCheck = require("./mod-timecheck.js");
+const serverInfoBM = require("./get-infobm.js");
 
 var restartTime = config.get(`ControlBot.Restart_Hour`);
 restartTimeConv(function (response) {
@@ -434,6 +435,79 @@ function afterLogin() {
                     }
                 })();
             }
+
+            
+            if (interaction.commandName === `${IDName}_info`) {
+                var commandSender = interaction.user.globalName;
+                if(config.get(`ControlBot.Battle_Metrics_Token`) !== ""){
+                (async function () {
+                    try {
+                        if (interaction.channelId !== (config.get(`Servers.${clients[i][1]}.Chat_Channel_ID`))) {
+                        const BMInfo = await serverInfoBM();
+                        const modLinks = BMInfo.attributes.details.modLinks;
+                        const modNames = BMInfo.attributes.details.modNames;
+                        const modIds = BMInfo.attributes.details.modIds;
+            
+                        let BMInfoEmbed = new EmbedBuilder()
+                            .setTitle(BMInfo.attributes.name)
+                            .setColor(0x00e8ff)
+                            .addFields({ name: 'STATUS', value: BMInfo.attributes.status})
+                            .addFields({ name: 'SERVER IP & PORT', value: `${BMInfo.attributes.ip}:${BMInfo.attributes.port}`})
+                            .addFields({ name: 'DATE CREATED', value: `${BMInfo.attributes.createdAt.substring(5, 7)}-${BMInfo.attributes.createdAt.substring(8, 10)}-${BMInfo.attributes.createdAt.substring(0, 4)}`})
+                            .addFields({ name: 'COUNTRY', value: `${BMInfo.attributes.country}`})
+                            .addFields({ name: 'RANK', value: `${BMInfo.attributes.rank}`})
+                            .addFields({ name: 'PLAYER COUNT', value: `${BMInfo.attributes.players}/${BMInfo.attributes.maxPlayers}`})
+                            .addFields({ name: 'MAP', value:`${ BMInfo.attributes.details.map}`})
+                            .addFields({ name: 'VERSION', value: `${BMInfo.attributes.details.version}`})
+                            .addFields({ name: 'PVE', value: `${BMInfo.attributes.details.pve}`})
+                            .addFields({ name: 'CROSSPLAY', value: `${BMInfo.attributes.details.crossplay}`})
+                        let embeds = [];
+            
+                        for (let i = 0; i < modLinks.length; i++) {
+                            const modName = modNames[i] || 'Unknown';
+                            const modId = modIds[i] || 'Unknown';
+            
+                            BMInfoEmbed.addFields({ 
+                                name: `MOD ${i + 1}`, 
+                                value: `[${modName}](${modLinks[i]}) - ID: ${modId}`, 
+                                inline: true  
+                            });
+            
+                            if ((i + 1) % 15=== 0 || i === modLinks.length - 1) {
+                                embeds.push(BMInfoEmbed);
+                                if (i !== modLinks.length - 1) {
+                                    BMInfoEmbed = new EmbedBuilder()
+                                        .setColor(0x00e8ff);
+                                }
+                            }
+                        }
+            
+                        await interaction.reply({ embeds: embeds });
+            
+                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}`);
+                    } else {
+                        const plListEmbed = new EmbedBuilder()
+                            .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                            .addFields({ name: 'ERROR:', value: 'You cant send player list to in game chat!' })
+                            .setColor(0xff0000)
+                        interaction.reply({ embeds: [plListEmbed] });
+                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: You cant send player list to in game chat!`);
+                    }
+                    } catch (error) {
+                        console.error('Error retrieving server information:', error);
+                        return;
+                    }
+                })();
+            }else{
+                const plListEmbed = new EmbedBuilder()
+                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                .addFields({ name: 'ERROR:', value: 'Function not set up for discord' })
+                .setColor(0xff0000)
+                 interaction.reply({ embeds: [plListEmbed] });
+                console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: Function not set up for discord`);
+            }
+            }
+       
 
             if (interaction.commandName === `${IDName}_rcon`) {
                 (async function () {

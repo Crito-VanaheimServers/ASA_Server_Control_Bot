@@ -2,7 +2,7 @@
     "ControlBot": {
         "Discord_ID": "54654156123165415684564153214",
         "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
-        "Battle_Metrics_Token": "fd5s6g4dsf56g465sdf4gsdf56g4sdf56g4156dsfg4156dsf41g56dsf4gb564dsfg564fsd56g4d6f5sg465fds4g65dfs4g65df4g654fds65g4fd65sg465dsf4g56dsf4g56dfs4g654dfs65g4sdf65g4sdf65g456sdf4g65sdf4g6dfs54g65dsfg564g56sdf4",
+        "Battle_Metrics_Token": "",
         "Curse_Forge_Token": "$f5adsf456ad4f5asd4f56a41sdfg564ad56fg4asd56fg46ads54fg6",
         "Steam_Path": "C: \\VGS_Server_Files\\Steam_CMD_Files",
         "Restart_Hour": "00",
@@ -17,7 +17,7 @@
         "The_Island_Test": {
             "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
             "EXE_Launcher": "ArkAscendedServer.exe",
-            "Battle_Metrics_ServerID": "456456452132514564",
+            "Battle_Metrics_ServerID": "24311277",
             "Player_Count_Bot_Token": "ad4f56ad4sf564ds56f4165adsfg456asd4gf65ads4fg564asd56fg4das564fg65ads4f65fa41d56f456",
             "Bot_ID": "54564564564654654",
             "Admin_Channel_ID": "465465456456456434",

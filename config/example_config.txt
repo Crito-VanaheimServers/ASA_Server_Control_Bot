@@ -7,8 +7,8 @@
         "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
 		
         //Battlemetrics Personal Access Token, this is free to obtain and can get from https://www.battlemetrics.com/developers
-        //Currently not in use
-        "Battle_Metrics_Token": "a5f4d65f456ad4f65asd4f65a4d5f64asd65f45ads64f564sadf564asd56f4asd654f56asd4fg56a4sdf564ads5f64asd65f4asd56f456ads4f56asd4f65as4df654dsa65fg46a5dsfg465asd4fg56asd4fg65a4sd1gf56a1sdfg65a4fg564ag54rdf56afg489afd498",
+		//if you do not want to get a token than leave empty quotes you just wont get the server info command function
+        "Battle_Metrics_Token": "",
         
 		//Curseforge API Token, this is free but requires a google account to login and can be obtained from https://console.curseforge.com/#/login
         //Bot uses this to keep an eye on mod changes to automatically keep mods up to date on your server
@@ -51,8 +51,7 @@
 			//Battlemetrics server ID, Find your server on battlemetrics and select it then in adress bar copy the ID number.
 			//Example: https://www.battlemetrics.com/servers/arksa/24950685 
 			//BMServerID would be 24950685
-			//Currently not in use
-			"Battle_Metrics_ServerID": "12345678",
+			"Battle_Metrics_ServerID": "24311277",
 			
 			//your bots token from bot you create at https://discord.com/developers/ each server needs its own bot
             "Player_Count_Bot_Token": "fd54f56a4fg685a4fg984agf654a6fg465ad4gf65asd4fg654a6df4",

@@ -20,7 +20,12 @@ for (const serverKey in servers) {
 
         {
             name: `${IDName}_players`,
-            description: 'See the currently connected players for Ark Survival Ascended The Island server',
+            description: 'get a list of the currently connected players',
+        },
+        
+        {
+            name: `${IDName}_info`,
+            description: 'get information about the server',
         },
     ];
 
