@@ -443,7 +443,7 @@ function afterLogin() {
                 (async function () {
                     try {
                         if (interaction.channelId !== (config.get(`Servers.${clients[i][1]}.Chat_Channel_ID`))) {
-                        const BMInfo = await serverInfoBM();
+                        const BMInfo = await serverInfoBM(clients[i]);
                         const modLinks = BMInfo.attributes.details.modLinks;
                         const modNames = BMInfo.attributes.details.modNames;
                         const modIds = BMInfo.attributes.details.modIds;
