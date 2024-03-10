@@ -10,7 +10,8 @@
         "Mod_Updates": true,
         "Game_Chat": true,
         "Discord_Chat": true,
-        "Player_List": true
+        "Player_List": true,
+		"Player_Info": true
     },
 
     "Servers": {

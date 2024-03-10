@@ -1,3 +1,8 @@
+//If you are using this bot with a rented server like nitrado than you need to set the following to false
+//they will not work for rented servers.
+//"Server_Control": false
+//"Mod_Updates": false
+//"Player_Info": false
 {
     "ControlBot": {
         //your discord server ID where your bot will be listening
@@ -34,7 +39,10 @@
         "Discord_Chat": true
 		
 		//if you dont want players using command to see who is online than set this to false
-		"Player_List": false
+		"Player_List": false,
+
+		//set to false to dissable command for player info
+		"Player_Info": true
     },
 
     "Servers": {

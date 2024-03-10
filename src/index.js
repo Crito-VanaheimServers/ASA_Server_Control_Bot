@@ -437,6 +437,7 @@ function afterLogin() {
             if (interaction.commandName === `${IDName}_player_info`) {
                 (async function () {
                     try {
+                        if (config.get(`ControlBot.Server_Control`)) {
                         var trgtName = interaction.options.get('player-info').value;
                         var sender = interaction.user.globalName;
                         if (interaction.channelId === (config.get(`Servers.${clients[i][1]}.Admin_Channel_ID`))) {
@@ -456,6 +457,14 @@ function afterLogin() {
                             interaction.reply({ embeds: [pInfoEmbed] });
                             console.log(`Player info for ${trgtName} requested by: ${sender}\nResults: You just tried to run an admin command outside of an admin channel!`);
                         }
+                    }else{
+                        const pInfoEmbed = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: 'ERROR:', value: 'Function disabled' })
+                                .setColor(0xff0000)
+                            interaction.reply({ embeds: [pInfoEmbed] });
+                            console.log(`Player info for ${trgtName} requested by: ${sender}\nResults: Function disabled`);
+                    }
                     } catch (error) {
                         return
                     }
