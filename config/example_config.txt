@@ -32,17 +32,23 @@
         
 		//if you want discord members to be able to chat to players in game set this to true
         "Discord_Chat": true
+		
+		//if you dont want players using command to see who is online than set this to false
+		"Player_List": false
     },
 
     "Servers": {
 	
 		//you can add as many servers as you want but each server needs its own bot to communicate with
 		//make a name for each server no spaces
-        "The_Island_Test": {
+		"The_Island_Test": {
 			
 			//Set file path to the folder your server files are located or will be located
             "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
-			
+	
+			//Set the file path to where your saved files for the server are located (these files are the .ark, .arkprofile, and .arktribe save files)
+			"Saves_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server\\ShooterGame\\Saved\\SavedArks\\TheIsland_WP",		
+		
 			//If your using Server API then set this to AsaApiLoader.exe
 			//If you have no idea or you are NOT using Server API than set to ArkAscendedServer.exe
 			//info about server API found here https://gameservershub.com/forums/resources/categories/asa-official-resources.111/

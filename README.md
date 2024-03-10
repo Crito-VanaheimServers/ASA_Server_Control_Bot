@@ -2,7 +2,7 @@
 VGS ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v2.5 02/25/2024
+v2.6 03/9/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -80,6 +80,8 @@ EXTRA FEATURES
 
     Discord useres can run slash command in discord to see a list of currently connected players.
 
+	Slash command for player info availble to run in admin channel to get player ID's, EoSID's, and other information about about a player.
+
     Designate a channel for game chat. The Bot will display any in game chat that is sent in global channel to this channel.
     Discord users can chat with players in game thru this channel without being in game.
 
@@ -116,6 +118,10 @@ Change Notes:
 			  or set it to "" empty quotes. empty quotes will disable the function. If you want a token you can get a free token from https://www.battlemetrics.com/developers
 			  make sure to set the "Battle_Metrics_ServerID": for your servers in the config as well, if your using this function. see example config for details.
 			  This command can be used by anyone to get server information/status.
+
+	3/9/2024 Added slash command for use in admin channel to get player information about a player. 
+			 Info obtained such as player and character names, player ID, EosID, and more.
+			 also added new config setting to dissable the player list that discord memebers can run to see who is online.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation

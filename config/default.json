@@ -9,13 +9,15 @@
         "Server_Control": true,
         "Mod_Updates": true,
         "Game_Chat": true,
-        "Discord_Chat": true
+        "Discord_Chat": true,
+        "Player_List": true
     },
 
     "Servers": {
 
         "The_Island_Test": {
             "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
+			"Saves_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server\\ShooterGame\\Saved\\SavedArks\\TheIsland_WP",
             "EXE_Launcher": "ArkAscendedServer.exe",
             "Battle_Metrics_ServerID": "24311277",
             "Player_Count_Bot_Token": "ad4f56ad4sf564ds56f4165adsfg456asd4gf65ads4fg564asd56fg4das564fg65ads4f65fa41d56f456",

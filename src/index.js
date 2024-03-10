@@ -15,6 +15,7 @@ const modCheck = require("./mod-check.js");
 const rconCall = require("./rcon-call.js");
 const modTimeCheck = require("./mod-timecheck.js");
 const serverInfoBM = require("./get-infobm.js");
+const plyrSaveInfo = require("./get_filedata.js");
 
 var restartTime = config.get(`ControlBot.Restart_Hour`);
 restartTimeConv(function (response) {
@@ -63,6 +64,7 @@ function afterLogin() {
                                 reBoot([clients[i], `${clients[i][0].user.tag}`]);
                                 await updateServer([clients[i], `${clients[i][0].user.tag}`]);
                                 buttonsInfo(clients);
+                                await modCollect(clients[i]);
                             }
                         }
                     } catch (error) {
@@ -102,18 +104,6 @@ function afterLogin() {
         }
     }, 3000);
 
-    if (config.get(`ControlBot.Mod_Updates`)) {
-        (async function () {
-            try {
-                for (let i = 0; i < clients.length; i++) {
-                    await modCollect(clients[i]);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        })();
-    }
-
     if (config.get(`ControlBot.Server_Control`)) {
         (async function () {
             await buttonsInfo(clients);
@@ -124,7 +114,6 @@ function afterLogin() {
                         clients[i][2] = false;
                         console.log(`${result}`);
                     } else {
-                        console.log(`${result}`);
                         clients[i][2] = false;
                     }
                 } catch (error) {
@@ -394,6 +383,7 @@ function afterLogin() {
                 (async function () {
                     try {
                         var commandSender = interaction.user.globalName;
+                        if(config.get(`ControlBot.Player_List`)){
                         if (interaction.channelId !== (config.get(`Servers.${clients[i][1]}.Chat_Channel_ID`))) {
                             const response = await rconCall([clients[i], 'ListPlayers']);
                             var plyrTrim = response.trim();
@@ -430,20 +420,55 @@ function afterLogin() {
                             interaction.reply({ embeds: [plListEmbed] });
                             console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: You cant send player list to in game chat!`);
                         }
+                    }else{
+                        const plListEmbed = new EmbedBuilder()
+                        .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                        .addFields({ name: 'ERROR:', value: 'Function disabled' })
+                        .setColor(0xff0000)
+                         interaction.reply({ embeds: [plListEmbed] });
+                        console.log(`SENDER: ${commandSender}\nCOMMAND: ${interaction.commandName}\nRESPONSE: Function disabled`);
+                    }
                     } catch (error) {
                         return
                     }
                 })();
             }
 
-            
-            if (interaction.commandName === `${IDName}_info`) {
+            if (interaction.commandName === `${IDName}_player_info`) {
+                (async function () {
+                    try {
+                        var trgtName = interaction.options.get('player-info').value;
+                        var sender = interaction.user.globalName;
+                        if (interaction.channelId === (config.get(`Servers.${clients[i][1]}.Admin_Channel_ID`))) {
+                            const response = await plyrSaveInfo([clients[i], trgtName]);
+                            const pInfoEmbed = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: `Player info for ${trgtName} requested by: ${sender}`, value: `Results:\n${response}` })
+                                .setColor(0x00e8ff)
+                            interaction.reply({ embeds: [pInfoEmbed] });
+                            console.log(`Player info for ${trgtName} requested by: ${sender} \n Results:\n${response}`);
+                            buttonsInfo(clients);
+                        } else {
+                            const pInfoEmbed = new EmbedBuilder()
+                                .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
+                                .addFields({ name: 'ERROR:', value: 'You just tried to run an admin command outside of an admin channel!' })
+                                .setColor(0xff0000)
+                            interaction.reply({ embeds: [pInfoEmbed] });
+                            console.log(`Player info for ${trgtName} requested by: ${sender}\nResults: You just tried to run an admin command outside of an admin channel!`);
+                        }
+                    } catch (error) {
+                        return
+                    }
+                })();
+            }
+
+            if (interaction.commandName === `${IDName}_server_info`) {
                 var commandSender = interaction.user.globalName;
                 if(config.get(`ControlBot.Battle_Metrics_Token`) !== ""){
                 (async function () {
                     try {
                         if (interaction.channelId !== (config.get(`Servers.${clients[i][1]}.Chat_Channel_ID`))) {
-                        const BMInfo = await serverInfoBM(clients[i]);
+                        const BMInfo = await serverInfoBM();
                         const modLinks = BMInfo.attributes.details.modLinks;
                         const modNames = BMInfo.attributes.details.modNames;
                         const modIds = BMInfo.attributes.details.modIds;

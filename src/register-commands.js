@@ -19,12 +19,25 @@ for (const serverKey in servers) {
         },
 
         {
+            name: `${IDName}_player_info`,
+            description: 'Get details about a player',
+            options: [
+                {
+                    name: 'player-info',
+                    description: 'Player name (not character name)',
+                    type: ApplicationCommandOptionType.String,
+                    required: true,
+                }
+            ]
+        },
+
+        {
             name: `${IDName}_players`,
             description: 'get a list of the currently connected players',
         },
         
         {
-            name: `${IDName}_info`,
+            name: `${IDName}_server_info`,
             description: 'get information about the server',
         },
     ];

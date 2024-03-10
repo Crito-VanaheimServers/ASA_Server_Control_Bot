@@ -3,13 +3,11 @@ const BM = require('@leventhan/battlemetrics')
 
 module.exports = (serverBMInfo);
 
-async function serverBMInfo(client) {
+async function serverBMInfo() {
     try {
-        var server = client[1];
-
         const options = {
             token: config.get('ControlBot.Battle_Metrics_Token'),
-            serverID: config.get(`Servers.${server}.Battle_Metrics_ServerID`),
+            serverID: config.get('Servers.The_Island_Test.Battle_Metrics_ServerID'),
             game: 'arksa'
         };
 
