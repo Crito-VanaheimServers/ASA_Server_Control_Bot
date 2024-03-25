@@ -1,1 +1,190 @@
-2024-01-17T15:53:26.577Z
+{
+  "id": 929420,
+  "gameId": 83374,
+  "name": "Super Spyglass Plus",
+  "slug": "super-spyglass-plus",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/super-spyglass-plus",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Adds an Spyglass that shows advanced information about most stuff you point it at.",
+  "status": 4,
+  "downloadCount": 3205864,
+  "isFeatured": false,
+  "primaryCategoryId": 6076,
+  "categories": [
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105714718,
+      "name": "kavan87",
+      "url": "https://www.curseforge.com/members/kavan87"
+    }
+  ],
+  "logo": {
+    "id": 904667,
+    "modId": 929420,
+    "title": "638355047673327098.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/904/667/256/256/638355047673327098.png",
+    "url": "https://media.forgecdn.net/avatars/904/667/638355047673327098.png"
+  },
+  "screenshots": [
+    {
+      "id": 751491,
+      "modId": 929420,
+      "title": "SSP 3",
+      "description": "Info shown when looking at an gestating creature.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/491/310/172/ssp_4.png",
+      "url": "https://media.forgecdn.net/attachments/751/491/ssp_4.png"
+    },
+    {
+      "id": 751487,
+      "modId": 929420,
+      "title": "SSP 1",
+      "description": "Shows the Dino Info UI then hovering a wild dino.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/487/310/172/ssp_1.png",
+      "url": "https://media.forgecdn.net/attachments/751/487/ssp_1.png"
+    },
+    {
+      "id": 751496,
+      "modId": 929420,
+      "title": "SSP 4",
+      "description": "You can see that it shows that the sheep has one mutation that went into the O2 stat.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/496/310/172/ssp_5.png",
+      "url": "https://media.forgecdn.net/attachments/751/496/ssp_5.png"
+    },
+    {
+      "id": 751556,
+      "modId": 929420,
+      "title": "SSP 9",
+      "description": "You can set the Position of the main UI and GPS.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/556/310/172/ssp_9.png",
+      "url": "https://media.forgecdn.net/attachments/751/556/ssp_9.png"
+    },
+    {
+      "id": 751489,
+      "modId": 929420,
+      "title": "SSP 2",
+      "description": "Egg info when looking at a fertilized egg.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/489/310/172/ssp_2.png",
+      "url": "https://media.forgecdn.net/attachments/751/489/ssp_2.png"
+    },
+    {
+      "id": 751552,
+      "modId": 929420,
+      "title": "SSP 8",
+      "description": "Shows Structure Info",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/552/310/172/ssp_8.png",
+      "url": "https://media.forgecdn.net/attachments/751/552/ssp_8.png"
+    },
+    {
+      "id": 751545,
+      "modId": 929420,
+      "title": "SSP 7",
+      "description": "Show items in death caches and drop bags.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/545/310/172/ssp_7.png",
+      "url": "https://media.forgecdn.net/attachments/751/545/ssp_7.png"
+    },
+    {
+      "id": 751498,
+      "modId": 929420,
+      "title": "SSP 6",
+      "description": "You can for example change the UI color and text color.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/498/310/172/ssp_6.png",
+      "url": "https://media.forgecdn.net/attachments/751/498/ssp_6.png"
+    },
+    {
+      "id": 751497,
+      "modId": 929420,
+      "title": "SSP 5",
+      "description": "This is the configuration menu.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/497/310/172/ssp_3.png",
+      "url": "https://media.forgecdn.net/attachments/751/497/ssp_3.png"
+    }
+  ],
+  "mainFileId": 5040426,
+  "latestFiles": [
+    {
+      "id": 5040426,
+      "gameId": 83374,
+      "modId": 929420,
+      "isAvailable": true,
+      "displayName": "super spyglass plus-windows 31.zip",
+      "fileName": "super spyglass plus-windows 31.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "801c46d7f80c7518f182466cbf4d5d81a0deacb5",
+          "algo": 1
+        },
+        {
+          "value": "4dcc57d5952c9b7a6230631e42904fa5",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-01-17T15:53:26.227Z",
+      "fileLength": 2838297,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 3025296,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 581965303,
+      "modules": [
+        {
+          "name": "SuperSpyglassPlus",
+          "fingerprint": 1097735620
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5040426,
+      "filename": "super spyglass plus-windows 31.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-29T14:13:36.677Z",
+  "dateModified": "2024-02-01T07:57:26.603Z",
+  "dateReleased": "2024-01-17T15:53:26.577Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 4,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

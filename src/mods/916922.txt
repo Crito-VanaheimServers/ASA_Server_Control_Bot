@@ -1,1 +1,146 @@
-2023-11-21T13:06:26.747Z
+{
+  "id": 916922,
+  "gameId": 83374,
+  "name": "Additions Ascended: Helicoprion",
+  "slug": "additions-ascended-helicoprion",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/additions-ascended-helicoprion",
+    "wikiUrl": "https://discord.gg/BxpAGg9Huu",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Adds Helicoprion from ARK Additions",
+  "status": 4,
+  "downloadCount": 1551434,
+  "isFeatured": false,
+  "primaryCategoryId": 6074,
+  "categories": [
+    {
+      "id": 6074,
+      "gameId": 83374,
+      "name": "Creatures",
+      "slug": "creatures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/creatures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/861/638126560008756045.png",
+      "dateModified": "2023-02-22T09:46:40.88Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105016778,
+      "name": "Garuga123",
+      "url": "https://www.curseforge.com/members/garuga123"
+    }
+  ],
+  "logo": {
+    "id": 894244,
+    "modId": 916922,
+    "title": "638337721005591677.jpeg",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/894/244/256/256/638337721005591677.jpeg",
+    "url": "https://media.forgecdn.net/avatars/894/244/638337721005591677.jpeg"
+  },
+  "screenshots": [
+    {
+      "id": 750741,
+      "modId": 916922,
+      "title": "Heli2",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/741/310/172/20231027213334_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/741/20231027213334_1.jpg"
+    },
+    {
+      "id": 748360,
+      "modId": 916922,
+      "title": "Helicoprion",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/748/360/310/172/heli_asa_banner.png",
+      "url": "https://media.forgecdn.net/attachments/748/360/heli_asa_banner.png"
+    }
+  ],
+  "mainFileId": 4886524,
+  "latestFiles": [
+    {
+      "id": 4886524,
+      "gameId": 83374,
+      "modId": 916922,
+      "isAvailable": true,
+      "displayName": "additions ascended_ helicoprion-windows 8.zip",
+      "fileName": "additions ascended_ helicoprion-windows 8.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "eafc081a6d6429ad0022cbe199fb06d7c741add7",
+          "algo": 1
+        },
+        {
+          "value": "5c0cf3a77adf34e6630efff586076c4e",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-11-21T13:06:26.403Z",
+      "fileLength": 208636590,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 209279313,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 2931041561,
+      "modules": [
+        {
+          "name": "AAHelicoprion",
+          "fingerprint": 1794899624
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4886524,
+      "filename": "additions ascended_ helicoprion-windows 8.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-09-26T17:30:18.373Z",
+  "dateModified": "2023-11-22T15:52:31.09Z",
+  "dateReleased": "2023-11-21T13:06:26.747Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 15,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

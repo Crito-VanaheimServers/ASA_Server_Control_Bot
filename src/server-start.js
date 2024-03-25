@@ -13,7 +13,7 @@ async function startServer([clients, commandSender]) {
         const server = clients[1];
 
         var serverstart = require('child_process').spawn(config.get(`ControlBot.Bot_Folder_Path`) + ('/src/ServerStart.bat'), [config.get(`Servers.${server}.Server_Path`), config.get(`Servers.${server}.Game_Server_Name`), config.get(`Servers.${server}.EXE_Launcher`), config.get(`Servers.${server}.Command_Line`)]);
-        
+
         serverstart.stdout.on('data', function (data) {
             console.log(`${data}`);
             const message = (`${config.get(`Servers.${server}.Game_Server_Name`)} server is up to date.\n${data}`);
@@ -32,9 +32,9 @@ async function startServer([clients, commandSender]) {
             client.channels.cache.get((config.get(`Servers.${server}.Admin_Channel_ID`))).send({ embeds: [startserver] });
         });
 
-        await sleep(60000);
-        clients[2] = false;
-        clients[4] = false;
+        //await sleep(60000);
+        //clients[2] = false;
+        //clients[4] = false;
     } catch (error) {
         console.error('Error in serverStart:', error);
         return

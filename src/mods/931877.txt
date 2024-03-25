@@ -1,1 +1,194 @@
-2023-11-21T19:08:31.623Z
+{
+  "id": 931877,
+  "gameId": 83374,
+  "name": "Klinger Additional Structures",
+  "slug": "additional-dedicate-storage",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/additional-dedicate-storage",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Klinger Additional Structures",
+  "status": 4,
+  "downloadCount": 474653,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105719009,
+      "name": "klingerMartins",
+      "url": "https://www.curseforge.com/members/klingermartins"
+    }
+  ],
+  "logo": {
+    "id": 900106,
+    "modId": 931877,
+    "title": "638346438679783701.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/900/106/256/256/638346438679783701.png",
+    "url": "https://media.forgecdn.net/avatars/900/106/638346438679783701.png"
+  },
+  "screenshots": [
+    {
+      "id": 753687,
+      "modId": 931877,
+      "title": "DinoGate 3X Glass +Sconce light",
+      "description": "DinoGate 3X Glass DinoGate 3X Glass +Sconce light",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/753/687/310/172/20231103175901_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/753/687/20231103175901_1.jpg"
+    },
+    {
+      "id": 752572,
+      "modId": 931877,
+      "title": "Wood Dedicate Storage",
+      "description": "Wood Dedicate Storage",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/752/572/310/172/20231102080714_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/752/572/20231102080714_1.jpg"
+    },
+    {
+      "id": 753688,
+      "modId": 931877,
+      "title": "MultiForge",
+      "description": "MultiForge",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/753/688/310/172/20231103175742_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/753/688/20231103175742_1.jpg"
+    },
+    {
+      "id": 752574,
+      "modId": 931877,
+      "title": "Stone Dedicate Storage",
+      "description": "Stone Dedicate Storage",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/752/574/310/172/20231102080652_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/752/574/20231102080652_1.jpg"
+    },
+    {
+      "id": 752577,
+      "modId": 931877,
+      "title": "Can be placed on rafts and Catamaran",
+      "description": "Can be placed on rafts and Catamaran",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/752/577/310/172/20231031221137_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/752/577/20231031221137_1.jpg"
+    },
+    {
+      "id": 753689,
+      "modId": 931877,
+      "title": "Tubular Light",
+      "description": "Tubular Light",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/753/689/310/172/20231103181338_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/753/689/20231103181338_1.jpg"
+    },
+    {
+      "id": 753686,
+      "modId": 931877,
+      "title": "DinoGate 3X Glass",
+      "description": "DinoGate 3X Glass",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/753/686/310/172/20231103175728_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/753/686/20231103175728_1.jpg"
+    },
+    {
+      "id": 753690,
+      "modId": 931877,
+      "title": "Sconce Light, Tubular Light, Circular Light",
+      "description": "Sconce Light, Tubular Light, Circular Light",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/753/690/310/172/20231103181430_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/753/690/20231103181430_1.jpg"
+    }
+  ],
+  "mainFileId": 4887804,
+  "latestFiles": [
+    {
+      "id": 4887804,
+      "gameId": 83374,
+      "modId": 931877,
+      "isAvailable": true,
+      "displayName": "klinger additional structures-windows 13.zip",
+      "fileName": "klinger additional structures-windows 13.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "c915f61e21fcaf4ad5650f6c35b96562c2d48197",
+          "algo": 1
+        },
+        {
+          "value": "9f1d1f1cce6b014f92e3618bb73941ca",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-11-21T19:08:31.29Z",
+      "fileLength": 115772491,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 117826814,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 195112942,
+      "modules": [
+        {
+          "name": "KAS",
+          "fingerprint": 4024654599
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4887804,
+      "filename": "klinger additional structures-windows 13.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-11-02T01:39:36.743Z",
+  "dateModified": "2024-03-15T18:40:20.407Z",
+  "dateReleased": "2023-11-21T19:08:31.623Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 65,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

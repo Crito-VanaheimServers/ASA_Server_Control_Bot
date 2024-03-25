@@ -28,7 +28,6 @@ async function getModInfo(modId) {
       }
     }
   } catch (error) {
-    console.error('Error:', error);
-    throw new Error('Error fetching mod change logs for: ' + modId + error.message);
+    return
   }
 }

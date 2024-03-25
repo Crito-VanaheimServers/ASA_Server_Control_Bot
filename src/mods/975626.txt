@@ -1,0 +1,272 @@
+{
+  "id": 975626,
+  "gameId": 83374,
+  "name": "Reverence",
+  "slug": "reverence",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/reverence",
+    "wikiUrl": null,
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Survivors. Journey into a land not known by you, but by those who came before you",
+  "status": 4,
+  "downloadCount": 54254,
+  "isFeatured": false,
+  "primaryCategoryId": 6077,
+  "categories": [
+    {
+      "id": 6077,
+      "gameId": 83374,
+      "name": "Maps",
+      "slug": "maps",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/maps",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/864/638126560389358852.png",
+      "dateModified": "2023-02-22T09:47:18.94Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 107890121,
+      "name": "kelthezuad",
+      "url": "https://www.curseforge.com/members/kelthezuad"
+    },
+    {
+      "id": 108345191,
+      "name": "Excited_Kangaroo",
+      "url": "https://www.curseforge.com/members/excited_kangaroo"
+    },
+    {
+      "id": 107786716,
+      "name": "wildcard_jat",
+      "url": "https://www.curseforge.com/members/wildcard_jat"
+    }
+  ],
+  "logo": {
+    "id": 949229,
+    "modId": 975626,
+    "title": "638437150791336331.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/949/229/256/256/638437150791336331.png",
+    "url": "https://media.forgecdn.net/avatars/949/229/638437150791336331.png"
+  },
+  "screenshots": [
+    {
+      "id": 809381,
+      "modId": 975626,
+      "title": "13-1.jpg",
+      "description": "13-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/381/310/172/13-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/381/13-1.jpg"
+    },
+    {
+      "id": 809383,
+      "modId": 975626,
+      "title": "15-1.jpg",
+      "description": "15-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/383/310/172/15-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/383/15-1.jpg"
+    },
+    {
+      "id": 809382,
+      "modId": 975626,
+      "title": "14-1.jpg",
+      "description": "14-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/382/310/172/14-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/382/14-1.jpg"
+    },
+    {
+      "id": 809368,
+      "modId": 975626,
+      "title": "Sunset shot",
+      "description": "sunset over the mountains",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/368/310/172/8.png",
+      "url": "https://media.forgecdn.net/attachments/809/368/8.png"
+    },
+    {
+      "id": 809366,
+      "modId": 975626,
+      "title": "test",
+      "description": "test",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/366/310/172/1.png",
+      "url": "https://media.forgecdn.net/attachments/809/366/1.png"
+    },
+    {
+      "id": 809370,
+      "modId": 975626,
+      "title": "Vally cliffs",
+      "description": "Beach pass to the red obelisk",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/370/310/172/5.png",
+      "url": "https://media.forgecdn.net/attachments/809/370/5.png"
+    },
+    {
+      "id": 809378,
+      "modId": 975626,
+      "title": "7-1.jpg",
+      "description": "7-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/378/310/172/7-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/378/7-1.jpg"
+    },
+    {
+      "id": 809380,
+      "modId": 975626,
+      "title": "10-1.jpg",
+      "description": "10-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/380/310/172/10-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/380/10-1.jpg"
+    },
+    {
+      "id": 809376,
+      "modId": 975626,
+      "title": "6-1.jpg",
+      "description": "6-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/376/310/172/6-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/376/6-1.jpg"
+    },
+    {
+      "id": 809369,
+      "modId": 975626,
+      "title": "Sunset shot 2",
+      "description": "sunset over the entire mountain range",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/369/310/172/11.png",
+      "url": "https://media.forgecdn.net/attachments/809/369/11.png"
+    },
+    {
+      "id": 809384,
+      "modId": 975626,
+      "title": "16-1.jpg",
+      "description": "16-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/384/310/172/16-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/384/16-1.jpg"
+    },
+    {
+      "id": 809375,
+      "modId": 975626,
+      "title": "3-1.jpg",
+      "description": "3-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/375/310/172/3-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/375/3-1.jpg"
+    },
+    {
+      "id": 809379,
+      "modId": 975626,
+      "title": "9-1.jpg",
+      "description": "9-1.jpg",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/379/310/172/9-1.jpg",
+      "url": "https://media.forgecdn.net/attachments/809/379/9-1.jpg"
+    },
+    {
+      "id": 809367,
+      "modId": 975626,
+      "title": "Testing 2",
+      "description": "Testing 2",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/809/367/310/172/2.png",
+      "url": "https://media.forgecdn.net/attachments/809/367/2.png"
+    },
+    {
+      "id": 826077,
+      "modId": 975626,
+      "title": "18",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/826/77/310/172/18.jpg",
+      "url": "https://media.forgecdn.net/attachments/826/77/18.jpg"
+    },
+    {
+      "id": 826078,
+      "modId": 975626,
+      "title": "19",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/826/78/310/172/19.jpg",
+      "url": "https://media.forgecdn.net/attachments/826/78/19.jpg"
+    },
+    {
+      "id": 826076,
+      "modId": 975626,
+      "title": "17",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/826/76/310/172/17.jpg",
+      "url": "https://media.forgecdn.net/attachments/826/76/17.jpg"
+    },
+    {
+      "id": 826079,
+      "modId": 975626,
+      "title": "20",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/826/79/310/172/20.png",
+      "url": "https://media.forgecdn.net/attachments/826/79/20.png"
+    }
+  ],
+  "mainFileId": 5183722,
+  "latestFiles": [
+    {
+      "id": 5183722,
+      "gameId": 83374,
+      "modId": 975626,
+      "isAvailable": true,
+      "displayName": "reverence-windows 10.zip",
+      "fileName": "reverence-windows 10.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "3f76a9f123296edc6f472e37d9c3fe54c6baddca",
+          "algo": 1
+        },
+        {
+          "value": "d96194acd7168f1012e994ae820f445a",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-15T03:56:26.243Z",
+      "fileLength": 6263383949,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 6354546234,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 1372001469,
+      "modules": [
+        {
+          "name": "Gardenia",
+          "fingerprint": 2802534844
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5183722,
+      "filename": "reverence-windows 10.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2024-02-16T21:17:58.98Z",
+  "dateModified": "2024-03-18T07:00:37.283Z",
+  "dateReleased": "2024-03-15T03:56:26.677Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 164,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

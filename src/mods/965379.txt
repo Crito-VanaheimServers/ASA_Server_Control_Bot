@@ -1,0 +1,190 @@
+{
+  "id": 965379,
+  "gameId": 83374,
+  "name": "Amissa",
+  "slug": "amissa",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/amissa",
+    "wikiUrl": "https://discord.gg/CzvWvD2WcV",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Beautiful fantasy map with a past civilization which was fighting back the tek.",
+  "status": 4,
+  "downloadCount": 88616,
+  "isFeatured": false,
+  "primaryCategoryId": 6077,
+  "categories": [
+    {
+      "id": 6077,
+      "gameId": 83374,
+      "name": "Maps",
+      "slug": "maps",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/maps",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/864/638126560389358852.png",
+      "dateModified": "2023-02-22T09:47:18.94Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 106113386,
+      "name": "sicco0803",
+      "url": "https://www.curseforge.com/members/sicco0803"
+    }
+  ],
+  "logo": {
+    "id": 937103,
+    "modId": 965379,
+    "title": "638415006418343006.jpeg",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/937/103/256/256/638415006418343006.jpeg",
+    "url": "https://media.forgecdn.net/avatars/937/103/638415006418343006.jpeg"
+  },
+  "screenshots": [
+    {
+      "id": 794225,
+      "modId": 965379,
+      "title": "Image4",
+      "description": "Image4",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/225/310/172/image_4.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/225/image_4.jpg"
+    },
+    {
+      "id": 794223,
+      "modId": 965379,
+      "title": "Image2",
+      "description": "Image2",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/223/310/172/image_2.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/223/image_2.jpg"
+    },
+    {
+      "id": 794229,
+      "modId": 965379,
+      "title": "Image8",
+      "description": "Image8",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/229/310/172/image_8.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/229/image_8.jpg"
+    },
+    {
+      "id": 794230,
+      "modId": 965379,
+      "title": "Image9",
+      "description": "Image9",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/230/310/172/image_9.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/230/image_9.jpg"
+    },
+    {
+      "id": 794226,
+      "modId": 965379,
+      "title": "Image5",
+      "description": "Image5",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/226/310/172/image_5.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/226/image_5.jpg"
+    },
+    {
+      "id": 794227,
+      "modId": 965379,
+      "title": "Image6",
+      "description": "Image6",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/227/310/172/image_6.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/227/image_6.jpg"
+    },
+    {
+      "id": 794224,
+      "modId": 965379,
+      "title": "Image3",
+      "description": "Image3",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/224/310/172/image_3.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/224/image_3.jpg"
+    },
+    {
+      "id": 794228,
+      "modId": 965379,
+      "title": "Image7",
+      "description": "Image7",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/228/310/172/image_7.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/228/image_7.jpg"
+    },
+    {
+      "id": 794221,
+      "modId": 965379,
+      "title": "Image1",
+      "description": "Image1",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/794/221/310/172/image_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/794/221/image_1.jpg"
+    }
+  ],
+  "mainFileId": 5186750,
+  "latestFiles": [
+    {
+      "id": 5186750,
+      "gameId": 83374,
+      "modId": 965379,
+      "isAvailable": true,
+      "displayName": "amissa-windows 10.zip",
+      "fileName": "amissa-windows 10.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "24e53221c1306ae0151b2240a4a2f21f3abc509f",
+          "algo": 1
+        },
+        {
+          "value": "e39beff48d8692d3935b93f8e85732df",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-16T12:58:15.313Z",
+      "fileLength": 4758712711,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 4808874483,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 2263153360,
+      "modules": [
+        {
+          "name": "Amissa",
+          "fingerprint": 2481008416
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5186750,
+      "filename": "amissa-windows 10.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2024-01-22T05:35:14.99Z",
+  "dateModified": "2024-03-18T07:00:39.56Z",
+  "dateReleased": "2024-03-16T12:58:15.733Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 151,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

@@ -1,1 +1,154 @@
-2024-02-10T00:18:52.387Z
+{
+  "id": 926956,
+  "gameId": 83374,
+  "name": "Additions Ascended: Archelon",
+  "slug": "additions-ascended-archelon",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/additions-ascended-archelon",
+    "wikiUrl": "https://discord.gg/BxpAGg9Huu",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Adds Archelon from ARK Additions",
+  "status": 4,
+  "downloadCount": 1621128,
+  "isFeatured": false,
+  "primaryCategoryId": 6074,
+  "categories": [
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6074,
+      "gameId": 83374,
+      "name": "Creatures",
+      "slug": "creatures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/creatures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/861/638126560008756045.png",
+      "dateModified": "2023-02-22T09:46:40.88Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105016778,
+      "name": "Garuga123",
+      "url": "https://www.curseforge.com/members/garuga123"
+    }
+  ],
+  "logo": {
+    "id": 893991,
+    "modId": 926956,
+    "title": "638337294844919798.octet-stream",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/893/991/256/256/638337294844919798.octet-stream",
+    "url": "https://media.forgecdn.net/avatars/893/991/638337294844919798.octet-stream"
+  },
+  "screenshots": [
+    {
+      "id": 750733,
+      "modId": 926956,
+      "title": "Turtle3",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/733/310/172/desktop_screenshot_2023.png",
+      "url": "https://media.forgecdn.net/attachments/750/733/desktop_screenshot_2023.png"
+    },
+    {
+      "id": 750732,
+      "modId": 926956,
+      "title": "Turtle2",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/732/310/172/20231027212754_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/732/20231027212754_1.jpg"
+    },
+    {
+      "id": 748329,
+      "modId": 926956,
+      "title": "Turtle",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/748/329/310/172/archelonasa_modbanner.png",
+      "url": "https://media.forgecdn.net/attachments/748/329/archelonasa_modbanner.png"
+    }
+  ],
+  "mainFileId": 5203865,
+  "latestFiles": [
+    {
+      "id": 5203865,
+      "gameId": 83374,
+      "modId": 926956,
+      "isAvailable": true,
+      "displayName": "additions ascended_ archelon-windows 9.zip",
+      "fileName": "additions ascended_ archelon-windows 9.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "162bda676893ed7124cf7911183c6e80da8db5ce",
+          "algo": 1
+        },
+        {
+          "value": "e4df793ad7dfb9e7b1484f6e4bbff4d1",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-22T23:27:23.827Z",
+      "fileLength": 56701527,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 57383758,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 2191055881,
+      "modules": [
+        {
+          "name": "AAArchelon",
+          "fingerprint": 2742511734
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5203865,
+      "filename": "additions ascended_ archelon-windows 9.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-24T07:31:24.42Z",
+  "dateModified": "2024-03-24T15:20:55.17Z",
+  "dateReleased": "2024-03-22T23:27:24.207Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 8,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

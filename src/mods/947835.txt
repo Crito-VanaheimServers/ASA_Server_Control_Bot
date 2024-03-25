@@ -1,1 +1,170 @@
-2024-01-21T01:10:26.623Z
+{
+  "id": 947835,
+  "gameId": 83374,
+  "name": "Human_NPCs_ASA",
+  "slug": "human_npcs_asa",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/human_npcs_asa",
+    "wikiUrl": "https://discord.gg/q2aNmUsYSP",
+    "issuesUrl": "",
+    "sourceUrl": null
+  },
+  "summary": "Human NPCs_ASA add Humans to the world of ARK: Survival Ascended.",
+  "status": 4,
+  "downloadCount": 419911,
+  "isFeatured": false,
+  "primaryCategoryId": 6074,
+  "categories": [
+    {
+      "id": 6074,
+      "gameId": 83374,
+      "name": "Creatures",
+      "slug": "creatures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/creatures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/861/638126560008756045.png",
+      "dateModified": "2023-02-22T09:46:40.88Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105994341,
+      "name": "ZoneKi11er",
+      "url": "https://www.curseforge.com/members/zoneki11er"
+    }
+  ],
+  "logo": {
+    "id": 919333,
+    "modId": 947835,
+    "title": "638381495762540082.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/919/333/256/256/638381495762540082.png",
+    "url": "https://media.forgecdn.net/avatars/919/333/638381495762540082.png"
+  },
+  "screenshots": [
+    {
+      "id": 787787,
+      "modId": 947835,
+      "title": "Small Village",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/787/787/310/172/smallvillage.png",
+      "url": "https://media.forgecdn.net/attachments/787/787/smallvillage.png"
+    },
+    {
+      "id": 787791,
+      "modId": 947835,
+      "title": "Snow Village",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/787/791/310/172/snowvillage.png",
+      "url": "https://media.forgecdn.net/attachments/787/791/snowvillage.png"
+    },
+    {
+      "id": 776836,
+      "modId": 947835,
+      "title": "NPC_Spino",
+      "description": "They will fight big dinos",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/776/836/310/172/rudy.png",
+      "url": "https://media.forgecdn.net/attachments/776/836/rudy.png"
+    },
+    {
+      "id": 787786,
+      "modId": 947835,
+      "title": "Npc Bird Attack",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/787/786/310/172/npcbirdattack.png",
+      "url": "https://media.forgecdn.net/attachments/787/786/npcbirdattack.png"
+    },
+    {
+      "id": 777865,
+      "modId": 947835,
+      "title": "Love The Mod",
+      "description": "NPCs doing what NPCs Do",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/777/865/310/172/lovethemod.png",
+      "url": "https://media.forgecdn.net/attachments/777/865/lovethemod.png"
+    }
+  ],
+  "mainFileId": 5048673,
+  "latestFiles": [
+    {
+      "id": 5048673,
+      "gameId": 83374,
+      "modId": 947835,
+      "isAvailable": true,
+      "displayName": "human_npcs_asa-windows 11.zip",
+      "fileName": "human_npcs_asa-windows 11.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "16ff1de36e1a79ac2f849097bcd95e3021e758e0",
+          "algo": 1
+        },
+        {
+          "value": "ce2409a3654787d4ddf40e686e0c279f",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-01-21T01:10:26.267Z",
+      "fileLength": 102032711,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 102985717,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 3804384097,
+      "modules": [
+        {
+          "name": "Human_NPCs_ASA",
+          "fingerprint": 2967380331
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5048673,
+      "filename": "human_npcs_asa-windows 11.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-12-08T05:44:19.36Z",
+  "dateModified": "2024-01-31T08:01:32.42Z",
+  "dateReleased": "2024-01-21T01:10:26.623Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 59,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

@@ -1,1 +1,129 @@
-2023-11-23T15:45:09.043Z
+{
+  "id": 928708,
+  "gameId": 83374,
+  "name": "Custom Dino Levels",
+  "slug": "custom-dino-levels",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/custom-dino-levels",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Level distribution mod. ",
+  "status": 4,
+  "downloadCount": 1139081,
+  "isFeatured": false,
+  "primaryCategoryId": 6079,
+  "categories": [
+    {
+      "id": 6074,
+      "gameId": 83374,
+      "name": "Creatures",
+      "slug": "creatures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/creatures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/861/638126560008756045.png",
+      "dateModified": "2023-02-22T09:46:40.88Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6079,
+      "gameId": 83374,
+      "name": "Rebalancing",
+      "slug": "rebalancing",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/rebalancing",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/866/638126560604640170.png",
+      "dateModified": "2023-02-22T09:47:40.467Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105726769,
+      "name": "kitzykatty",
+      "url": "https://www.curseforge.com/members/kitzykatty"
+    }
+  ],
+  "logo": {
+    "id": 895998,
+    "modId": 928708,
+    "title": "638341001824710728.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/895/998/256/256/638341001824710728.png",
+    "url": "https://media.forgecdn.net/avatars/895/998/638341001824710728.png"
+  },
+  "screenshots": [],
+  "mainFileId": 4894071,
+  "latestFiles": [
+    {
+      "id": 4894071,
+      "gameId": 83374,
+      "modId": 928708,
+      "isAvailable": true,
+      "displayName": "custom dino levels-windows 3.zip",
+      "fileName": "custom dino levels-windows 3.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "8e4ad539ef8732cb73a02d5259331ca3b14f40da",
+          "algo": 1
+        },
+        {
+          "value": "6ab99ac1664f4551571c5cc03a3494d1",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-11-23T15:45:08.59Z",
+      "fileLength": 718375,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 720021,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 3383766598,
+      "modules": [
+        {
+          "name": "LevelTestingMod",
+          "fingerprint": 3904569967
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4894071,
+      "filename": "custom dino levels-windows 3.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-28T14:29:42.323Z",
+  "dateModified": "2023-11-26T14:15:34.753Z",
+  "dateReleased": "2023-11-23T15:45:09.043Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 11,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

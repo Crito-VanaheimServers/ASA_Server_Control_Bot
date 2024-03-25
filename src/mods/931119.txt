@@ -1,1 +1,158 @@
-2024-02-09T13:13:59.09Z
+{
+  "id": 931119,
+  "gameId": 83374,
+  "name": "WBUI2",
+  "slug": "wbui2",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/wbui2",
+    "wikiUrl": "https://github.com/DC-Modding/WBUI2-Wiki/wiki",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Simple editable UI to display information",
+  "status": 4,
+  "downloadCount": 682523,
+  "isFeatured": false,
+  "primaryCategoryId": 6076,
+  "categories": [
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105726704,
+      "name": "DonCamillo",
+      "url": "https://www.curseforge.com/members/doncamillo"
+    }
+  ],
+  "logo": {
+    "id": 914350,
+    "modId": 931119,
+    "title": "638371402211207586.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/914/350/256/256/638371402211207586.png",
+    "url": "https://media.forgecdn.net/avatars/914/350/638371402211207586.png"
+  },
+  "screenshots": [
+    {
+      "id": 754898,
+      "modId": 931119,
+      "title": "3 Box Layout",
+      "description": "Example of the 3 Box Layout",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/754/898/310/172/screenshot-2023-11-05-071103.png",
+      "url": "https://media.forgecdn.net/attachments/754/898/screenshot-2023-11-05-071103.png"
+    },
+    {
+      "id": 754899,
+      "modId": 931119,
+      "title": "4 Box Layout",
+      "description": "Example of the 4 Box Layout",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/754/899/310/172/screenshot-2023-11-05-071109.png",
+      "url": "https://media.forgecdn.net/attachments/754/899/screenshot-2023-11-05-071109.png"
+    },
+    {
+      "id": 754897,
+      "modId": 931119,
+      "title": "2 Box Layout",
+      "description": "Example of the 2 Box Layout",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/754/897/310/172/screenshot-2023-11-05-071056.png",
+      "url": "https://media.forgecdn.net/attachments/754/897/screenshot-2023-11-05-071056.png"
+    },
+    {
+      "id": 751727,
+      "modId": 931119,
+      "title": "Example-Image",
+      "description": "Example image of the UI",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/751/727/310/172/image.png",
+      "url": "https://media.forgecdn.net/attachments/751/727/image.png"
+    },
+    {
+      "id": 754896,
+      "modId": 931119,
+      "title": "1 Box Layout",
+      "description": "Example of the 1 Box Layout",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/754/896/310/172/screenshot-2023-11-05-071045.png",
+      "url": "https://media.forgecdn.net/attachments/754/896/screenshot-2023-11-05-071045.png"
+    }
+  ],
+  "mainFileId": 5092868,
+  "latestFiles": [
+    {
+      "id": 5092868,
+      "gameId": 83374,
+      "modId": 931119,
+      "isAvailable": true,
+      "displayName": "wbui2-windows 56.zip",
+      "fileName": "wbui2-windows 56.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "07b12e2a7333e3b45490c828f88da3a9213c4d87",
+          "algo": 1
+        },
+        {
+          "value": "1b42ca82e7455a250e2d03758b3aab47",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-02-09T13:13:58.727Z",
+      "fileLength": 163956,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 187539,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 714799610,
+      "modules": [
+        {
+          "name": "WBUI2",
+          "fingerprint": 2901584752
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5092868,
+      "filename": "wbui2-windows 56.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-31T18:15:06.297Z",
+  "dateModified": "2024-02-11T14:06:35.513Z",
+  "dateReleased": "2024-02-09T13:13:59.09Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 79,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

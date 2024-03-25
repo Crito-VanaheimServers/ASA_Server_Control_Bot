@@ -1,1 +1,136 @@
-2024-01-28T14:22:26.62Z
+{
+  "id": 929713,
+  "gameId": 83374,
+  "name": "TG Stacking Mod 1000-90",
+  "slug": "tg-stacking-mod-1000-90",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/tg-stacking-mod-1000-90",
+    "wikiUrl": "https://tecify.gg/discord",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "1.000 Stacks / -90% Weight",
+  "status": 4,
+  "downloadCount": 260847,
+  "isFeatured": false,
+  "primaryCategoryId": 6076,
+  "categories": [
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105730605,
+      "name": "Paeaet",
+      "url": "https://www.curseforge.com/members/paeaet"
+    },
+    {
+      "id": 105742826,
+      "name": "Agonoiz",
+      "url": "https://www.curseforge.com/members/agonoiz"
+    },
+    {
+      "id": 105756021,
+      "name": "Tiamat913",
+      "url": "https://www.curseforge.com/members/tiamat913"
+    }
+  ],
+  "logo": {
+    "id": 897081,
+    "modId": 929713,
+    "title": "638342132348015269.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/897/81/256/256/638342132348015269.png",
+    "url": "https://media.forgecdn.net/avatars/897/81/638342132348015269.png"
+  },
+  "screenshots": [
+    {
+      "id": 750286,
+      "modId": 929713,
+      "title": "TECIFY ARK Wallpaper",
+      "description": "a Wallpaper",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/286/310/172/wallpaper_ark.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/286/wallpaper_ark.jpg"
+    }
+  ],
+  "mainFileId": 5178025,
+  "latestFiles": [
+    {
+      "id": 5178025,
+      "gameId": 83374,
+      "modId": 929713,
+      "isAvailable": true,
+      "displayName": "tg stacking mod 1000-90-windows 11.zip",
+      "fileName": "tg stacking mod 1000-90-windows 11.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "d63d9a6473fb29ac38e818ff039370822f0a8229",
+          "algo": 1
+        },
+        {
+          "value": "9c9550773a238d2fbf06a94f18b5695a",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-12T23:00:59.233Z",
+      "fileLength": 2111179,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 2347740,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 4221093483,
+      "modules": [
+        {
+          "name": "TG_Stack_1000_90",
+          "fingerprint": 2171831788
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5178025,
+      "filename": "tg stacking mod 1000-90-windows 11.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-29T21:23:03.593Z",
+  "dateModified": "2024-03-13T13:10:45.41Z",
+  "dateReleased": "2024-03-12T23:00:59.687Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 125,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

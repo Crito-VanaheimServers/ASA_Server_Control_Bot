@@ -34,7 +34,6 @@ function playerCounts(clients) {
             });
         })
     } catch (error) {
-        console.error('Error in playerCounts:', error);
         return
     }
 }

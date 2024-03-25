@@ -1,1 +1,150 @@
-2024-01-19T13:58:26.61Z
+{
+  "id": 933099,
+  "gameId": 83374,
+  "name": "Super Cryo Storage",
+  "slug": "super-cryo-storage",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/super-cryo-storage",
+    "wikiUrl": "https://discord.gg/W3UckeevZz",
+    "issuesUrl": "",
+    "sourceUrl": null
+  },
+  "summary": "The perfect way to store your dinos! Store the dinos faster and deploy so much faster",
+  "status": 4,
+  "downloadCount": 995250,
+  "isFeatured": false,
+  "primaryCategoryId": 6076,
+  "categories": [
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105553821,
+      "name": "brunoamaraltm",
+      "url": "https://www.curseforge.com/members/brunoamaraltm"
+    }
+  ],
+  "logo": {
+    "id": 912940,
+    "modId": 933099,
+    "title": "638368762076395476.jpeg",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/912/940/256/256/638368762076395476.jpeg",
+    "url": "https://media.forgecdn.net/avatars/912/940/638368762076395476.jpeg"
+  },
+  "screenshots": [
+    {
+      "id": 774924,
+      "modId": 933099,
+      "title": "Cryo Terminal Settings",
+      "description": "If you are the player, you can use the options available in the Cryo Terminal inventory previous configured by an admin.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/774/924/310/172/captura-de-tela-2023-12-15-114326.png",
+      "url": "https://media.forgecdn.net/attachments/774/924/captura-de-tela-2023-12-15-114326.png"
+    },
+    {
+      "id": 766377,
+      "modId": 933099,
+      "title": "Admin Settings",
+      "description": "If you are a server owner, you can customize the mod as you wish in realtime!",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/766/377/310/172/admin-settings.png",
+      "url": "https://media.forgecdn.net/attachments/766/377/admin-settings.png"
+    },
+    {
+      "id": 766375,
+      "modId": 933099,
+      "title": "Custom UI",
+      "description": "The mod uses a custom UI that shows a lot of dino details including the equipped saddle, the mating time and the time until the baby grow up",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/766/375/310/172/customui.png",
+      "url": "https://media.forgecdn.net/attachments/766/375/customui.png"
+    },
+    {
+      "id": 766389,
+      "modId": 933099,
+      "title": "Easy Dino Selection",
+      "description": "You can hold R (X if is xbox or Square if PS) to open the screen to choose the dino to deploy. If you deploy a dino, the next will be auto equipped. If you want an empty cryopod, just press the same button used to open the screen twice!",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/766/389/310/172/dinowheel.png",
+      "url": "https://media.forgecdn.net/attachments/766/389/dinowheel.png"
+    }
+  ],
+  "mainFileId": 5045324,
+  "latestFiles": [
+    {
+      "id": 5045324,
+      "gameId": 83374,
+      "modId": 933099,
+      "isAvailable": true,
+      "displayName": "super cryo storage-windows 103.zip",
+      "fileName": "super cryo storage-windows 103.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "ba966a7b07b9e273c14cb0035a2104223c9d9c3d",
+          "algo": 1
+        },
+        {
+          "value": "ea2b0ba0d2f6f0da15a4791a4d3452db",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-01-19T13:58:26.187Z",
+      "fileLength": 34311090,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 35011047,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 2327621056,
+      "modules": [
+        {
+          "name": "SCS",
+          "fingerprint": 1033923492
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5045324,
+      "filename": "super cryo storage-windows 103.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-11-04T02:17:19.107Z",
+  "dateModified": "2024-02-28T22:39:29.847Z",
+  "dateReleased": "2024-01-19T13:58:26.61Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 61,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

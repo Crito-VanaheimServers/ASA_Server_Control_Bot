@@ -1,1 +1,182 @@
-2023-12-29T15:35:16.453Z
+{
+  "id": 930128,
+  "gameId": 83374,
+  "name": "Klinger Additional Boats",
+  "slug": "klinger-additional-boats-server",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/klinger-additional-boats-server",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "A small Catamaran with greater capabilities.",
+  "status": 4,
+  "downloadCount": 407906,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105719009,
+      "name": "klingerMartins",
+      "url": "https://www.curseforge.com/members/klingermartins"
+    }
+  ],
+  "logo": {
+    "id": 897472,
+    "modId": 930128,
+    "title": "638342681267030300.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/897/472/256/256/638342681267030300.png",
+    "url": "https://media.forgecdn.net/avatars/897/472/638342681267030300.png"
+  },
+  "screenshots": [
+    {
+      "id": 750812,
+      "modId": 930128,
+      "title": "06",
+      "description": "06",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/812/310/172/ark07.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/812/ark07.jpg"
+    },
+    {
+      "id": 750555,
+      "modId": 930128,
+      "title": "02",
+      "description": "02",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/555/310/172/20231029222934_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/555/20231029222934_1.jpg"
+    },
+    {
+      "id": 753982,
+      "modId": 930128,
+      "title": "Raft, Catamaran Sizes",
+      "description": "Raft, Catamaran  Sizes",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/753/982/310/172/20231104092313_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/753/982/20231104092313_1.jpg"
+    },
+    {
+      "id": 750554,
+      "modId": 930128,
+      "title": "01",
+      "description": "01",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/554/310/172/20231030020139_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/554/20231030020139_1.jpg"
+    },
+    {
+      "id": 750815,
+      "modId": 930128,
+      "title": "07",
+      "description": "07",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/815/310/172/ark04.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/815/ark04.jpg"
+    },
+    {
+      "id": 750811,
+      "modId": 930128,
+      "title": "05",
+      "description": "05",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/811/310/172/ark01.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/811/ark01.jpg"
+    },
+    {
+      "id": 750557,
+      "modId": 930128,
+      "title": "04",
+      "description": "04",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/557/310/172/01.png",
+      "url": "https://media.forgecdn.net/attachments/750/557/01.png"
+    },
+    {
+      "id": 750556,
+      "modId": 930128,
+      "title": "03",
+      "description": "03",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/556/310/172/04.png",
+      "url": "https://media.forgecdn.net/attachments/750/556/04.png"
+    }
+  ],
+  "mainFileId": 4992222,
+  "latestFiles": [
+    {
+      "id": 4992222,
+      "gameId": 83374,
+      "modId": 930128,
+      "isAvailable": true,
+      "displayName": "klinger additional boats-windows 9.zip",
+      "fileName": "klinger additional boats-windows 9.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "c6d0caecaf62f1778eec09cb60eb8dd0a7aaa484",
+          "algo": 1
+        },
+        {
+          "value": "b7ba816f57778801accef0970fb174cd",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-12-29T15:35:16.113Z",
+      "fileLength": 20232401,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 20756676,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 1394038461,
+      "modules": [
+        {
+          "name": "KAB",
+          "fingerprint": 3015386634
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4992222,
+      "filename": "klinger additional boats-windows 9.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-30T13:08:46.587Z",
+  "dateModified": "2024-02-01T07:57:26.59Z",
+  "dateReleased": "2023-12-29T15:35:16.453Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 75,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

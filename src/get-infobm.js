@@ -17,7 +17,6 @@ async function serverBMInfo(clients) {
         const serverInfo = await battleMetrics.getServerInfoById(options.serverID);
         return serverInfo;
     } catch (error) {
-        console.error('Error in serverBMInfo function:', error);
-        throw new Error('Error in serverBMInfo function');
+        return
     }
 };

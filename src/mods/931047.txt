@@ -1,1 +1,126 @@
-2024-02-11T11:17:00.003Z
+{
+  "id": 931047,
+  "gameId": 83374,
+  "name": "AutoDoors",
+  "slug": "autodoors",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/autodoors",
+    "wikiUrl": "",
+    "issuesUrl": "https://github.com/Jods-GH/AutoDoors/issues",
+    "sourceUrl": "https://github.com/Jods-GH/AutoDoors"
+  },
+  "summary": "Adds the beloved automatic doors that we all got used to in AsE when using S+",
+  "status": 4,
+  "downloadCount": 1223749,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 13431431,
+      "name": "Jods",
+      "url": "https://www.curseforge.com/members/jods"
+    }
+  ],
+  "logo": {
+    "id": 902874,
+    "modId": 931047,
+    "title": "638351497911230341.jpeg",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/902/874/256/256/638351497911230341.jpeg",
+    "url": "https://media.forgecdn.net/avatars/902/874/638351497911230341.jpeg"
+  },
+  "screenshots": [
+    {
+      "id": 756749,
+      "modId": 931047,
+      "title": "AutoDoor",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/756/749/310/172/autodoorimage.jpg",
+      "url": "https://media.forgecdn.net/attachments/756/749/autodoorimage.jpg"
+    }
+  ],
+  "mainFileId": 5189130,
+  "latestFiles": [
+    {
+      "id": 5189130,
+      "gameId": 83374,
+      "modId": 931047,
+      "isAvailable": true,
+      "displayName": "autodoors-windows 34.zip",
+      "fileName": "autodoors-windows 34.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "3f173421d12881a799d1d5326ac8ac59c7065d4c",
+          "algo": 1
+        },
+        {
+          "value": "c74cd1a21bffade0347d6ef684326d66",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-17T11:00:43.187Z",
+      "fileLength": 426831,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 640339,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 1883672891,
+      "modules": [
+        {
+          "name": "AutoDoors",
+          "fingerprint": 3908216605
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5189130,
+      "filename": "autodoors-windows 34.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-31T15:13:50.47Z",
+  "dateModified": "2024-03-17T12:07:35.75Z",
+  "dateReleased": "2024-03-17T11:00:43.59Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 35,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

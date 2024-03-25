@@ -1,1 +1,166 @@
-2024-03-02T14:33:31.383Z
+{
+  "id": 940786,
+  "gameId": 83374,
+  "name": "Wall'n'Floor Decor",
+  "slug": "wallnfloor-decor",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/wallnfloor-decor",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Decor mod for ASA",
+  "status": 4,
+  "downloadCount": 435758,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105768398,
+      "name": "Glitch_DK",
+      "url": "https://www.curseforge.com/members/glitch_dk"
+    }
+  ],
+  "logo": {
+    "id": 908734,
+    "modId": 940786,
+    "title": "638361044971064639.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/908/734/256/256/638361044971064639.png",
+    "url": "https://media.forgecdn.net/avatars/908/734/638361044971064639.png"
+  },
+  "screenshots": [
+    {
+      "id": 779877,
+      "modId": 940786,
+      "title": "Rhino on a Wall mount",
+      "description": "A rhino head on a Stained Glass trophy mount",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/779/877/310/172/rhino.png",
+      "url": "https://media.forgecdn.net/attachments/779/877/rhino.png"
+    },
+    {
+      "id": 761866,
+      "modId": 940786,
+      "title": "Trophies",
+      "description": "Some Of The Trophies Mounted On The Trophy Mounts",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/761/866/310/172/walldecortrophies.png",
+      "url": "https://media.forgecdn.net/attachments/761/866/walldecortrophies.png"
+    },
+    {
+      "id": 761867,
+      "modId": 940786,
+      "title": "Rex Skulls",
+      "description": "The Rex Skull Statues",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/761/867/310/172/rexskullstatues.png",
+      "url": "https://media.forgecdn.net/attachments/761/867/rexskullstatues.png"
+    },
+    {
+      "id": 779878,
+      "modId": 940786,
+      "title": "Dinos on pedestal",
+      "description": "Statues",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/779/878/310/172/pedestal.png",
+      "url": "https://media.forgecdn.net/attachments/779/878/pedestal.png"
+    },
+    {
+      "id": 769838,
+      "modId": 940786,
+      "title": "Decor",
+      "description": "Different decor items",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/769/838/310/172/bild1.jpg",
+      "url": "https://media.forgecdn.net/attachments/769/838/bild1.jpg"
+    },
+    {
+      "id": 769840,
+      "modId": 940786,
+      "title": "Creature statues",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/769/840/310/172/bil3.png",
+      "url": "https://media.forgecdn.net/attachments/769/840/bil3.png"
+    }
+  ],
+  "mainFileId": 5203619,
+  "latestFiles": [
+    {
+      "id": 5203619,
+      "gameId": 83374,
+      "modId": 940786,
+      "isAvailable": true,
+      "displayName": "wall_n_floor decor-windows 32.zip",
+      "fileName": "wall_n_floor decor-windows 32.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "971089dce7fbcfa5d28c1d1097922733de06f8cb",
+          "algo": 1
+        },
+        {
+          "value": "61889356c7283201ac50f458e3bbe991",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-22T21:13:16.067Z",
+      "fileLength": 248970088,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 256553860,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 613218579,
+      "modules": [
+        {
+          "name": "WallAndFloorDecor",
+          "fingerprint": 3370619939
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5203619,
+      "filename": "wall_n_floor decor-windows 32.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-11-20T19:14:56.95Z",
+  "dateModified": "2024-03-24T15:20:34.623Z",
+  "dateReleased": "2024-03-22T21:13:16.427Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 59,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

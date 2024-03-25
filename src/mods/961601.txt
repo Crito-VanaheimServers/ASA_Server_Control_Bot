@@ -1,1 +1,243 @@
-2024-02-29T00:27:13.1Z
+{
+  "id": 961601,
+  "gameId": 83374,
+  "name": "Cliffans Wardrobe (CDM) [Armor & Clothing]",
+  "slug": "cliffans-wardrobe",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/cliffans-wardrobe",
+    "wikiUrl": "https://discord.gg/DYHdfsS",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "A huge variety of high quality clothing skins!",
+  "status": 4,
+  "downloadCount": 266111,
+  "isFeatured": false,
+  "primaryCategoryId": 6078,
+  "categories": [
+    {
+      "id": 6078,
+      "gameId": 83374,
+      "name": "Outfits",
+      "slug": "outfits",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/outfits",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/865/638126560492493899.png",
+      "dateModified": "2023-02-22T09:47:29.25Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6081,
+      "gameId": 83374,
+      "name": "Visuals and Sounds",
+      "slug": "visuals-and-sounds",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/visuals-and-sounds",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/868/638126560930785638.png",
+      "dateModified": "2023-02-22T09:48:13.083Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105681184,
+      "name": "Cliffan_",
+      "url": "https://www.curseforge.com/members/cliffan_"
+    },
+    {
+      "id": 106054124,
+      "name": "whimsical_whit",
+      "url": "https://www.curseforge.com/members/whimsical_whit"
+    }
+  ],
+  "logo": {
+    "id": 932676,
+    "modId": 961601,
+    "title": "638407555887721405.octet-stream",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/932/676/256/256/638407555887721405.octet-stream",
+    "url": "https://media.forgecdn.net/avatars/932/676/638407555887721405.octet-stream"
+  },
+  "screenshots": [
+    {
+      "id": 789365,
+      "modId": 961601,
+      "title": "Dragon Knight",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/365/310/172/20240113202741_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/365/20240113202741_1.jpg"
+    },
+    {
+      "id": 789372,
+      "modId": 961601,
+      "title": "Dragon Knight 3",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/372/310/172/20240113233507_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/372/20240113233507_1.jpg"
+    },
+    {
+      "id": 789378,
+      "modId": 961601,
+      "title": "Magician Set",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/378/310/172/20240113202855_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/378/20240113202855_1.jpg"
+    },
+    {
+      "id": 806927,
+      "modId": 961601,
+      "title": "Eastern Assassin Set",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/806/927/310/172/20240209230031_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/806/927/20240209230031_1.jpg"
+    },
+    {
+      "id": 789383,
+      "modId": 961601,
+      "title": "Whit Corset",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/383/310/172/20240113203657_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/383/20240113203657_1.jpg"
+    },
+    {
+      "id": 806925,
+      "modId": 961601,
+      "title": "Heavy Desert Set",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/806/925/310/172/20240209225952_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/806/925/20240209225952_1.jpg"
+    },
+    {
+      "id": 789377,
+      "modId": 961601,
+      "title": "Assassin Set 2",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/377/310/172/20240113203543_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/377/20240113203543_1.jpg"
+    },
+    {
+      "id": 806923,
+      "modId": 961601,
+      "title": "Screenshot sent in by Helvi",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/806/923/310/172/91d40579-7759-43a6-badd-d899c732b368.jpg",
+      "url": "https://media.forgecdn.net/attachments/806/923/91d40579-7759-43a6-badd-d899c732b368.jpg"
+    },
+    {
+      "id": 789376,
+      "modId": 961601,
+      "title": "Assassin Set",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/376/310/172/20240113202634_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/376/20240113202634_1.jpg"
+    },
+    {
+      "id": 806924,
+      "modId": 961601,
+      "title": "Assassin Set (Cape down)",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/806/924/310/172/20240209230214_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/806/924/20240209230214_1.jpg"
+    },
+    {
+      "id": 789369,
+      "modId": 961601,
+      "title": "Dragon Knight 2",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/369/310/172/20240113203235_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/369/20240113203235_1.jpg"
+    },
+    {
+      "id": 789380,
+      "modId": 961601,
+      "title": "Wizard Set",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/789/380/310/172/20240113203002_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/789/380/20240113203002_1.jpg"
+    }
+  ],
+  "mainFileId": 5144561,
+  "latestFiles": [
+    {
+      "id": 5144561,
+      "gameId": 83374,
+      "modId": 961601,
+      "isAvailable": true,
+      "displayName": "cliffans wardrobe (cdm) [armor & clothing]-windows 6.zip",
+      "fileName": "cliffans wardrobe (cdm) [armor & clothing]-windows 6.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "c880a6c2e55ee1b98390d8256a8de95124d83a16",
+          "algo": 1
+        },
+        {
+          "value": "fd472800e19ced5254e3381145916e3d",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-02-29T00:27:12.697Z",
+      "fileLength": 725456307,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 737303818,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 987711604,
+      "modules": [
+        {
+          "name": "CliffansWardrobe",
+          "fingerprint": 272839854
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5144561,
+      "filename": "cliffans wardrobe (cdm) [armor & clothing]-windows 6.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2024-01-13T15:13:08.63Z",
+  "dateModified": "2024-02-29T14:25:28.657Z",
+  "dateReleased": "2024-02-29T00:27:13.1Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 47,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

@@ -1,1 +1,154 @@
-2023-11-21T13:06:27.27Z
+{
+  "id": 912902,
+  "gameId": 83374,
+  "name": "Additions Ascended: Deinosuchus",
+  "slug": "additions-ascended-deinosuchus",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/additions-ascended-deinosuchus",
+    "wikiUrl": "https://discord.gg/BxpAGg9Huu",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Adds Deinosuchus from ARK Additions",
+  "status": 4,
+  "downloadCount": 2082367,
+  "isFeatured": false,
+  "primaryCategoryId": 6074,
+  "categories": [
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6074,
+      "gameId": 83374,
+      "name": "Creatures",
+      "slug": "creatures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/creatures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/861/638126560008756045.png",
+      "dateModified": "2023-02-22T09:46:40.88Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105016778,
+      "name": "Garuga123",
+      "url": "https://www.curseforge.com/members/garuga123"
+    }
+  ],
+  "logo": {
+    "id": 894007,
+    "modId": 912902,
+    "title": "638337319345014786.jpeg",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/894/7/256/256/638337319345014786.jpeg",
+    "url": "https://media.forgecdn.net/avatars/894/7/638337319345014786.jpeg"
+  },
+  "screenshots": [
+    {
+      "id": 750737,
+      "modId": 912902,
+      "title": "Gator2",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/737/310/172/20231029163008_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/750/737/20231029163008_1.jpg"
+    },
+    {
+      "id": 748342,
+      "modId": 912902,
+      "title": "Gator",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/748/342/310/172/deinosuchus_asa_banner.png",
+      "url": "https://media.forgecdn.net/attachments/748/342/deinosuchus_asa_banner.png"
+    },
+    {
+      "id": 750739,
+      "modId": 912902,
+      "title": "Gator3",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/739/310/172/ark_survival_ascended_screenshot_2023.png",
+      "url": "https://media.forgecdn.net/attachments/750/739/ark_survival_ascended_screenshot_2023.png"
+    }
+  ],
+  "mainFileId": 5204126,
+  "latestFiles": [
+    {
+      "id": 5204126,
+      "gameId": 83374,
+      "modId": 912902,
+      "isAvailable": true,
+      "displayName": "additions ascended_ deinosuchus-windows 9.zip",
+      "fileName": "additions ascended_ deinosuchus-windows 9.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "a70b5efcd9cd425c2d7a543bacf0826236150eed",
+          "algo": 1
+        },
+        {
+          "value": "8deb97f6d0f72d9979ca57689e58f2c5",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-23T01:15:26.167Z",
+      "fileLength": 184526354,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 185857070,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 303625826,
+      "modules": [
+        {
+          "name": "AADeinosuchus",
+          "fingerprint": 2002483770
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5204126,
+      "filename": "additions ascended_ deinosuchus-windows 9.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-09-13T22:18:00.017Z",
+  "dateModified": "2024-03-24T15:22:27.567Z",
+  "dateReleased": "2024-03-23T01:15:26.547Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 7,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

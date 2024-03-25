@@ -1,1 +1,166 @@
-2023-12-05T06:31:14.93Z
+{
+  "id": 937546,
+  "gameId": 83374,
+  "name": "Dino+ (Nanny, Hatchey)",
+  "slug": "dinoplus",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/dinoplus",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Dino+ focuses on delivering quality of life improvements to enhance your overall gaming experience.",
+  "status": 4,
+  "downloadCount": 947138,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 106013210,
+      "name": "TheMadCollector",
+      "url": "https://www.curseforge.com/members/themadcollector"
+    }
+  ],
+  "logo": {
+    "id": 908716,
+    "modId": 937546,
+    "title": "638361016362271593.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/908/716/256/256/638361016362271593.png",
+    "url": "https://media.forgecdn.net/avatars/908/716/638361016362271593.png"
+  },
+  "screenshots": [
+    {
+      "id": 759632,
+      "modId": 937546,
+      "title": "D+ Hatchery",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/632/310/172/arkascended_o1ibfw2try.png",
+      "url": "https://media.forgecdn.net/attachments/759/632/arkascended_o1ibfw2try.png"
+    },
+    {
+      "id": 759792,
+      "modId": 937546,
+      "title": "D+ Hatchery ",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/792/310/172/arkascended_h8sjiucxqp.jpg",
+      "url": "https://media.forgecdn.net/attachments/759/792/arkascended_h8sjiucxqp.jpg"
+    },
+    {
+      "id": 759631,
+      "modId": 937546,
+      "title": "D+ Hatchery Engram",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/631/310/172/arkascended_7p0bnq0jrw.png",
+      "url": "https://media.forgecdn.net/attachments/759/631/arkascended_7p0bnq0jrw.png"
+    },
+    {
+      "id": 759290,
+      "modId": 937546,
+      "title": "D+ Nanny",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/290/310/172/arkascended_p4f7dvhcmh.png",
+      "url": "https://media.forgecdn.net/attachments/759/290/arkascended_p4f7dvhcmh.png"
+    },
+    {
+      "id": 759793,
+      "modId": 937546,
+      "title": "D+ Nanny",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/793/310/172/arkascended_czajhpkyil.jpg",
+      "url": "https://media.forgecdn.net/attachments/759/793/arkascended_czajhpkyil.jpg"
+    },
+    {
+      "id": 759630,
+      "modId": 937546,
+      "title": "D+ Nanny Engram",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/630/310/172/arkascended_a6wnft02ip.png",
+      "url": "https://media.forgecdn.net/attachments/759/630/arkascended_a6wnft02ip.png"
+    }
+  ],
+  "mainFileId": 4928340,
+  "latestFiles": [
+    {
+      "id": 4928340,
+      "gameId": 83374,
+      "modId": 937546,
+      "isAvailable": true,
+      "displayName": "dino+ (nanny, hatchey)-windows 41.zip",
+      "fileName": "dino+ (nanny, hatchey)-windows 41.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "ea1dd55dbb65d7e3fd05489775c47b063cb16968",
+          "algo": 1
+        },
+        {
+          "value": "ffd83988bd0b4f7cf1dbe5419a8e760d",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-12-05T06:31:14.623Z",
+      "fileLength": 1385853,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 1537702,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 3857360142,
+      "modules": [
+        {
+          "name": "DPlusMod",
+          "fingerprint": 2547281917
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4928340,
+      "filename": "dino+ (nanny, hatchey)-windows 41.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-11-15T02:16:26.817Z",
+  "dateModified": "2023-12-12T18:27:27.377Z",
+  "dateReleased": "2023-12-05T06:31:14.93Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 28,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

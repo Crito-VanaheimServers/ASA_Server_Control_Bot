@@ -44,9 +44,8 @@ module.exports = async function discordChat([clients, chatMessage]) {
                 console.log(`${sender}: ${chatMessage.content}`);
             }
         }
-
     } catch (error) {
-        console.error('Error in discordChat:', error);
+        return
     }
 };
 

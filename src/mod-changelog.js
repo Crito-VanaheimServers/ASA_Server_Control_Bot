@@ -15,18 +15,18 @@ async function modChangeLog({ modId, fileId }) {
 
     try {
         while (true) {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: headers
-        });
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: headers
+            });
 
-        if (response.ok) {
-            const body = await response.json();
-            return body;
-          } else {
-            await new Promise(resolve => setTimeout(resolve, 30000));
-          }
-    }
+            if (response.ok) {
+                const body = await response.json();
+                return body;
+            } else {
+                await new Promise(resolve => setTimeout(resolve, 30000));
+            }
+        }
     } catch (error) {
         console.error('Error:', error);
         throw new Error('Error fetching mod change logs for: ' + modId + error.message);

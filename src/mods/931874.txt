@@ -1,1 +1,198 @@
-2024-01-29T03:18:42.523Z
+{
+  "id": 931874,
+  "gameId": 83374,
+  "name": "Arkitect Structures Remastered",
+  "slug": "arkitect-structures-remastered",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/arkitect-structures-remastered",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "A cross-platform remake of my Ark Survival Evolved structure mod, Arkitect Structures: Core.",
+  "status": 4,
+  "downloadCount": 839978,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 5710274,
+      "name": "Gimilkhad",
+      "url": "https://www.curseforge.com/members/gimilkhad"
+    }
+  ],
+  "logo": {
+    "id": 963952,
+    "modId": 931874,
+    "title": "638462017824495882.jpeg",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/963/952/256/256/638462017824495882.jpeg",
+    "url": "https://media.forgecdn.net/avatars/963/952/638462017824495882.jpeg"
+  },
+  "screenshots": [
+    {
+      "id": 758330,
+      "modId": 931874,
+      "title": "Pillar variants",
+      "description": "Medium and Thin pillar variants. Also pictured: Wood Beam variants for wood pillars.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/758/330/310/172/20231105175536_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/758/330/20231105175536_1.jpg"
+    },
+    {
+      "id": 778918,
+      "modId": 931874,
+      "title": "Behemoth Walls",
+      "description": "Fortify your base with Behemoth Walls. Available for Wood, Stone, Metal, and Tek Tiers. Can build on top of them. Includes 8x8, 2x8, 2x8 Sloped, and Intersections.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/778/918/310/172/20231223170559_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/778/918/20231223170559_1.jpg"
+    },
+    {
+      "id": 758326,
+      "modId": 931874,
+      "title": "Shallow, Normal, and Steep angle roof parts",
+      "description": "Every roof part for every tier (except Thatch, for now) has a new shallow and steep version. Steep and Shallow sloped walls (gables) are also included.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/758/326/310/172/20231105162849_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/758/326/20231105162849_1.jpg"
+    },
+    {
+      "id": 798530,
+      "modId": 931874,
+      "title": "Wood, Stone, and Metal Glass tiers",
+      "description": "Wood, Stone, and Metal Glass tiers provide greenhouse effect, while Window Panes can snap into door frames. ASR Glass includes many style options as well as adjustable opacity. Use the Structure Gun to change glass settings from a distance.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/798/530/310/172/20240122001911_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/798/530/20240122001911_1.jpg"
+    },
+    {
+      "id": 758327,
+      "modId": 931874,
+      "title": "Foundation improvements",
+      "description": "Added half tall foundations, and all foundations can stack. Can be disabled via ini.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/758/327/310/172/20231105173154_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/758/327/20231105173154_1.jpg"
+    },
+    {
+      "id": 758328,
+      "modId": 931874,
+      "title": "Greenhouse wall additions",
+      "description": "Added \"flat\" glass apperances to greenhouse wall parts, as default. The original \"Corrugated\" appearance is now a variant.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/758/328/310/172/20231105172727_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/758/328/20231105172727_1.jpg"
+    },
+    {
+      "id": 798534,
+      "modId": 931874,
+      "title": "Metal Tier Glass",
+      "description": "Metal Glass tier. Metal strength. Provides greenhouse effect. Metal window panes that snap into doorframes are also available. ASR Glass includes many style options as well as adjustable opacity.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/798/534/310/172/20240127054625_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/798/534/20240127054625_1.jpg"
+    },
+    {
+      "id": 759684,
+      "modId": 931874,
+      "title": "Preview Variant Cycling",
+      "description": "Cycle through cosmetic variants on structures before placing them. Default hotkey is T, but this can be re-bound by going to the new ASR settings menu. Open this menu from the ASR Crafting Bench radial menu.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/759/684/310/172/screenshot-2023-11-15-145139.jpg",
+      "url": "https://media.forgecdn.net/attachments/759/684/screenshot-2023-11-15-145139.jpg"
+    },
+    {
+      "id": 758329,
+      "modId": 931874,
+      "title": "Automatic Doors and Windows",
+      "description": "All doors, gates, and windows have automatic capability, menu options to adjust, and can also be controlled via ini. There is also an option to disable door sounds.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/758/329/310/172/20231105173918_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/758/329/20231105173918_1.jpg"
+    },
+    {
+      "id": 758331,
+      "modId": 931874,
+      "title": "Corner Snaps for Foundations and Ceilings",
+      "description": "In addition to the center snap, you can now snap things like dedicated storage boxes to the corners of floors and ceilings.",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/758/331/310/172/20231105175726_1.jpg",
+      "url": "https://media.forgecdn.net/attachments/758/331/20231105175726_1.jpg"
+    }
+  ],
+  "mainFileId": 5178759,
+  "latestFiles": [
+    {
+      "id": 5178759,
+      "gameId": 83374,
+      "modId": 931874,
+      "isAvailable": true,
+      "displayName": "arkitect structures remastered-windows 64.zip",
+      "fileName": "arkitect structures remastered-windows 64.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "b5f5b9cfe782d30bc8c1c2f1f19574cedf40aab0",
+          "algo": 1
+        },
+        {
+          "value": "17922fffec9801ec200fec2cfeef179e",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-13T07:05:56.877Z",
+      "fileLength": 402414091,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 411395921,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 438485454,
+      "modules": [
+        {
+          "name": "ArkitectStructures",
+          "fingerprint": 3034603999
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5178759,
+      "filename": "arkitect structures remastered-windows 64.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-11-02T01:33:58.42Z",
+  "dateModified": "2024-03-13T14:46:25.973Z",
+  "dateReleased": "2024-03-13T07:05:57.273Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 31,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

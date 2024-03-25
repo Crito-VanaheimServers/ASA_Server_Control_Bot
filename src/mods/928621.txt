@@ -1,1 +1,129 @@
-2023-11-10T13:11:04.333Z
+{
+  "id": 928621,
+  "gameId": 83374,
+  "name": "Utilities Plus",
+  "slug": "utilities-plus",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/utilities-plus",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Reusable Tools made Simple.",
+  "status": 4,
+  "downloadCount": 1680402,
+  "isFeatured": false,
+  "primaryCategoryId": 6082,
+  "categories": [
+    {
+      "id": 6082,
+      "gameId": 83374,
+      "name": "Weapons",
+      "slug": "weapons",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/weapons",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/869/638126561039378325.png",
+      "dateModified": "2023-02-22T09:48:23.94Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6079,
+      "gameId": 83374,
+      "name": "Rebalancing",
+      "slug": "rebalancing",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/rebalancing",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/866/638126560604640170.png",
+      "dateModified": "2023-02-22T09:47:40.467Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 34846724,
+      "name": "blitzfire911",
+      "url": "https://www.curseforge.com/members/blitzfire911"
+    }
+  ],
+  "logo": {
+    "id": 895909,
+    "modId": 928621,
+    "title": "638340903071594984.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/895/909/256/256/638340903071594984.png",
+    "url": "https://media.forgecdn.net/avatars/895/909/638340903071594984.png"
+  },
+  "screenshots": [],
+  "mainFileId": 4856791,
+  "latestFiles": [
+    {
+      "id": 4856791,
+      "gameId": 83374,
+      "modId": 928621,
+      "isAvailable": true,
+      "displayName": "utilities plus-windows 7.zip",
+      "fileName": "utilities plus-windows 7.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "4d50e3f5f199f1d7d3d6060e2ddbad9916ed688c",
+          "algo": 1
+        },
+        {
+          "value": "f2be9ac83404ef1950ba38a3d5f26865",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-11-10T13:11:03.967Z",
+      "fileLength": 31714971,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 32005235,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 2100154310,
+      "modules": [
+        {
+          "name": "UtilsPlus",
+          "fingerprint": 4219906913
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4856791,
+      "filename": "utilities plus-windows 7.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-28T11:45:07.01Z",
+  "dateModified": "2023-12-10T13:50:11.337Z",
+  "dateReleased": "2023-11-10T13:11:04.333Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 3,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

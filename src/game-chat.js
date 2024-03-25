@@ -1,5 +1,4 @@
 const config = require('config');
-const { EmbedBuilder } = require('discord.js');
 const rconCall = require('./rcon-call');
 
 module.exports = async function gameChat(clients) {
@@ -8,7 +7,6 @@ module.exports = async function gameChat(clients) {
         var server = clients[1];
 
         const response = await rconCall([clients, 'GetChat']);
-
         if (`${response}`.trim() === 'Server received, But no response!!') {
             return;
         }
@@ -23,6 +21,7 @@ module.exports = async function gameChat(clients) {
             for (const serverKey in servers) {
                 const target = servers[serverKey];
                 if (PlyrChat.includes(target.Game_Server_Name)) {
+
                     return;
                 }
             }
@@ -31,12 +30,10 @@ module.exports = async function gameChat(clients) {
                 return;
             }
 
-
-
             client.channels.cache.get(config.get(`Servers.${server}.Chat_Channel_ID`)).send(`${PlyrChat}`);
             console.log(`${PlyrChat}`);
         }
     } catch (error) {
-        return
+        console.log(error);
     }
 };

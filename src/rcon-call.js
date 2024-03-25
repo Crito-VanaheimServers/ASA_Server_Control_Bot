@@ -20,7 +20,6 @@ module.exports = async function rconCall([clients, rconCMD]) {
                 resolve(rconInfo);
             }).on('error', function (err) {
                 conn.emit('end');
-                reject(err);
             }).on('end', function () {
                 conn.disconnect();
             });
@@ -28,6 +27,7 @@ module.exports = async function rconCall([clients, rconCMD]) {
             conn.connect();
         });
     } catch (error) {
+        console.log(error);
         return
     }
 };

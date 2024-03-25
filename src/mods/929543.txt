@@ -1,1 +1,162 @@
-2023-12-16T07:14:36.16Z
+{
+  "id": 929543,
+  "gameId": 83374,
+  "name": "Imbue and Upgrade Station",
+  "slug": "imbue-station",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/imbue-station",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "A workbench to improve weapon and armor quality, as well as apply random stat imbues. ",
+  "status": 4,
+  "downloadCount": 648268,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105714035,
+      "name": "HexenLord",
+      "url": "https://www.curseforge.com/members/hexenlord"
+    }
+  ],
+  "logo": {
+    "id": 901282,
+    "modId": 929543,
+    "title": "638348462810670476.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/901/282/256/256/638348462810670476.png",
+    "url": "https://media.forgecdn.net/avatars/901/282/638348462810670476.png"
+  },
+  "screenshots": [
+    {
+      "id": 766470,
+      "modId": 929543,
+      "title": "Imbue Setting Menu",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/766/470/310/172/capture13.JPG",
+      "url": "https://media.forgecdn.net/attachments/766/470/capture13.JPG"
+    },
+    {
+      "id": 750090,
+      "modId": 929543,
+      "title": "Imbue Bonuses",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/90/310/172/imbue2.JPG",
+      "url": "https://media.forgecdn.net/attachments/750/90/imbue2.JPG"
+    },
+    {
+      "id": 766469,
+      "modId": 929543,
+      "title": "INI Setting Menu",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/766/469/310/172/capture12.JPG",
+      "url": "https://media.forgecdn.net/attachments/766/469/capture12.JPG"
+    },
+    {
+      "id": 750092,
+      "modId": 929543,
+      "title": "Structure",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/750/92/310/172/imbue3.JPG",
+      "url": "https://media.forgecdn.net/attachments/750/92/imbue3.JPG"
+    }
+  ],
+  "mainFileId": 4960323,
+  "latestFiles": [
+    {
+      "id": 4960323,
+      "gameId": 83374,
+      "modId": 929543,
+      "isAvailable": true,
+      "displayName": "imbue and upgrade station-windows 22.zip",
+      "fileName": "imbue and upgrade station-windows 22.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "5676b1ee6222b6220ffdbf87cc84982450931e14",
+          "algo": 1
+        },
+        {
+          "value": "7edbb81b7584781b3865129f5efcb2f1",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-12-16T07:14:35.85Z",
+      "fileLength": 1751679,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 1771466,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 3872458295,
+      "modules": [
+        {
+          "name": "ImbueStation",
+          "fingerprint": 80580284
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4960323,
+      "filename": "imbue and upgrade station-windows 22.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-29T17:28:22.463Z",
+  "dateModified": "2024-02-01T07:57:26.723Z",
+  "dateReleased": "2023-12-16T07:14:36.16Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 55,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

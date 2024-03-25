@@ -1,8 +1,8 @@
-# VGS_ASA_Server_Control_Bot
-VGS ASA Server Control Bot
+# ASA_Server_Control_Bot
+ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v2.6 03/9/2024
+v2.7 03/24/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -28,16 +28,16 @@ Discord developer site
 https://discord.com/developers/applications
 
 Bot controls Ark Survival Ascended Server. Designate a specific channel for admin use only so users with
-permissions to that channel can the buttons to start, Stop, Restart your server from discord
+permissions to that channel can use the buttons to start, Stop, Restart your server from discord
 if needed keeping your server files safe. The bot has other functionality built into it read below.
 
-Server control does not work with Nitrado servers but can be dissabled in setup
-Nitrado servers can take advantage of game chat to discord and from discord, mod updates to discord,
+Rented servers can use this bot but Iam unaware of how well it performs with rented servers.
+Rented servers can take advantage of game chat to discord and from discord, mod updates to discord,
 player count status on bot, and rcon commands sent from discord
 
-f you run multiple servers this bot will handle them all if config is setup for multiple bots.
+If you run multiple servers this bot will handle them all if the bot config file (default.json) is setup for multiple bots.
 
-This works with Server API if you use it details in example config.
+This works with Server API if you use it just set the exe to use in the bots config file (default.json) found in the config folder of the bot.
 
 BUTTONS
     Start button: Starts server if it is not running
@@ -59,8 +59,14 @@ BUTTONS
 
     Destroy wild Dinos button: Use to destroy all wild dions on the map so new/fresh dinos can start spawning in.
 	
-	Use backslash commands to access RCON commands features for each server to send rcon commands from discord and get response if one is given from the server.
-
+	Rcon button: used to open discord modal where you can type your command to send to server.
+	
+	Online player list button: used to get a list of players currently online with EosID of each player.
+	
+	Get player info button: if the games save files (.arkprofiles and .arktribe files) are on the same machine as the bot and save 
+							path to these files are set in the bots config file (default.json) than this function will allow you to
+							get information about the player you enter into it.
+							
 BOT MONITORS
 	
 	CRASHES: If server crashes than the bot will detect that it has gone down and bring it back online sending you a message in discord
@@ -72,18 +78,22 @@ BOT MONITORS
 	MOD UPDATES: If you use the mod update function than the bot will detect when mod update is available and post information about the MOD
 	to your desired discord channel.
 
-	If you accidently close your bot monitor than just run the ASA_The_Island_Start.bat again, If server is running this will not
+	If you accidently close your bot monitor than just run the ASA_Server_Controller_Start.bat again, If server is running this will not
     do anything to server it will just restart the discord bot.
 	
 EXTRA FEATURES
     Bot status displays how many players are connected to server vs max player slots available.
 
-    Discord useres can run slash command in discord to see a list of currently connected players.
-
-	Slash command for player info availble to run in admin channel to get player ID's, EoSID's, and other information about about a player.
+    Discord users can run slash command in discord to see a list of currently connected players.
 
     Designate a channel for game chat. The Bot will display any in game chat that is sent in global channel to this channel.
     Discord users can chat with players in game thru this channel without being in game.
+	
+	Discord users can run slash command in discord to get information about the server such as on or offline, rank, lis of mods, ect.
+	
+	player conned or disconnected messages in game and or to discord when they join or leave the server.
+	
+	Pretty much all features can be customized to your liking as far as turning them on or off in the config file found in the bots config folder inside the default.json file.
 
 Change Notes:
 	12/20/23 Added slash command for admin channel to put in any rcon command and run it from the bot to server.
@@ -122,6 +132,8 @@ Change Notes:
 	3/9/2024 Added slash command for use in admin channel to get player information about a player. 
 			 Info obtained such as player and character names, player ID, EosID, and more.
 			 also added new config setting to dissable the player list that discord memebers can run to see who is online.
+			 
+	3/24/2024 fixed issued with mod updates, switched some slash commands to buttons for admins, fixed bug with button population on bot start.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation
@@ -187,20 +199,20 @@ Part 4:	File setup for your bot
 			
 	1. 	If you have not done so yet you will need to download the files from github.
 	
-	2. 	find the downloaded zip file and unzip it. Make sure that the files end up in a folder called, VGS_ASA_Server_Control_Bot
+	2. 	find the downloaded zip file and unzip it. Make sure that the files end up in a folder called, ASA_Server_Control_Bot
 		if they do not than you will need to make this folder and put them into it.
 		
-		note:	file structure should be: VGS_ASA_Server_Control_Bot folder and in this folder should be 
-				node_modules folder, rcon folder, src folder, ASA_The_Island_Start.bat File
+		note:	file structure should be: ASA_Server_Control_Bot folder and in this folder should be 
+				node_modules folder, rcon folder, src folder, ASA_Server_Controller_Start.bat File
 				ASAPic.jpg file, package.json file, package-lock.json file, and README.md file.
 				
-	3. 	Place the VGS_ASA_Server_Control_Bot folder where ever you would like.
+	3. 	Place the ASA_Server_Control_Bot folder where ever you would like.
 	
-	4.	Go into VGS_ASA_Server_Control_Bot folder and find the config folder and inside the config is the default.json
+	4.	Go into ASA_Server_Control_Bot folder and find the config folder and inside the config is the default.json
 		edit this file with a text editor. In the example_config.txt you will find helpful information on how to setup the default.json File
 		the example_config also shows a 2 server setup and if you want more servers just follow the example config adding another server.
 	
-	5.	all lines with // in the example_config are instructions read them they will guide your with putting in correct info.
+	5.	In the example_config are instructions read them they will guide your with putting in correct info.
  		in the default config file we need bot tokens for each of our bots for each server. Go back to the bot page I said we would come back to
 		on the discord developers portal.
 
@@ -208,10 +220,10 @@ Part 4:	File setup for your bot
 		and next to it you should see Reset Token button, click on this button.
 		
 	7.	Yes you want to reset bots token, once reset there should be a copy button to copy the token.
-		press this and paste the token in the token area of our .env file.
+		press this and paste the token in the Bot_Token area of our default.json file.
 		
 		note: 	Your bot token should be kept safe and not shared with anyone. If it gets compromised you can Reset
-				your bot token but will need to update it in you .env file for the bot.
+				your bot token but will need to update it in you default.json file for the bot.
 				
 	8.	Next we need the ID's for our Discord Server, Bot, and Discord Channels. So to get these we need to make sure
 		developer mode is on for us in discord. Go to discord and find User Settings usually located bottom left corner
@@ -228,10 +240,10 @@ Part 4:	File setup for your bot
 		Find the bot in the player list right click and copy ID, right click on channels and click copy ID.
 				
 	12. If you have made it this far Congratulations you should be ready to start your bot by double clicking on
-		VGS_ASA_Server_Controller_Start.bat found in VGS_ASA_Server_Control_Bot folder. You should than be able to go to your
+		ASA_Server_Controller_Start.bat found in ASA_Server_Control_Bot folder. You should than be able to go to your
 		discord and see your bot online now.
 		
-		If you have set everything up correctly than VGS_ASA_Server_Controller_Start.bat will do it all for you. It will start
+		If you have set everything up correctly than ASA_Server_Controller_Start.bat will do it all for you. It will start
 		your server and your bot. It will auto update each restart and anytime the server is manually restarted.
-		If for some reason your bot goes offline just start the ASA_The_Island_Start.bat again. You can run this File
+		If for some reason your bot goes offline just start the ASA_Server_Controller_Start.bat again. You can run this File
 		while server is running and it will not mess with the server while it is running.

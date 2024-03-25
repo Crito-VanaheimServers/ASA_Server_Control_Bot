@@ -1,1 +1,126 @@
-2024-03-02T15:36:07.41Z
+{
+  "id": 955932,
+  "gameId": 83374,
+  "name": "Draconis Glaucus",
+  "slug": "draconis-glaucus",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/draconis-glaucus",
+    "wikiUrl": "https://ark.wiki.gg/wiki/Mod:Draconis_Glaucus",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Adds the Glaucus, a custom creature.",
+  "status": 4,
+  "downloadCount": 271714,
+  "isFeatured": false,
+  "primaryCategoryId": 6074,
+  "categories": [
+    {
+      "id": 6074,
+      "gameId": 83374,
+      "name": "Creatures",
+      "slug": "creatures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/creatures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/861/638126560008756045.png",
+      "dateModified": "2023-02-22T09:46:40.88Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105754027,
+      "name": "myrmecoleontidae",
+      "url": "https://www.curseforge.com/members/myrmecoleontidae"
+    }
+  ],
+  "logo": {
+    "id": 926043,
+    "modId": 955932,
+    "title": "638395354542517944.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/926/43/256/256/638395354542517944.png",
+    "url": "https://media.forgecdn.net/avatars/926/43/638395354542517944.png"
+  },
+  "screenshots": [
+    {
+      "id": 782848,
+      "modId": 955932,
+      "title": "Glaucus",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/782/848/310/172/glaucus.png",
+      "url": "https://media.forgecdn.net/attachments/782/848/glaucus.png"
+    }
+  ],
+  "mainFileId": 5182424,
+  "latestFiles": [
+    {
+      "id": 5182424,
+      "gameId": 83374,
+      "modId": 955932,
+      "isAvailable": true,
+      "displayName": "draconis glaucus-windows 23.zip",
+      "fileName": "draconis glaucus-windows 23.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "442357d1ff413546f793b29f4efb39a2bb9b7104",
+          "algo": 1
+        },
+        {
+          "value": "597769ffc285f809566f9c98415d331f",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-14T17:09:26.277Z",
+      "fileLength": 40792501,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 41180570,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 169864494,
+      "modules": [
+        {
+          "name": "Glaucus",
+          "fingerprint": 905436325
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5182424,
+      "filename": "draconis glaucus-windows 23.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-12-30T12:17:34.17Z",
+  "dateModified": "2024-03-17T13:34:15.17Z",
+  "dateReleased": "2024-03-14T17:09:26.91Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 52,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

@@ -1,1 +1,131 @@
-2023-12-06T22:31:54.6Z
+{
+  "id": 929038,
+  "gameId": 83374,
+  "name": "Bangin Tranqs (Crossplay Live)",
+  "slug": "bangin-tranqs",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/bangin-tranqs",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Configurable Upgraded Tranqs",
+  "status": 4,
+  "downloadCount": 395214,
+  "isFeatured": false,
+  "primaryCategoryId": 6082,
+  "categories": [
+    {
+      "id": 6082,
+      "gameId": 83374,
+      "name": "Weapons",
+      "slug": "weapons",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/weapons",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/869/638126561039378325.png",
+      "dateModified": "2023-02-22T09:48:23.94Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 9615822,
+      "name": "BangPlaysGames",
+      "url": "https://www.curseforge.com/members/bangplaysgames"
+    },
+    {
+      "id": 105751321,
+      "name": "Banggugyangu",
+      "url": "https://www.curseforge.com/members/banggugyangu"
+    }
+  ],
+  "logo": {
+    "id": 909505,
+    "modId": 929038,
+    "title": "638362678027724763.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/909/505/256/256/638362678027724763.png",
+    "url": "https://media.forgecdn.net/avatars/909/505/638362678027724763.png"
+  },
+  "screenshots": [
+    {
+      "id": 749685,
+      "modId": 929038,
+      "title": "Engram List",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/749/685/310/172/screenshot-2023-10-28-223451.png",
+      "url": "https://media.forgecdn.net/attachments/749/685/screenshot-2023-10-28-223451.png"
+    }
+  ],
+  "mainFileId": 4934281,
+  "latestFiles": [
+    {
+      "id": 4934281,
+      "gameId": 83374,
+      "modId": 929038,
+      "isAvailable": true,
+      "displayName": "bangin tranqs (crossplay live)-windows 32.zip",
+      "fileName": "bangin tranqs (crossplay live)-windows 32.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "b27ad93aa9b913f3acb6d57ef60a7c78c1f89c03",
+          "algo": 1
+        },
+        {
+          "value": "c538bc0eb55f7cacc2df9087545790e4",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-12-06T22:31:54.25Z",
+      "fileLength": 34725410,
+      "downloadCount": 0,
+      "fileSizeOnDisk": 35340763,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 1641970810,
+      "modules": [
+        {
+          "name": "BanginTranqs",
+          "fingerprint": 1054436553
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4934281,
+      "filename": "bangin tranqs (crossplay live)-windows 32.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-29T00:41:54.44Z",
+  "dateModified": "2023-12-07T12:28:34Z",
+  "dateReleased": "2023-12-06T22:31:54.6Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 149,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

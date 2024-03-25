@@ -1,1 +1,117 @@
-2023-12-28T15:54:02.833Z
+{
+  "id": 930404,
+  "gameId": 83374,
+  "name": "Death Recovery Mod",
+  "slug": "death-recovery-mod",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/death-recovery-mod",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "Personal Gravestone to help you recover your lost items from your corpse.",
+  "status": 4,
+  "downloadCount": 266266,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105824293,
+      "name": "Mannalo",
+      "url": "https://www.curseforge.com/members/mannalo"
+    }
+  ],
+  "logo": {
+    "id": 897791,
+    "modId": 930404,
+    "title": "638343059987976814.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/897/791/256/256/638343059987976814.png",
+    "url": "https://media.forgecdn.net/avatars/897/791/638343059987976814.png"
+  },
+  "screenshots": [],
+  "mainFileId": 4989782,
+  "latestFiles": [
+    {
+      "id": 4989782,
+      "gameId": 83374,
+      "modId": 930404,
+      "isAvailable": true,
+      "displayName": "death recovery mod-windows 26.zip",
+      "fileName": "death recovery mod-windows 26.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "cc71f9188ce3257fc0e02c818a685192233a0157",
+          "algo": 1
+        },
+        {
+          "value": "1a8a22b486b94317a768eae9876901a9",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2023-12-28T15:54:02.443Z",
+      "fileLength": 2428500,
+      "downloadCount": 1,
+      "fileSizeOnDisk": 4130307,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 1661806,
+      "modules": [
+        {
+          "name": "DeathRecovery",
+          "fingerprint": 3930575176
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 4989782,
+      "filename": "death recovery mod-windows 26.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-10-30T23:32:25.977Z",
+  "dateModified": "2023-12-31T10:00:54.597Z",
+  "dateReleased": "2023-12-28T15:54:02.833Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 148,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}

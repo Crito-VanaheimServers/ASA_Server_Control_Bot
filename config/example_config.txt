@@ -1,154 +1,68 @@
-//If you are using this bot with a rented server like nitrado than you need to set the following to false
-//they will not work for rented servers.
-//"Server_Control": false
-//"Mod_Updates": false
-//"Player_Info": false
 {
     "ControlBot": {
-        //your discord server ID where your bot will be listening
-        "Discord_ID": "45648948947894654541564987",
-		
-        //full path to the location of this bots files use \\ seperating the folder names
-        "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
-		
-        //Battlemetrics Personal Access Token, this is free to obtain and can get from https://www.battlemetrics.com/developers
-		//if you do not want to get a token than leave empty quotes you just wont get the server info command function
-        "Battle_Metrics_Token": "",
-        
-		//Curseforge API Token, this is free but requires a google account to login and can be obtained from https://console.curseforge.com/#/login
-        //Bot uses this to keep an eye on mod changes to automatically keep mods up to date on your server
-        //if you do not get a token than you will not be able to use modUpdates and should set modUpdates=false above or bot will likely crash
-        "Curse_Forge_Token": "5da4fd54fad654asdf54asd56f456sdf4g865dfg485a4gd54dgf54a",
-        
-		//Set file path to the folder your steam cmd files are located use \\ seperating the folder names
-        "Steam_Path": "C:\\VGS_Server_Files\\Steam_CMD_Files",
-        
-		//Change this to the hour you want server to restart. military (12=12pm 00=12am) https://www.ontheclock.com/convert-military-24-hour-time.aspx
-        "Restart_Hour": "00",
-        
-		//if you do not use Nitrado and you are running this bot on the same machine as the servers than you can set this to true and control your servers from discord buttons
-        "Server_Control": true,
-        
-		//If you want mods that update to post to discord and send restart warnings to server for mod updates set this to true
-        "Mod_Updates": true,
-        
-		//if you want game chat to post to discord set this to true
-        "Game_Chat": true,
-        
-		//if you want discord members to be able to chat to players in game set this to true
-        "Discord_Chat": true
-		
-		//if you dont want players using command to see who is online than set this to false
-		"Player_List": false,
-
-		//set to false to dissable command for player info
-		"Player_Info": true
+        "Discord_ID": "ID number of your discord in these quotes",
+        "Bot_Folder_Path": "Path to the root of the ASA_Server_Control_Bot in these quotes. Each part of the path gets \\ instead of \ example: C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
+        "Battle_Metrics_Token": "Battle Metrics Personal Access Token in these quotes, obtained from https://www.battlemetrics.com/developers and is free. used for server info slash command. Leave empty quotes if not using this feature",
+        "Curse_Forge_Token": "CurseForge API Key in these quotes, obtained from https://console.curseforge.com/#/login and is free with google account login. Used for mod updates and change notes posted to discord. Leave empty quotes if not using this feature",
+        "Steam_Path": "Path to steamcmd.exe in these quotes. Each part of the path gets \\ instead of \ example: C:\\VGS_Server_Files\\Steam_CMD_Files. Used for server updates, leave blank if renting a server",
+        "Mod_Channel": "Put the ID of the channel you want your mod update information to post to in these quotes",
+        "Restart_Hour": "Hour you want your server to restart each day in these quotes. Military time with 00 being 12am",
+        "Server_Control": true or false. Set to true if you want the buttons to start\stop\restart\ect. Set to false if you do not want the buttons. No quotes,
+        "Mod_Updates_Restart": true or false. Set to true if you want your server to perform in game warnings and a restart to update mods when the bot detects mod changes. Set to false to dissable this function. No quotes,
+        "Game_Chat": true or false. Set to true if you want in game chat posted to discord. Set to false to dissable game chat posting to discord. No quotes,
+        "Discord_Chat": true or false. Set to true if you want discord members to be able to chat with players in game. Set to false to dissable this function. No quotes,
+        "Player_List": true or false. Set to true if you want discord members to be able to run a slash command to see a list of current online players. Set to false to dissable this function. No quotes,
+        "Player_Connection_Game": true or false. set to true if you want in game chat message when players connect and disconnect. No quotes,
+        "Player_Connection_Discord": true or false. Set to true if you want discord messages to chat channel when players connect and disconnect. No quotes
     },
 
     "Servers": {
-	
-		//you can add as many servers as you want but each server needs its own bot to communicate with
-		//make a name for each server no spaces
-		"The_Island_Test": {
-			
-			//Set file path to the folder your server files are located or will be located
-            "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
-	
-			//Set the file path to where your saved files for the server are located (these files are the .ark, .arkprofile, and .arktribe save files)
-			"Saves_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server\\ShooterGame\\Saved\\SavedArks\\TheIsland_WP",		
-		
-			//If your using Server API then set this to AsaApiLoader.exe
-			//If you have no idea or you are NOT using Server API than set to ArkAscendedServer.exe
-			//info about server API found here https://gameservershub.com/forums/resources/categories/asa-official-resources.111/
-			"EXE_Launcher": "ArkAscendedServer.exe",
-            
-			//Battlemetrics server ID, Find your server on battlemetrics and select it then in adress bar copy the ID number.
-			//Example: https://www.battlemetrics.com/servers/arksa/24950685 
-			//BMServerID would be 24950685
-			"Battle_Metrics_ServerID": "24311277",
-			
-			//your bots token from bot you create at https://discord.com/developers/ each server needs its own bot
-            "Player_Count_Bot_Token": "fd54f56a4fg685a4fg984agf654a6fg465ad4gf65asd4fg654a6df4",
-			
-			//your discord bots ID
-            "Bot_ID": "415646546546548489",
-			
-			//Discord channel ID where your server control buttons will appear.
-			//Make this an admin channel only or everyone will have control of your server.
-			//RCON commands can be sent by using / key in chat and selecting the server rcon you want to send commands to
-			//When sending RCON commands do not use quotes. (Example: ListPlayers) is what your would send in the chat to get a list of players from server using RCON
-			//If serverControl is set to false you can still use this channel to send RCON commands. RCON feature should work for Nitrado servers.
-            "Admin_Channel_ID": "454564865489451451564894",
-			
-			//discord channel ID were in game chat is to be sent to, if discordChat=true from above than it would be a good idea
-			//to have a dedicated channel for game chat only due to any message sent in discord in this channel will go in game
-			//if gameChat=false and discordChat=false from above than just leave random numbers here and all should be good.
-			//if either one is set to true than you need a channel ID here.
-            "Chat_Channel_ID": "546546549849841518954",
-			
-			//set the ID of the channel you want info for mod updates to be posted to.
-			//This tells the players the mod name, date it was updated, and a link to the mod page.
-			//If modUpdates is set to false than leave it alone having random numbers will not hurt anything.
-            "Mod_Channel": "465456448949498489498",
-			
-			//List mods for the bot to look for updates on and trigger a server restart with warnings to update the outdated mod. (seperate each mod id with commas)
-			//Updates to mods are done with -automanagedmods in your commandline
-            "Mod_IDs": "947835, 937546, 961601, 940786, 931119, 946694, 928708, 928501, 930404, 928621, 929420, 930128, 933099, 931877, 929543, 929038, 928818, 929713, 931047, 931874, 955451, 934401, 955932, 943713, 927131, 926956, 916922, 914844, 912902, 900062",
-            
-			//This does not change your server name it is used for the bot titles on discord messages and command names(do not use special characters)
-			//if slash commands do not generate on your discord than shorten this name up. Discord has a character limit on command names.
-			"Game_Server_Name": "VGS TEST",
-			
-			//set your global ip to your server
-            "Global_IP": "12.34.567.890",
-			
-			//The bot should run on same machine as server for everything to work correctly unless your using it for nitrado server
-			//If using for nitrado server and just want player counts, rcon control, and chat then set this to same ip as your global ip
-			//If running on same machine as the servers than set this to your local ip (default 127.0.0.1)
-            "Local_IP": "127.0.0.1",
-			
-			//set the servers port
-            "Game_Port": "7877",
-			
-			//set your servers rcon port
-            "Rcon_Port": "27120",
-			
-			//set your password you use to log in as admin in game here for rcon to work with the bot
-            "Admin_Password": "yourPassord",
-			
-			//List of vip players discord names that will have names colored in game chat setting them apart from normal players in chat
-			"VIP_Players": "Crito, Bob, Tim",
-			
-			//RGBA color code that will be the color of VIP players names
-            "VIP_Color": "1,0,1,1",
-			
-			//Server color if using cross chat with cluster will be color for server in chat
-            "Server_Color": "0,1,0,1",
-			
-			//Set the start up command line for your ark server
-            "Command_Line": "TheIsland_WP?listen?Port=7877?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
+        "put_any_name_you_want_no_spaces_in_these_quotes": {
+            "Server_Path": "Path to the root of your server in these quotes. Each part of the path gets \\ instead of \ example: C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
+            "Saves_Path": "(If renting a server leave blank) set the path to the root of your game saves for this server in these quotes. Each part of the path gets \\ instead of \ example: C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server\\ShooterGame\\Saved\\SavedArks\\TheIsland_WP",
+            "EXE_Launcher": "Name of the exe file used to start the server in these quotes. Default is ArkAscendedServer.exe",
+            "Battle_Metrics_ServerID": "If Battle_Metrics_Token from above not empty quotes find your server on battlemetrics and in the adress bar copy the ID number at the end and paste in these quotes. Example: https://www.battlemetrics.com/servers/arksa/24950685 Battle_Metrics_ServerID would be 24950685",
+            "Bot_Token": "put in the discord bot token in these quotes. Bot token obtained form https://discord.com/developers/ and selecting the bot you made and invited to your discord. Each server in this config needs its own bot.",
+            "Bot_ID": "ID number of this bot from your discord in these quotes",
+            "Admin_Channel_ID": "ID of the channel from your discord that only you and a select few others have access to in these quotes, This is where the controls for the server will appear",
+            "Chat_Channel_ID": "ID of the channel you plan to use for game chat to discord or discord chat to game in these quotes. Suggested to make it its own channel",
+            "Mod_IDs": " Mod ID's for this server seperated by commas in these quotes. Used for mod update post to discord and mod update restarts. Example: 947835, 937546, 961601, 940786",
+            "Game_Server_Name": "In these quotes put a name, it has nothing to do with your servers name just a name for the bot on discord. Keep it short and sweet there is a character limit and try not to use special characters. Using a name close to server name will help know what server your controlling",
+            "Global_IP": "Set the global ip of the server in these quotes. Can be obtained by finding your server on battlemetrics website",
+            "Local_IP": "Set the local ip of your server in these quotes. default is usually 127.0.0.1 but yours could be different. If bot is not on same machine as server than put your global ip here",
+            "Game_Port": "Put the port of the server in these quotes",
+            "Rcon_Port": "Put the RCON port number in these quotes for this server and make sure in GameUserSetting.ini file of the server that you have RCONEnabled=True",
+            "Admin_Password": "In these quotes put your ServerAdminPassword found in GameUserSettings.ini of the server",
+            "VIP_Players": "In these quotes you can list player names to have different chat colors when sending messages from discord. Example: Crito, Bob, Tim",
+            "VIP_Color": "In these quotes you can set the color of the VIP_Players chat names format R,G,B,A Example purple: 1,0,1,1",
+            "Server_Color": "In these quotes you can set the color of non VIP_Players chat names when chatting from discord format R,G,B,A Example green: 0,1,0,1",
+            "Command_Line": "Command line parameters used to start your server in these quotes Example: TheIsland_WP?listen?Port=7777?MaxPlayers=70? -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786 -NoTransferFromFiltering -clusterid=yourCluterID -ClusterDirOverride=C:\\someFolderName\\someFolderName\\someFolderName -GBUSageToForceRestart=0 -crossplay -servergamelog -game -server -log"
         },
-
-        "The_Island": {
-            "Server_Path": "C:\\VGS_Server_Files\\ARK_Survival_Ascended\\The_Island",
-            "EXE_Launcher": "AsaApiLoader.exe",
-            "Battle_Metrics_ServerID": "545645645",
-            "Player_Count_Bot_Token": "54daf56f456as4df564asd56f4as56df46a5sdf4g65asd4fg65ads4fg65a",
-            "Bot_ID": "5456465465468468954",
-            "Admin_Channel_ID": "4654564564869478947",
-            "Chat_Channel_ID": "415645645646549849846",
-            "Mod_Channel": "64564654654568498489465",
-            "Mod_IDs": "947835, 937546, 961601, 940786, 931119, 946694, 928708, 928501, 930404, 928621, 929420, 930128, 933099, 931877, 929543, 929038, 928818, 929713, 931047, 931874, 955451, 934401, 955932, 943713, 927131, 926956, 916922, 914844, 912902, 900062",
-            "Game_Server_Name": "VGS ISLAND PVE BOOSTED",
-            "Global_IP": "12.34.567.890",
-            "Local_IP": "127.0.0.1",
-            "Game_Port": "7777",
-            "Rcon_Port": "27020",
-            "Admin_Password": "yourpassword",
-			"VIP_Players": "Crito, Bob, Tim",
-            "VIP_Color": "1,0,1,1",
-            "Server_Color": "0,1,0,1",
-            "Command_Line": "TheIsland_WP?listen?Port=7777?MaxPlayers=70 -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786,946694,928708,928501,930404,928621,929420,930128,933099,931877,929543,929038,928818,929713,931047,931874,955451,934401,955932,943713,927131,926956,916922,914844,912902,900062 -crossplay -servergamelog -game -server -log"
+		
+        "New_Server_Name_Here": {
+            "Server_Path": "Path to the root of your server in these quotes. Each part of the path gets \\ instead of \ example: C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server",
+            "Saves_Path": "(If renting a server leave blank) set the path to the root of your game saves for this server in these quotes. Each part of the path gets \\ instead of \ example: C:\\VGS_Server_Files\\ARK_Survival_Ascended\\TEST_Server\\ShooterGame\\Saved\\SavedArks\\TheIsland_WP",
+            "EXE_Launcher": "Name of the exe file used to start the server in these quotes. Default is ArkAscendedServer.exe",
+            "Battle_Metrics_ServerID": "If Battle_Metrics_Token from above not empty quotes find your server on battlemetrics and in the adress bar copy the ID number at the end and paste in these quotes. Example: https://www.battlemetrics.com/servers/arksa/24950685 Battle_Metrics_ServerID would be 24950685",
+            "Bot_Token": "put in the discord bot token in these quotes. Bot token obtained form https://discord.com/developers/ and selecting the bot you made and invited to your discord. Each server in this config needs its own bot.",
+            "Bot_ID": "ID number of this bot from your discord in these quotes",
+            "Admin_Channel_ID": "ID of the channel from your discord that only you and a select few others have access to in these quotes, This is where the controls for the server will appear",
+            "Chat_Channel_ID": "ID of the channel you plan to use for game chat to discord or discord chat to game in these quotes. Suggested to make it its own channel",
+            "Mod_IDs": " Mod ID's for this server seperated by commas in these quotes. Used for mod update post to discord and mod update restarts. Example: 947835, 937546, 961601, 940786",
+            "Game_Server_Name": "In these quotes put a name, it has nothing to do with your servers name just a name for the bot on discord. Keep it short and sweet there is a character limit and try not to use special characters. Using a name close to server name will help know what server your controlling",
+            "Global_IP": "Set the global ip of the server in these quotes. Can be obtained by finding your server on battlemetrics website",
+            "Local_IP": "Set the local ip of your server in these quotes. default is usually 127.0.0.1 but yours could be different. If bot is not on same machine as server than put your global ip here",
+            "Game_Port": "Put the port of the server in these quotes",
+            "Rcon_Port": "Put the RCON port number in these quotes for this server and make sure in GameUserSetting.ini file of the server that you have RCONEnabled=True",
+            "Admin_Password": "In these quotes put your ServerAdminPassword found in GameUserSettings.ini of the server",
+            "VIP_Players": "In these quotes you can list player names to have different chat colors when sending messages from discord. Example: Crito, Bob, Tim",
+            "VIP_Color": "In these quotes you can set the color of the VIP_Players chat names format R,G,B,A Example purple: 1,0,1,1",
+            "Server_Color": "In these quotes you can set the color of non VIP_Players chat names when chatting from discord format R,G,B,A Example green: 0,1,0,1",
+            "Command_Line": "Command line parameters used to start your server in these quotes Example: TheIsland_WP?listen?Port=7877?MaxPlayers=70? -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786 -NoTransferFromFiltering -clusterid=yourCluterID -ClusterDirOverride=C:\\someFolderName\\someFolderName\\someFolderName -GBUSageToForceRestart=0 -crossplay -servergamelog -game -server -log"
         }
-    }
+
+		Add as many servers as you need, each server added needs its own bot created at https://discord.com/developers/
+		pay close attention to quotes and commas in this config file. every line in a list of settings gets commas except for the last line in the list of settings
+		also at the end of each servers list of settings in this servers section gets a comma unless its the last server in the servers section than it does not get a comma.
+	}
 }

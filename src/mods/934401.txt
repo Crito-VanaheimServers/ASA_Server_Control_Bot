@@ -1,1 +1,166 @@
-2023-11-22T18:28:54.59Z
+{
+  "id": 934401,
+  "gameId": 83374,
+  "name": "Electric Power Amplifier",
+  "slug": "electric-power-amplifier",
+  "links": {
+    "websiteUrl": "https://www.curseforge.com/ark-survival-ascended/mods/electric-power-amplifier",
+    "wikiUrl": "",
+    "issuesUrl": null,
+    "sourceUrl": null
+  },
+  "summary": "wireless power outlet",
+  "status": 4,
+  "downloadCount": 61518,
+  "isFeatured": false,
+  "primaryCategoryId": 6080,
+  "categories": [
+    {
+      "id": 6080,
+      "gameId": 83374,
+      "name": "Structures",
+      "slug": "structures",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/structures",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/867/638126560715804577.png",
+      "dateModified": "2023-02-22T09:47:51.58Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6076,
+      "gameId": 83374,
+      "name": "General",
+      "slug": "general",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/general",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/863/638126560274835693.png",
+      "dateModified": "2023-02-22T09:47:07.49Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    },
+    {
+      "id": 6075,
+      "gameId": 83374,
+      "name": "Game Modes",
+      "slug": "game-modes",
+      "url": "https://www.curseforge.com/ark-survival-ascended/mods/game-modes",
+      "iconUrl": "https://media.forgecdn.net/avatars/780/862/638126560118024751.png",
+      "dateModified": "2023-02-22T09:46:51.81Z",
+      "isClass": false,
+      "classId": 6072,
+      "parentCategoryId": 6072
+    }
+  ],
+  "classId": 6072,
+  "authors": [
+    {
+      "id": 105990125,
+      "name": "stachu997446994",
+      "url": "https://www.curseforge.com/members/stachu997446994"
+    }
+  ],
+  "logo": {
+    "id": 901663,
+    "modId": 934401,
+    "title": "638349130226987464.png",
+    "description": "",
+    "thumbnailUrl": "https://media.forgecdn.net/avatars/thumbnails/901/663/256/256/638349130226987464.png",
+    "url": "https://media.forgecdn.net/avatars/901/663/638349130226987464.png"
+  },
+  "screenshots": [
+    {
+      "id": 756219,
+      "modId": 934401,
+      "title": "wheel",
+      "description": "",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/756/219/310/172/zrzut-ekranu-88.png",
+      "url": "https://media.forgecdn.net/attachments/756/219/zrzut-ekranu-88.png"
+    },
+    {
+      "id": 756218,
+      "modId": 934401,
+      "title": "should snap to anything",
+      "description": "also shown the cost of making",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/756/218/310/172/zrzut-ekranu-87.png",
+      "url": "https://media.forgecdn.net/attachments/756/218/zrzut-ekranu-87.png"
+    },
+    {
+      "id": 756221,
+      "modId": 934401,
+      "title": "little one",
+      "description": "size in comparison to generator",
+      "thumbnailUrl": "https://media.forgecdn.net/attachments/thumbnails/756/221/310/172/zrzut-ekranu-89.png",
+      "url": "https://media.forgecdn.net/attachments/756/221/zrzut-ekranu-89.png"
+    }
+  ],
+  "mainFileId": 5182823,
+  "latestFiles": [
+    {
+      "id": 5182823,
+      "gameId": 83374,
+      "modId": 934401,
+      "isAvailable": true,
+      "displayName": "electric power amplifier-windows 4.zip",
+      "fileName": "electric power amplifier-windows 4.zip",
+      "releaseType": 1,
+      "fileStatus": 4,
+      "hashes": [
+        {
+          "value": "5f83f258b1641a8930b6f433aab3606cbc214d8a",
+          "algo": 1
+        },
+        {
+          "value": "81492004e1eab0ab6ca892af41d18a5f",
+          "algo": 2
+        }
+      ],
+      "fileDate": "2024-03-14T20:03:59.493Z",
+      "fileLength": 3015568,
+      "downloadCount": 2,
+      "fileSizeOnDisk": 3103043,
+      "downloadUrl": null,
+      "gameVersions": [
+        "1.0"
+      ],
+      "sortableGameVersions": [
+        {
+          "gameVersionName": "1.0",
+          "gameVersionPadded": "0000000001.0000000000",
+          "gameVersion": "1.0",
+          "gameVersionReleaseDate": "2023-02-22T00:00:00Z",
+          "gameVersionTypeId": 76367
+        }
+      ],
+      "dependencies": [],
+      "alternateFileId": 0,
+      "isServerPack": false,
+      "fileFingerprint": 3316183677,
+      "modules": [
+        {
+          "name": "ElectricPowerAplifier",
+          "fingerprint": 3425846730
+        }
+      ]
+    }
+  ],
+  "supportedPlatform": 0,
+  "supportsCrossPlatform": true,
+  "latestFilesIndexes": [
+    {
+      "gameVersion": "1.0",
+      "fileId": 5182823,
+      "filename": "electric power amplifier-windows 4.zip",
+      "releaseType": 1,
+      "gameVersionTypeId": 76367
+    }
+  ],
+  "latestEarlyAccessFilesIndexes": [],
+  "dateCreated": "2023-11-07T00:17:02.607Z",
+  "dateModified": "2024-03-19T23:23:41.74Z",
+  "dateReleased": "2024-03-14T20:03:59.87Z",
+  "allowModDistribution": false,
+  "gamePopularityRank": 320,
+  "isAvailable": true,
+  "thumbsUpCount": 0
+}
