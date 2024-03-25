@@ -33,10 +33,10 @@
             "Game_Port": "7777",
             "Rcon_Port": "27020",
             "Admin_Password": "",
-			"VIP_Players": "",
+            "VIP_Players": "",
             "VIP_Color": "1,0,1,1",
             "Server_Color": "0,1,0,1",
-			"Command_Line": ""
+            "Command_Line": ""
         }
     }
 }
