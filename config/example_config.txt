@@ -36,7 +36,7 @@
             "VIP_Players": "In these quotes you can list player names to have different chat colors when sending messages from discord. Example: Crito, Bob, Tim",
             "VIP_Color": "In these quotes you can set the color of the VIP_Players chat names format R,G,B,A Example purple: 1,0,1,1",
             "Server_Color": "In these quotes you can set the color of non VIP_Players chat names when chatting from discord format R,G,B,A Example green: 0,1,0,1",
-            "Command_Line": "Command line parameters used to start your server in these quotes Example: TheIsland_WP?listen?Port=7777?MaxPlayers=70? -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786 -NoTransferFromFiltering -clusterid=yourCluterID -ClusterDirOverride=C:\\someFolderName\\someFolderName\\someFolderName -GBUSageToForceRestart=0 -crossplay -servergamelog -game -server -log"
+            "Command_Line": "Command line parameters used to start your server in these quotes Example: TheIsland_WP?listen?Port=7777?SessionName='VGS TEST'?MaxPlayers=70? -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786 -NoTransferFromFiltering -clusterid=yourCluterID -ClusterDirOverride=C:\\someFolderName\\someFolderName\\someFolderName -GBUSageToForceRestart=0 -crossplay -servergamelog -game -server -log"
         },
 		
         "New_Server_Name_Here": {
@@ -58,7 +58,7 @@
             "VIP_Players": "In these quotes you can list player names to have different chat colors when sending messages from discord. Example: Crito, Bob, Tim",
             "VIP_Color": "In these quotes you can set the color of the VIP_Players chat names format R,G,B,A Example purple: 1,0,1,1",
             "Server_Color": "In these quotes you can set the color of non VIP_Players chat names when chatting from discord format R,G,B,A Example green: 0,1,0,1",
-            "Command_Line": "Command line parameters used to start your server in these quotes Example: TheIsland_WP?listen?Port=7877?MaxPlayers=70? -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786 -NoTransferFromFiltering -clusterid=yourCluterID -ClusterDirOverride=C:\\someFolderName\\someFolderName\\someFolderName -GBUSageToForceRestart=0 -crossplay -servergamelog -game -server -log"
+            "Command_Line": "Command line parameters used to start your server in these quotes Example: TheIsland_WP?listen?Port=7877?SessionName='VGS TEST 2'?MaxPlayers=70? -NoBattlEye -automanagedmods -Mods=947835,937546,961601,931119,940786 -NoTransferFromFiltering -clusterid=yourCluterID -ClusterDirOverride=C:\\someFolderName\\someFolderName\\someFolderName -GBUSageToForceRestart=0 -crossplay -servergamelog -game -server -log"
         }
 
 		Add as many servers as you need, each server added needs its own bot created at https://discord.com/developers/

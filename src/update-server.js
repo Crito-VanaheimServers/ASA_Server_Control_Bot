@@ -1,44 +1,63 @@
+const { exec } = require('child_process');
 const config = require('config');
 const { EmbedBuilder } = require('discord.js');
 const startServer = require("./server-start");
 
 module.exports = async function updateServer([clients, commandSender]) {
-    return new Promise((resolve, reject) => {
-        try {
-            const client = clients[0];
-            const server = clients[1];
-
-            const updateinfo = new EmbedBuilder()
-                .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
-                .addFields({ name: commandSender, value: `${config.get(`Servers.${server}.Game_Server_Name`)} checking for updates please wait....` })
-                .setColor(0x00e8ff);
-            client.channels.cache.get(config.get(`Servers.${server}.Admin_Channel_ID`)).send({ embeds: [updateinfo] });
-
-            const updateserver = require('child_process').spawn(config.get(`ControlBot.Bot_Folder_Path`) + '/src/UpdateServer.bat', [config.get(`Servers.${server}.Server_Path`), config.get(`Servers.${server}.Game_Server_Name`), config.get(`ControlBot.Steam_Path`)]);
-
-            updateserver.stdout.on('data', function (data) {
-                console.log(`${data}`);
-                if (`${data}`.includes("server is up to date")) {
-                    resolve();
-                }
-            });
-            updateserver.on('close', (code) => {
-                if (code === 0) {
-                    startServer([clients, commandSender]);
-                    resolve(code);
+    const updateServer = (directory, serverName, steamcmdPath, branch = '2430930', steamLogin = 'anonymous', callback) => {
+        console.log(`You are about to update your ${serverName} server`);
+        console.log(`Dir: ${directory}`);
+        console.log(`Branch: ${branch}`);
+        console.log(`checking for updates could take some time please wait....`);
+        const cmd = `"${steamcmdPath}\\steamcmd.exe" +force_install_dir "${directory}" +login ${steamLogin} +"app_update ${branch}" validate +quit`;
+        let updateCompleted = false;
+    
+        exec(cmd, (error, stdout, stderr) => {
+            if (!updateCompleted) {
+                updateCompleted = true;
+                if (callback && typeof callback === 'function') {
+                    if (error) {
+                        console.error(`Error updating ${serverName} server: ${error}`);
+                        callback(error);
+                    } else {
+                        const message = `${serverName} server is up to date`;
+                        console.log(stdout);
+                        console.log(message);
+                        callback(null, message);
+                    }
                 } else {
-                    console.log("UPDATE ERROR: Try restarting the bot");
-                    const serverupdate = new EmbedBuilder()
-                        .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
-                        .addFields({ name: commandSender, value: "UPDATE ERROR: Try restarting the bot" })
-                        .setColor(0x00e8ff);
-                    client.channels.cache.get(config.get(`Servers.${server}.Game_Server_Name`)).send({ embeds: [serverupdate] });
-                    reject(new Error("UPDATE ERROR"));
+                    console.error('Callback is not a function');
                 }
-            });
-        } catch (error) {
-            console.error('Error in updateServer function:', error);
-            reject(error);
-        }
-    });
+            }
+        });
+    };
+
+    try {
+        const client = clients[0];
+        const server = clients[1];
+    
+        const updateinfo = new EmbedBuilder()
+            .setTitle(config.get(`Servers.${server}.Game_Server_Name`))
+            .addFields({ name: commandSender, value: `${config.get(`Servers.${server}.Game_Server_Name`)} checking for updates could take some time please wait....` })
+            .setColor(0x00e8ff);
+        client.channels.cache.get(config.get(`Servers.${server}.Admin_Channel_ID`)).send({ embeds: [updateinfo] });
+    
+        const serverDirectory = config.get(`Servers.${server}.Server_Path`);
+        const serverName = config.get(`Servers.${server}.Game_Server_Name`);
+        const steamcmdPath = config.get(`ControlBot.Steam_Path`);
+        const branch = '2430930';
+    
+        const updateCallback = (error, message) => {
+            if (error) {
+                console.error('An error occurred during server update:', error);
+            } else {
+                startServer([clients, commandSender,message]);
+            }
+        };
+
+        updateServer(serverDirectory, serverName, steamcmdPath, branch, 'anonymous', updateCallback); // Assuming 'anonymous' is the correct Steam login
+    
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
 }

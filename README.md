@@ -2,7 +2,7 @@
 ASA Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v2.7 03/24/2024
+v2.8 03/24/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -19,7 +19,7 @@ License:
     MIT License
 
 install video: 
-coming soon
+https://www.youtube.com/watch?v=a9uVmuJPGN8
 
 node.js download
 https://nodejs.org/en
@@ -134,6 +134,10 @@ Change Notes:
 			 also added new config setting to dissable the player list that discord memebers can run to see who is online.
 			 
 	3/24/2024 fixed issued with mod updates, switched some slash commands to buttons for admins, fixed bug with button population on bot start.
+
+	4/23/2024 Fixed Issue with not being able to use double quotes in bots config file for the CommandLine setting. insted of using double quotes "these" use
+			  single quotes 'these' around any CommandLine parameter that needs quotes.
+			  Fixed issue where some versions of windows 10 dont support the spawn commands within the bot to update server and start the server.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation
