@@ -4,6 +4,8 @@ By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
 v2.8 03/24/2024
 
+ASA Server Control Bot Deluxe version:  https://whop.com/vgscontentshop
+
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
 
