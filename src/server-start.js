@@ -12,7 +12,7 @@ try {
         const gameExecutable = config.get(`Servers.${server}.EXE_Launcher`);
         const cmdLine = config.get(`Servers.${server}.Command_Line`);
  
-        const modifiedCmdLine = cmdLine.replace(/"/g, "'");
+        const modifiedCmdLine = cmdLine.replace(/'/g, '"');
     
         const cmd = `"${serverPath}\\ShooterGame\\Binaries\\Win64\\${gameExecutable}" ${modifiedCmdLine}`;
     
